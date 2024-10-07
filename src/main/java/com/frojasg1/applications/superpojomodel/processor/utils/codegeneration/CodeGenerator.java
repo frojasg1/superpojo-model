@@ -33,20 +33,21 @@ import com.helger.jcodemodel.IJExpression;
 import com.helger.jcodemodel.JBlock;
 import com.helger.jcodemodel.JClassAlreadyExistsException;
 import com.helger.jcodemodel.JCodeModel;
+import com.helger.jcodemodel.JConditional;
 import com.helger.jcodemodel.JDefinedClass;
 import com.helger.jcodemodel.JExpr;
 import com.helger.jcodemodel.JFieldVar;
 import com.helger.jcodemodel.JMethod;
 import com.helger.jcodemodel.JMod;
 import com.helger.jcodemodel.JPackage;
+import com.helger.jcodemodel.JVar;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class CodeGenerator {
 
@@ -113,7 +114,7 @@ public class CodeGenerator {
         addFields(jClass, pojoClassDefinitionContext);
         addFieldFunctions(jClass, pojoClassDefinitionContext);
 
-        if(getCommandLineArgs().isToString()) {
+        if(getCommandLineArgs().isToAddToString()) {
             createToStringFunction(jClass);
         }
     }
@@ -124,27 +125,32 @@ public class CodeGenerator {
         Object attributeType = null;
         String className = null;
         Class<?> clazz = null;
+        AbstractJType jType = null;
         MyParameterizedType parameterizedType = null;
         for(Map.Entry<String, AttributeContext> entry: pojoClassDefinitionContext.getAttributeDescriptionMap().entrySet()) {
             attributeName = entry.getKey();
             attributeType = entry.getValue().getAttributeType();
 
-            if(attributeType instanceof String) {
-                className = (String) attributeType;
-                AbstractJType jType = getJClass(className);
-                jClass.field(JMod.PRIVATE, jType, attributeName);
-            } else if(attributeType instanceof Class) {
-                clazz = (Class<?>) attributeType;
-                jClass.field(JMod.PRIVATE, clazz, attributeName);
-            } else if(attributeType instanceof MyParameterizedType) {
-                parameterizedType = (MyParameterizedType) attributeType;
-
-                // https://jensknipper.de/blog/dealing-with-generic-fields-in-jcodemodel/
-                AbstractJClass classType = getNarrowedClass(pojoClassDefinitionContext.getDefinitionClass(), parameterizedType);
-
-                jClass.field(JMod.PRIVATE, classType, attributeName);
-            }
+            jType = getJType(attributeType, pojoClassDefinitionContext);
+            jClass.field(JMod.PRIVATE, jType, attributeName);
         }
+    }
+
+    protected AbstractJType getJType(Object attributeType, PojoClassDefinitionContext pojoClassDefinitionContext) {
+        AbstractJType result = null;
+        if(attributeType instanceof String) {
+            String className = (String) attributeType;
+            result = getJClass(className);
+        } else if(attributeType instanceof Class) {
+            Class<?> clazz = (Class<?>) attributeType;
+            result = this.modelResult.ref(clazz);
+        } else if(attributeType instanceof MyParameterizedType) {
+            MyParameterizedType parameterizedType = (MyParameterizedType) attributeType;
+
+            // https://jensknipper.de/blog/dealing-with-generic-fields-in-jcodemodel/
+            result = getNarrowedClass(pojoClassDefinitionContext.getDefinitionClass(), parameterizedType);
+        }
+        return result;
     }
 
     protected Object getAttributeType(Type attribType, Class<?> inputPackageClass) {
@@ -197,18 +203,81 @@ public class CodeGenerator {
         for(Map.Entry<String, AttributeContext> entry: pojoClassDefinitionContext.getAttributeDescriptionMap().entrySet()) {
             attribName = entry.getKey();
             attributeContext = entry.getValue();
-            addFieldFunctions(jClass, attribName, attributeContext);
+            addFieldFunctions(jClass, attribName, attributeContext, pojoClassDefinitionContext);
         }
     }
 
     protected void addFieldFunctions(JDefinedClass jClass, String fieldName,
-                                     AttributeContext attributeContext) {
+                                     AttributeContext attributeContext,
+                                     PojoClassDefinitionContext pojoClassDefinitionContext) {
         addGetter(jClass, fieldName, attributeContext);
         addSetter(jClass, fieldName, attributeContext);
 
-        if(getCommandLineArgs().isBuilderStyle()) {
+        if(getCommandLineArgs().isToAddBuilderStyle()) {
             addBuilder(jClass, fieldName);
         }
+
+        if(getCommandLineArgs().isToAddListItemAdder() &&
+            isParameterizedList(attributeContext.getAttributeType())) {
+            addListItemAdder(jClass, fieldName, attributeContext, pojoClassDefinitionContext);
+        }
+    }
+
+    protected Object getFirstParameter(Object attributeType) {
+        return getClassFunctions().getFirstParameter(attributeType);
+    }
+
+    protected String getListItemAdderFunctionName(String fieldName) {
+        return String.format("add%sItem", getAttribNameForFunctions(fieldName));
+    }
+
+    protected JMethod addListItemAdder(JDefinedClass jClass, String fieldName,
+                                       AttributeContext attributeContext,
+                                       PojoClassDefinitionContext pojoClassDefinitionContext) {
+        // https://sookocheff.com/post/java/generating-java-with-jcodemodel/
+        String functionName = getListItemAdderFunctionName(fieldName);
+        JMethod result = null;
+        if(getCommandLineArgs().isToAddBuilderStyle()) {
+            result = jClass.method(JMod.PUBLIC, jClass, functionName);
+        } else {
+            result = jClass.method(JMod.PUBLIC, this.modelResult.VOID, functionName);
+        }
+        AbstractJType elemType = getJType(getFirstParameter(attributeContext.getAttributeType()), pojoClassDefinitionContext);
+        JVar param = result.param(elemType, "item");
+
+        JFieldVar jField = jClass.fields().get(fieldName);
+        JConditional condition = result.body()._if(JExpr._this().ref(jField.name()).eqNull());
+        condition._then().assign(
+                JExpr._this().ref(jField.name()),
+                JExpr._new(getListJType(attributeContext, pojoClassDefinitionContext)));
+
+        result.body().add(JExpr._this().ref(jField.name()).invoke("add").arg(param));
+
+        if(getCommandLineArgs().isToAddBuilderStyle()) {
+            result.body()._return(JExpr._this());
+        }
+
+        return result;
+    }
+
+    protected Class<?> getRawListClass(Object attributeType) {
+        return getClassFunctions().getRawListClass(attributeType);
+    }
+
+    protected AbstractJClass getListJType(AttributeContext attributeContext, PojoClassDefinitionContext pojoClassDefinitionContext) {
+        AbstractJClass result = null;
+
+        Class<?> rawListClass = getRawListClass(attributeContext.getAttributeType());
+        if(Objects.equals(List.class, rawListClass)) {
+            result = this.modelResult.ref(ArrayList.class);
+        } else {
+            result = this.modelResult.ref(rawListClass);
+        }
+        return result;
+    }
+
+    protected boolean isParameterizedList(Object attributeType) {
+        return getClassFunctions().isParameterizedList(attributeType);
     }
 
     protected JMethod addGetter(JDefinedClass jClass, String fieldName,

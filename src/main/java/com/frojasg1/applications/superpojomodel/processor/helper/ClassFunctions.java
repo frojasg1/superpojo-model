@@ -102,4 +102,41 @@ public class ClassFunctions {
 
         return result;
     }
+
+    public Object getFirstParameter(Object attributeType) {
+        Object result = null;
+        MyParameterizedType type = cast(attributeType, MyParameterizedType.class);
+        if(type != null) {
+            if(!type.getTypeParameters().isEmpty()) {
+                result = type.getTypeParameters().get(0);
+            }
+        }
+        return result;
+    }
+
+    public <C> C cast(Object object, Class<C> clazz) {
+        C result = null;
+        if(clazz.isInstance(object)) {
+            result = clazz.cast(object);
+        }
+        return result;
+    }
+
+    public boolean isParameterizedList(Object attributeType) {
+        boolean result = false;
+        Class<?> rawType = getRawListClass(attributeType);
+        if(rawType != null) {
+            result = List.class.isAssignableFrom(rawType);
+        }
+        return result;
+    }
+
+    public Class<?> getRawListClass(Object attributeType) {
+        Class<?> result = null;
+        MyParameterizedType type = cast(attributeType, MyParameterizedType.class);
+        if(type != null) {
+            result = cast(type.getRawType(), Class.class);
+        }
+        return result;
+    }
 }

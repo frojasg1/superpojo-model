@@ -20,13 +20,10 @@
 package com.frojasg1.applications.superpojomodel.args;
 
 import java.io.File;
-import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -218,11 +215,23 @@ public class CommandLineArgs {
                 .numberOfArgs(0)
                 .desc("flag to tell whether pojos will include builder style or not").build());
 
+        options.addOption(Option.builder("addListItemAdder")
+                .optionalArg(true)
+                .hasArg(false)
+                .numberOfArgs(0)
+                .desc("flag to tell if List attrib item adder will be added to the pojo").build());
+
         options.addOption(Option.builder("ignoreErrors")
                 .optionalArg(true)
                 .hasArg(false)
                 .numberOfArgs(0)
                 .desc("flag to tell if when error number is greater than zero the output is generated or not").build());
+
+        options.addOption(Option.builder("elementAndListOfElementsAreCompatible")
+                .optionalArg(true)
+                .hasArg(false)
+                .numberOfArgs(0)
+                .desc("flag to tell if attrib type List is compatible with ListElem (resulting in a List)").build());
 
         return options;
     }
@@ -350,15 +359,23 @@ public class CommandLineArgs {
         return result;
     }
 
-    public boolean isToString() {
+    public boolean isToAddToString() {
         return getCommandLine().hasOption("toString");
     }
 
-    public boolean isBuilderStyle() {
+    public boolean isToAddBuilderStyle() {
         return getCommandLine().hasOption("addBuilderStyle");
     }
-    public boolean isIgnoreErrors() {
+    public boolean isToIgnoreErrors() {
         return getCommandLine().hasOption("ignoreErrors");
+    }
+
+    public boolean elementAndListOfElementsAreCompatible() {
+        return getCommandLine().hasOption("elementAndListOfElementsAreCompatible");
+    }
+
+    public boolean isToAddListItemAdder() {
+        return getCommandLine().hasOption("addListItemAdder");
     }
 
     public interface UnsafeFunction<CC>

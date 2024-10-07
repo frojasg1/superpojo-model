@@ -20,6 +20,7 @@
 package com.frojasg1.applications.superpojomodel.processor.utils.suitability;
 
 import com.frojasg1.applications.superpojomodel.args.CommandLineArgs;
+import com.frojasg1.applications.superpojomodel.contexts.MyParameterizedType;
 import com.frojasg1.applications.superpojomodel.processor.helper.ClassFunctions;
 import com.frojasg1.applications.superpojomodel.processor.utils.suitability.context.AttributeContext;
 import com.frojasg1.applications.superpojomodel.processor.utils.suitability.context.JavaSourceFileDefinitionContext;
@@ -46,7 +47,7 @@ public class SuperPojoClassNamesSuitability {
     protected List<String> superPojoNestedClasses;
     protected CommandLineArgs commandLineArgs;
 
-    protected Map<String, JavaSourceFileDefinitionContext> result;
+    protected Map<String, JavaSourceFileDefinitionContext> javaClassDefinitionResultMap;
 
     protected int numErrors;
     protected int numWarnings;
@@ -67,7 +68,7 @@ public class SuperPojoClassNamesSuitability {
             result.put(superPojoNestedClassName, currentSuperPojoJavaDefinition);
         }
 
-        this.result = result;
+        this.javaClassDefinitionResultMap = result;
 
         return this;
     }
@@ -84,8 +85,8 @@ public class SuperPojoClassNamesSuitability {
         return commandLineArgs;
     }
 
-    public Map<String, JavaSourceFileDefinitionContext> getResult() {
-        return result;
+    public Map<String, JavaSourceFileDefinitionContext> getJavaClassDefinitionResultMap() {
+        return javaClassDefinitionResultMap;
     }
 
     protected JavaSourceFileDefinitionContext isSuitable(String superPojoNestedClassName) {
@@ -321,7 +322,54 @@ public class SuperPojoClassNamesSuitability {
         return getClassFunctions().getAttributeType(attribType, inputPackageClass);
     }
 
-    protected boolean areAttribTypesCompatible(Object attribType1, Object attribType2) {
+    protected AttributeContext getCompatibleAttrib(AttributeContext resultAttributeContext,
+                                                   AttributeContext currentAttributeContext) {
+        AttributeContext result = resultAttributeContext;
+        if(resultAttributeContext == null) {
+            result = currentAttributeContext;
+        } else if(currentAttributeContext == null) {
+            result = resultAttributeContext;
+        } else {
+            if(!areAttribTypesTheSame(resultAttributeContext.getAttributeType(), currentAttributeContext.getAttributeType())) {
+                if(getCommandLineArgs().elementAndListOfElementsAreCompatible()) {
+                    result = getListIfElementAndListOfElements(resultAttributeContext, currentAttributeContext);
+                } else {
+                    result = null;
+                }
+            }
+        }
+        return result;
+    }
+
+    protected AttributeContext getListIfElementAndListOfElements(AttributeContext resultAttributeContext,
+                                                                 AttributeContext currentAttributeContext) {
+        AttributeContext result = getListIfFirstListSecondElement(resultAttributeContext, currentAttributeContext);
+        if(result == null) {
+            result = getListIfFirstListSecondElement(currentAttributeContext, resultAttributeContext);
+        }
+        return result;
+    }
+
+    protected AttributeContext getListIfFirstListSecondElement(AttributeContext resultAttributeContext,
+                                                               AttributeContext currentAttributeContext) {
+        AttributeContext result = null;
+        if(isParameterizedList(resultAttributeContext.getAttributeType())) {
+            if(areAttribTypesTheSame(getFirstParameter(resultAttributeContext.getAttributeType()), currentAttributeContext.getAttributeType())) {
+                result = resultAttributeContext;
+            }
+        }
+        return result;
+    }
+
+    protected Object getFirstParameter(Object attributeType) {
+        return getClassFunctions().getFirstParameter(attributeType);
+    }
+
+    protected boolean isParameterizedList(Object attributeType) {
+        return getClassFunctions().isParameterizedList(attributeType);
+    }
+
+    protected boolean areAttribTypesTheSame(Object attribType1, Object attribType2) {
         return Objects.equals(attribType1, attribType2);
     }
 
@@ -353,7 +401,7 @@ public class SuperPojoClassNamesSuitability {
                     warn(String.format("incompatible attrib names at: %s, for methods: \n %s \n and \n %s", inputPackageClass, firstMethod, method));
                 }
 
-                if(!areAttribTypesCompatible(currentAttributeType, attributeContext.getAttributeType())) {
+                if(!areAttribTypesTheSame(currentAttributeType, attributeContext.getAttributeType())) {
                     error(String.format("incompatible attribute types at: %s, for methods: \n attrib type: %s \n %s \n and \n attrib type: %s \n %s",
                             inputPackageClass, attributeContext.getAttributeType(), firstMethod, currentAttributeType, method));
                     result = false;
@@ -434,16 +482,21 @@ public class SuperPojoClassNamesSuitability {
         String attributeName = null;
         AttributeContext attributeContext = null;
         Map.Entry<String, AttributeContext> entry = null;
+        Map<String, AttributeContext> compatibleAttribMap = new HashMap<>();
         Iterator<Map.Entry<String, AttributeContext>> it = currentResult.getAttributeDescriptionMap().entrySet().iterator();
+        AttributeContext currentAttribCtx = null;
         while(it.hasNext()) {
             entry = it.next();
             attributeName = entry.getKey();
             attributeContext = entry.getValue();
 
-            if(!checkSuitableAttrib(attributeContext, currentJavaDefinition.getAttributeDescriptionMap().get(attributeName))) {
-                it.remove();
+            currentAttribCtx = getSuitableAttrib(attributeContext, currentJavaDefinition.getAttributeDescriptionMap().get(attributeName));
+            if(currentAttribCtx != null) {
+                compatibleAttribMap.put(attributeName, currentAttribCtx);
             }
         }
+        currentResult.getAttributeDescriptionMap().clear();
+        currentResult.getAttributeDescriptionMap().putAll(compatibleAttribMap);
 
         for(Map.Entry<String, AttributeContext> entry2: currentJavaDefinition.getAttributeDescriptionMap().entrySet()) {
             attributeName = entry2.getKey();
@@ -452,14 +505,14 @@ public class SuperPojoClassNamesSuitability {
         }
     }
 
-    protected boolean checkSuitableAttrib(AttributeContext resultAttributeContext, AttributeContext currentAttributeContext) {
-        boolean result = true;
+    protected AttributeContext getSuitableAttrib(AttributeContext resultAttributeContext, AttributeContext currentAttributeContext) {
+        AttributeContext result = resultAttributeContext;
         if(currentAttributeContext != null) {
-            if(!areAttribTypesCompatible(resultAttributeContext.getAttributeType(), currentAttributeContext.getAttributeType())) {
+            result = getCompatibleAttrib(resultAttributeContext, currentAttributeContext);
+            if(result == null) {
                 error(String.format("incompatible attribute types at: %s : \n attrib type: %s \n (%s) \n and \n %s: \n attrib type: %s \n %s",
                         resultAttributeContext.getContainerClass(), resultAttributeContext.getAttributeType(), getMethod(resultAttributeContext),
                         currentAttributeContext.getContainerClass(), currentAttributeContext.getAttributeType(), getMethod(currentAttributeContext)));
-                result = false;
             } else {
                 // the first letter may differ in case sensitivity
                 Map<String, Method> resultAttributeNameMap = getAttributeNames(resultAttributeContext);

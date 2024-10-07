@@ -61,7 +61,7 @@ public class Processor {
         superPojoClassNamesSuitability.errLog("Warnings: " + superPojoClassNamesSuitability.getNumWarnings());
 
         if(superPojoClassNamesSuitability.getNumErrors() > 0) {
-            if(getCommandLineArgs().isIgnoreErrors()) {
+            if(getCommandLineArgs().isToIgnoreErrors()) {
                 superPojoClassNamesSuitability.errLog("Errors at processing. Ignoring them ...");
             } else {
                 superPojoClassNamesSuitability.errLog("Errors at processing. Exiting ...");
@@ -69,7 +69,7 @@ public class Processor {
             }
         }
 
-        Map<String, JavaSourceFileDefinitionContext> superPojoMap = superPojoClassNamesSuitability.getResult();
+        Map<String, JavaSourceFileDefinitionContext> superPojoMap = superPojoClassNamesSuitability.getJavaClassDefinitionResultMap();
         generateCode(superPojoMap);
     }
 

@@ -36,7 +36,9 @@ public class MainTest {
                 "com.telefonica.iot.diameter5greceiver.nchf.superpojos.openapi.model",
                 "-addBuilderStyle",
                 "-toString",
-                "-ignoreErrors"
+                "-ignoreErrors",
+                "-elementAndListOfElementsAreCompatible",
+                "-addListItemAdder"
         };
 
         Main.main(args);

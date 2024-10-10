@@ -19,7 +19,7 @@
 
 package com.frojasg1.applications.superpojomodel.processor.utils.codegeneration;
 
-import com.frojasg1.applications.superpojomodel.args.CommandLineArgs;
+import com.frojasg1.applications.superpojomodel.config.SuperPojoModelGeneratorConfiguration;
 import com.frojasg1.applications.superpojomodel.contexts.MyParameterizedType;
 import com.frojasg1.applications.superpojomodel.processor.helper.ClassFunctions;
 import com.frojasg1.applications.superpojomodel.processor.utils.suitability.context.AttributeContext;
@@ -51,13 +51,13 @@ import java.util.Objects;
 
 public class CodeGenerator {
 
-    protected CommandLineArgs commandLineArgs;
+    protected SuperPojoModelGeneratorConfiguration commandLineArgs;
     protected Map<String, JavaSourceFileDefinitionContext> superPojoMap;
 
     protected JCodeModel modelResult;
     protected JPackage jPackage;
 
-    public CodeGenerator(CommandLineArgs commandLineArgs, Map<String, JavaSourceFileDefinitionContext> superPojoMap) {
+    public CodeGenerator(SuperPojoModelGeneratorConfiguration commandLineArgs, Map<String, JavaSourceFileDefinitionContext> superPojoMap) {
         this.commandLineArgs = commandLineArgs;
         this.superPojoMap = superPojoMap;
     }
@@ -356,7 +356,7 @@ public class CodeGenerator {
         return toString;
     }
 
-    protected CommandLineArgs getCommandLineArgs() {
+    protected SuperPojoModelGeneratorConfiguration getCommandLineArgs() {
         return commandLineArgs;
     }
 

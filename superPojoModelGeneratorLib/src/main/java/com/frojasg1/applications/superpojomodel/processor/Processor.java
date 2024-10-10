@@ -19,7 +19,7 @@
 
 package com.frojasg1.applications.superpojomodel.processor;
 
-import com.frojasg1.applications.superpojomodel.args.CommandLineArgs;
+import com.frojasg1.applications.superpojomodel.config.SuperPojoModelGeneratorConfiguration;
 import com.frojasg1.applications.superpojomodel.processor.utils.classnamescalculator.SuperPojoClassNamesCalculator;
 import com.frojasg1.applications.superpojomodel.processor.utils.codegeneration.CodeGenerator;
 import com.frojasg1.applications.superpojomodel.processor.utils.suitability.SuperPojoClassNamesSuitability;
@@ -38,10 +38,10 @@ import java.io.File;
 public class Processor {
     private static final Logger LOGGER = LoggerFactory.getLogger(Processor.class);
 
-    protected CommandLineArgs commandLineArgs;
+    protected SuperPojoModelGeneratorConfiguration commandLineArgs;
     protected URLClassLoader urlClassLoader;
 
-    public Processor(CommandLineArgs commandLineArgs) {
+    public Processor(SuperPojoModelGeneratorConfiguration commandLineArgs) {
         this.commandLineArgs = commandLineArgs;
     }
 
@@ -93,7 +93,7 @@ public class Processor {
         return urlClassLoader;
     }
 
-    protected CommandLineArgs getCommandLineArgs() {
+    protected SuperPojoModelGeneratorConfiguration getCommandLineArgs() {
         return commandLineArgs;
     }
 

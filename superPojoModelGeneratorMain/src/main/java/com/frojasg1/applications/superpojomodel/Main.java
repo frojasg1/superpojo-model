@@ -46,7 +46,7 @@ public class Main {
     protected void process() {
         CommandLineArgs commandLineArgs = createCommandLine();
         if (commandLineArgs != null) {
-            new Processor(commandLineArgs).process();
+            new Processor(commandLineArgs.getConfiguration()).process();
 
             LOGGER.info("Successful execution");
         }

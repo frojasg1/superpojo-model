@@ -19,6 +19,7 @@
 
 package com.frojasg1.applications.superpojomodel.args;
 
+import com.frojasg1.applications.superpojomodel.config.SuperPojoModelGeneratorConfiguration;
 import java.io.File;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -47,6 +48,8 @@ public class CommandLineArgs {
     protected CommandLine commandLine;
 
     protected boolean allowEmptyCommandLineArguments;
+
+    protected SuperPojoModelGeneratorConfiguration configuration;
 
     public CommandLineArgs(String applicationName, String usagesTextHeader) {
         this.applicationName = applicationName;
@@ -147,7 +150,26 @@ public class CommandLineArgs {
 
         validate(commandLine);
 
+        configuration = createConfiguration();
+
         return commandLine;
+    }
+
+    protected SuperPojoModelGeneratorConfiguration createConfiguration() {
+        SuperPojoModelGeneratorConfiguration result = new SuperPojoModelGeneratorConfiguration();
+        result.setInputJars(getInputJars());
+        result.setInputPackages(getInputPackages());
+        result.setOutputFolder(getOutputFolder());
+        result.setOutputPackage(getOutputPackage());
+        result.setGetterRegexPattern(getGetterRegexPattern());
+        result.setSetterRegexPattern(getSetterRegexPattern());
+        result.setToAddToString(isToAddToString());
+        result.setToAddBuilderStyle(isToAddBuilderStyle());
+        result.setToAddListItemAdder(isToAddListItemAdder());
+        result.setElementAndListOfElementsAreCompatible(elementAndListOfElementsAreCompatible());
+        result.setToIgnoreErrors(isToIgnoreErrors());
+
+        return result;
     }
 
     protected void validate(CommandLine cl) {
@@ -326,27 +348,27 @@ public class CommandLineArgs {
         checkRegex(cl.getOptionValue("setterRegex"), "setterRegex");
     }
 
-    public String[] getInputJars() {
+    protected String[] getInputJars() {
         return getCommandLine().getOptionValues("inputJar");
     }
 
-    public String[] getInputPackages() {
+    protected String[] getInputPackages() {
         return getCommandLine().getOptionValues("inputPackage");
     }
 
-    public String getOutputFolder() {
+    protected String getOutputFolder() {
         return getCommandLine().getOptionValue("outputFolder");
     }
 
-    public String getOutputPackage() {
+    protected String getOutputPackage() {
         return getCommandLine().getOptionValue("outputPackage");
     }
 
-    public Pattern getGetterRegexPattern() {
+    protected Pattern getGetterRegexPattern() {
         return getOptionPattern("getterRegex", DEFAULT_GETTER_ATTRIBUTE_NAME_GETTER);
     }
 
-    public Pattern getSetterRegexPattern() {
+    protected Pattern getSetterRegexPattern() {
         return getOptionPattern("setterRegex", DEFAULT_SETTER_ATTRIBUTE_NAME_GETTER);
     }
 
@@ -359,23 +381,27 @@ public class CommandLineArgs {
         return result;
     }
 
-    public boolean isToAddToString() {
+    protected boolean isToAddToString() {
         return getCommandLine().hasOption("toString");
     }
 
-    public boolean isToAddBuilderStyle() {
+    protected boolean isToAddBuilderStyle() {
         return getCommandLine().hasOption("addBuilderStyle");
     }
-    public boolean isToIgnoreErrors() {
+    protected boolean isToIgnoreErrors() {
         return getCommandLine().hasOption("ignoreErrors");
     }
 
-    public boolean elementAndListOfElementsAreCompatible() {
+    protected boolean elementAndListOfElementsAreCompatible() {
         return getCommandLine().hasOption("elementAndListOfElementsAreCompatible");
     }
 
-    public boolean isToAddListItemAdder() {
+    protected boolean isToAddListItemAdder() {
         return getCommandLine().hasOption("addListItemAdder");
+    }
+
+    public SuperPojoModelGeneratorConfiguration getConfiguration() {
+        return configuration;
     }
 
     public interface UnsafeFunction<CC>

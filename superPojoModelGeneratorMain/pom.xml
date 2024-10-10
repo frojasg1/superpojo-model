@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (C) 2023 Francisco Javier Rojas Garrido <frojasg1@hotmail.com>
+Copyright (C) 2024 Francisco Javier Rojas Garrido <frojasg1@hotmail.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -30,11 +30,11 @@ You may obtain a copy of the License at
         </parent>
 -->
 	<groupId>com.frojasg1</groupId>
-	<artifactId>super-pojo-model</artifactId>
+	<artifactId>super-pojo-model-generator-main</artifactId>
 	<version>v1.0-SNAPSHOT</version>
-	<name>super-pojo-model</name>
+	<name>super-pojo-model-generator-main</name>
 
-	<description>super-pojo-model</description>
+	<description>super-pojo-model-generator-main</description>
 <!--	<url>https://github.com/frojasg1/libGenericDesktop</url> -->
 
 	<organization>
@@ -180,19 +180,12 @@ You may obtain a copy of the License at
 			<version>${jline.version}</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
+			<groupId>com.frojasg1</groupId>
+			<artifactId>super-pojo-model-generator-lib</artifactId>
+			<version>v1.0-SNAPSHOT</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.helger/jcodemodel -->
-		<dependency>
-			<groupId>com.helger</groupId>
-			<artifactId>jcodemodel</artifactId>
-			<version>${jcodemodel.version}</version>
-		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -286,7 +279,7 @@ You may obtain a copy of the License at
 				<filtering>true</filtering>
 			</resource>
 			<resource>
-				<directory>${project.basedir}</directory>
+				<directory>..</directory>
 				<includes>
 					<include>NOTICE*</include>
 					<include>LICENSE*</include>

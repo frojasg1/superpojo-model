@@ -19,8 +19,7 @@
 
 package com.frojasg1.applications.superpojomodel.processor.utils.suitability;
 
-import com.frojasg1.applications.superpojomodel.args.CommandLineArgs;
-import com.frojasg1.applications.superpojomodel.contexts.MyParameterizedType;
+import com.frojasg1.applications.superpojomodel.config.SuperPojoModelGeneratorConfiguration;
 import com.frojasg1.applications.superpojomodel.processor.helper.ClassFunctions;
 import com.frojasg1.applications.superpojomodel.processor.utils.suitability.context.AttributeContext;
 import com.frojasg1.applications.superpojomodel.processor.utils.suitability.context.JavaSourceFileDefinitionContext;
@@ -45,7 +44,7 @@ public class SuperPojoClassNamesSuitability {
 
     protected URLClassLoader urlClassLoader;
     protected List<String> superPojoNestedClasses;
-    protected CommandLineArgs commandLineArgs;
+    protected SuperPojoModelGeneratorConfiguration commandLineArgs;
 
     protected Map<String, JavaSourceFileDefinitionContext> javaClassDefinitionResultMap;
 
@@ -53,7 +52,7 @@ public class SuperPojoClassNamesSuitability {
     protected int numWarnings;
 
 
-    public SuperPojoClassNamesSuitability(URLClassLoader urlClassLoader, List<String> superPojoNestedClasses, CommandLineArgs commandLineArgs) {
+    public SuperPojoClassNamesSuitability(URLClassLoader urlClassLoader, List<String> superPojoNestedClasses, SuperPojoModelGeneratorConfiguration commandLineArgs) {
         this.urlClassLoader = urlClassLoader;
         this.superPojoNestedClasses = superPojoNestedClasses;
         this.commandLineArgs = commandLineArgs;
@@ -81,7 +80,7 @@ public class SuperPojoClassNamesSuitability {
         return superPojoNestedClasses;
     }
 
-    protected CommandLineArgs getCommandLineArgs() {
+    protected SuperPojoModelGeneratorConfiguration getCommandLineArgs() {
         return commandLineArgs;
     }
 

@@ -25,20 +25,21 @@ public class MainTest {
     public static void main(String[] args) {
         args = new String[] {
                 "-inputJar",
-                "../../../tmp/tmp/superpojo_src/diameter-5g-receiver-10.2.0-SNAPSHOT-cj8-jar-with-dependencies.jar",
+                "./inputModelsToSuperPojo5gExample/target/input-models-to-super-pojo-5g-example-v1.0-SNAPSHOT.jar",
                 "-inputPackage",
-                "com.telefonica.iot.diameter5greceiver.nchf.rel15.openapi.model",
+                "com.frojasg1.nchf5g.rel15.openapi.model",
                 "-inputPackage",
-                "com.telefonica.iot.diameter5greceiver.nchf.rel16_15_0.openapi.model",
+                "com.frojasg1.nchf5g.rel16_15_0.openapi.model",
                 "-outputFolder",
-                "../../../tmp/tmp/superpojo_src",
+                "superPojo5gModelsExample/src/main/java",
                 "-outputPackage",
-                "com.telefonica.iot.diameter5greceiver.nchf.superpojos.openapi.model",
+                "com.frojasg1.nchf5g.superpojo.model",
                 "-addBuilderStyle",
                 "-toString",
                 "-ignoreErrors",
                 "-elementAndListOfElementsAreCompatible",
-                "-addListItemAdder"
+                "-addListItemAdder",
+                "-hashcodeAndEquals"
         };
 
         Main.main(args);

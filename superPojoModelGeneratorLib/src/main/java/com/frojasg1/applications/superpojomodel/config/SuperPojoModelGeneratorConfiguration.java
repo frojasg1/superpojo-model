@@ -19,17 +19,19 @@
 
 package com.frojasg1.applications.superpojomodel.config;
 
+import com.frojasg1.applications.superpojomodel.patterns.SuperPojoCommonPatterns;
 import java.util.regex.Pattern;
 
 public class SuperPojoModelGeneratorConfiguration {
     protected boolean isToAddListItemAdder;
     protected boolean isToAddToString;
+    protected boolean isToAddHashcodeAndEquals;
     protected boolean isToAddBuilderStyle;
     protected boolean isToIgnoreErrors;
     protected boolean elementAndListOfElementsAreCompatible;
 
-    protected Pattern setterRegexPattern;
-    protected Pattern getterRegexPattern;
+    protected Pattern setterRegexPattern = SuperPojoCommonPatterns.DEFAULT_SETTER_ATTRIBUTE_NAME_GETTER;
+    protected Pattern getterRegexPattern = SuperPojoCommonPatterns.DEFAULT_GETTER_ATTRIBUTE_NAME_GETTER;
 
     protected String[] inputJars;
 
@@ -82,47 +84,67 @@ public class SuperPojoModelGeneratorConfiguration {
         return isToAddListItemAdder;
     }
 
-    public void setToAddListItemAdder(boolean toAddListItemAdder) {
+    public boolean isToAddHashcodeAndEquals() {
+        return isToAddHashcodeAndEquals;
+    }
+
+    public SuperPojoModelGeneratorConfiguration setToAddListItemAdder(boolean toAddListItemAdder) {
         isToAddListItemAdder = toAddListItemAdder;
+        return this;
     }
 
-    public void setToAddToString(boolean toAddToString) {
+    public SuperPojoModelGeneratorConfiguration setToAddToString(boolean toAddToString) {
         isToAddToString = toAddToString;
+        return this;
     }
 
-    public void setToAddBuilderStyle(boolean toAddBuilderStyle) {
+    public SuperPojoModelGeneratorConfiguration setToAddHashcodeAndEquals(boolean toAddHashcodeAndEquals) {
+        isToAddHashcodeAndEquals = toAddHashcodeAndEquals;
+        return this;
+    }
+
+    public SuperPojoModelGeneratorConfiguration setToAddBuilderStyle(boolean toAddBuilderStyle) {
         isToAddBuilderStyle = toAddBuilderStyle;
+        return this;
     }
 
-    public void setToIgnoreErrors(boolean toIgnoreErrors) {
+    public SuperPojoModelGeneratorConfiguration setToIgnoreErrors(boolean toIgnoreErrors) {
         isToIgnoreErrors = toIgnoreErrors;
+        return this;
     }
 
-    public void setElementAndListOfElementsAreCompatible(boolean elementAndListOfElementsAreCompatible) {
+    public SuperPojoModelGeneratorConfiguration setElementAndListOfElementsAreCompatible(boolean elementAndListOfElementsAreCompatible) {
         this.elementAndListOfElementsAreCompatible = elementAndListOfElementsAreCompatible;
+        return this;
     }
 
-    public void setSetterRegexPattern(Pattern setterRegexPattern) {
+    public SuperPojoModelGeneratorConfiguration setSetterRegexPattern(Pattern setterRegexPattern) {
         this.setterRegexPattern = setterRegexPattern;
+        return this;
     }
 
-    public void setGetterRegexPattern(Pattern getterRegexPattern) {
+    public SuperPojoModelGeneratorConfiguration setGetterRegexPattern(Pattern getterRegexPattern) {
         this.getterRegexPattern = getterRegexPattern;
+        return this;
     }
 
-    public void setInputJars(String[] inputJars) {
+    public SuperPojoModelGeneratorConfiguration setInputJars(String[] inputJars) {
         this.inputJars = inputJars;
+        return this;
     }
 
-    public void setInputPackages(String[] inputPackages) {
+    public SuperPojoModelGeneratorConfiguration setInputPackages(String[] inputPackages) {
         this.inputPackages = inputPackages;
+        return this;
     }
 
-    public void setOutputFolder(String outputFolder) {
+    public SuperPojoModelGeneratorConfiguration setOutputFolder(String outputFolder) {
         this.outputFolder = outputFolder;
+        return this;
     }
 
-    public void setOutputPackage(String outputPackage) {
+    public SuperPojoModelGeneratorConfiguration setOutputPackage(String outputPackage) {
         this.outputPackage = outputPackage;
+        return this;
     }
 }

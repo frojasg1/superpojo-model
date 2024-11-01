@@ -20,6 +20,7 @@
 package com.frojasg1.applications.superpojomodel.processor.utils.suitability.context.impl;
 
 import com.frojasg1.applications.superpojomodel.processor.utils.suitability.context.JavaSourceFileDefinitionContext;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,8 +32,24 @@ public class EnumDefinitionContext implements JavaSourceFileDefinitionContext {
 
     protected List<String> elemNames = new ArrayList<>();
 
+    protected Method nameFunction;
+    protected Method valueOfFunction;
+
+
     public EnumDefinitionContext(Class<?> definitionClass) {
         this.definitionClass = definitionClass;
+
+        try {
+            nameFunction = definitionClass.getMethod("name");
+        } catch(Exception ex) {
+            throw new RuntimeException(String.format("%s does not seem to be an enum. It does not have name() function", definitionClass), ex);
+        }
+
+        try {
+            valueOfFunction = definitionClass.getMethod("valueOf", String.class);
+        } catch(Exception ex) {
+            throw new RuntimeException(String.format("%s does not seem to be an enum. It does not have valueOf() function", definitionClass), ex);
+        }
     }
 
     public List<String> getElemNames() {
@@ -70,5 +87,27 @@ public class EnumDefinitionContext implements JavaSourceFileDefinitionContext {
         return "EnumDefinitionContext{" +
                 "definitionClass=" + definitionClass +
                 '}';
+    }
+
+    public String name(Object enumElementOfThisClass) {
+        try {
+            return (String) nameFunction.invoke(enumElementOfThisClass);
+        } catch(Exception ex) {
+            throw new IllegalArgumentException(
+                    String.format("%s does not seem to be of enum: %s",
+                            enumElementOfThisClass, getDefinitionClass()),
+                    ex);
+        }
+    }
+
+    public Object valueOf(String elemName) {
+        try {
+            return valueOfFunction.invoke(null, elemName);
+        } catch(Exception ex) {
+            throw new IllegalArgumentException(
+                    String.format("%s does not seem to be the name of an element of enum: %s",
+                            elemName, getDefinitionClass()),
+                    ex);
+        }
     }
 }

@@ -1,0 +1,194 @@
+
+package com.frojasg1.nchf5g.superpojo.model;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.UUID;
+
+public class MultipleUnitInformation {
+    private UUID uPFID;
+    private Integer quotaHoldingTime;
+    private Integer validityTime;
+    private Integer timeQuotaThreshold;
+    private GrantedUnit grantedUnit;
+    private FinalUnitIndication finalUnitIndication;
+    private Integer ratingGroup;
+    private ResultCode resultCode;
+    private List<Trigger> triggers;
+    private Long volumeQuotaThreshold;
+    private Integer unitQuotaThreshold;
+
+    public UUID getuPFID() {
+        return uPFID;
+    }
+
+    public void setuPFID(UUID uPFID) {
+        this.uPFID = uPFID;
+    }
+
+    public MultipleUnitInformation uPFID(UUID uPFID) {
+        this.uPFID = uPFID;
+        return this;
+    }
+
+    public Integer getQuotaHoldingTime() {
+        return quotaHoldingTime;
+    }
+
+    public void setQuotaHoldingTime(Integer quotaHoldingTime) {
+        this.quotaHoldingTime = quotaHoldingTime;
+    }
+
+    public MultipleUnitInformation quotaHoldingTime(Integer quotaHoldingTime) {
+        this.quotaHoldingTime = quotaHoldingTime;
+        return this;
+    }
+
+    public Integer getValidityTime() {
+        return validityTime;
+    }
+
+    public void setValidityTime(Integer validityTime) {
+        this.validityTime = validityTime;
+    }
+
+    public MultipleUnitInformation validityTime(Integer validityTime) {
+        this.validityTime = validityTime;
+        return this;
+    }
+
+    public Integer getTimeQuotaThreshold() {
+        return timeQuotaThreshold;
+    }
+
+    public void setTimeQuotaThreshold(Integer timeQuotaThreshold) {
+        this.timeQuotaThreshold = timeQuotaThreshold;
+    }
+
+    public MultipleUnitInformation timeQuotaThreshold(Integer timeQuotaThreshold) {
+        this.timeQuotaThreshold = timeQuotaThreshold;
+        return this;
+    }
+
+    public GrantedUnit getGrantedUnit() {
+        return grantedUnit;
+    }
+
+    public void setGrantedUnit(GrantedUnit grantedUnit) {
+        this.grantedUnit = grantedUnit;
+    }
+
+    public MultipleUnitInformation grantedUnit(GrantedUnit grantedUnit) {
+        this.grantedUnit = grantedUnit;
+        return this;
+    }
+
+    public FinalUnitIndication getFinalUnitIndication() {
+        return finalUnitIndication;
+    }
+
+    public void setFinalUnitIndication(FinalUnitIndication finalUnitIndication) {
+        this.finalUnitIndication = finalUnitIndication;
+    }
+
+    public MultipleUnitInformation finalUnitIndication(FinalUnitIndication finalUnitIndication) {
+        this.finalUnitIndication = finalUnitIndication;
+        return this;
+    }
+
+    public Integer getRatingGroup() {
+        return ratingGroup;
+    }
+
+    public void setRatingGroup(Integer ratingGroup) {
+        this.ratingGroup = ratingGroup;
+    }
+
+    public MultipleUnitInformation ratingGroup(Integer ratingGroup) {
+        this.ratingGroup = ratingGroup;
+        return this;
+    }
+
+    public ResultCode getResultCode() {
+        return resultCode;
+    }
+
+    public void setResultCode(ResultCode resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    public MultipleUnitInformation resultCode(ResultCode resultCode) {
+        this.resultCode = resultCode;
+        return this;
+    }
+
+    public List<Trigger> getTriggers() {
+        return triggers;
+    }
+
+    public void setTriggers(List<Trigger> triggers) {
+        this.triggers = triggers;
+    }
+
+    public MultipleUnitInformation triggers(List<Trigger> triggers) {
+        this.triggers = triggers;
+        return this;
+    }
+
+    public MultipleUnitInformation addTriggersItem(Trigger item) {
+        if (this.triggers == null) {
+            this.triggers = new ArrayList();
+        }
+        this.triggers.add(item);
+        return this;
+    }
+
+    public Long getVolumeQuotaThreshold() {
+        return volumeQuotaThreshold;
+    }
+
+    public void setVolumeQuotaThreshold(Long volumeQuotaThreshold) {
+        this.volumeQuotaThreshold = volumeQuotaThreshold;
+    }
+
+    public MultipleUnitInformation volumeQuotaThreshold(Long volumeQuotaThreshold) {
+        this.volumeQuotaThreshold = volumeQuotaThreshold;
+        return this;
+    }
+
+    public Integer getUnitQuotaThreshold() {
+        return unitQuotaThreshold;
+    }
+
+    public void setUnitQuotaThreshold(Integer unitQuotaThreshold) {
+        this.unitQuotaThreshold = unitQuotaThreshold;
+    }
+
+    public MultipleUnitInformation unitQuotaThreshold(Integer unitQuotaThreshold) {
+        this.unitQuotaThreshold = unitQuotaThreshold;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ((((((((((((((((((((((((((((((((("MultipleUnitInformation {"+"uPFID = ")+ uPFID)+", ")+"quotaHoldingTime = ")+ quotaHoldingTime)+", ")+"validityTime = ")+ validityTime)+", ")+"timeQuotaThreshold = ")+ timeQuotaThreshold)+", ")+"grantedUnit = ")+ grantedUnit)+", ")+"finalUnitIndication = ")+ finalUnitIndication)+", ")+"ratingGroup = ")+ ratingGroup)+", ")+"resultCode = ")+ resultCode)+", ")+"triggers = ")+ triggers)+", ")+"volumeQuotaThreshold = ")+ volumeQuotaThreshold)+", ")+"unitQuotaThreshold = ")+ unitQuotaThreshold)+"}");
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uPFID, quotaHoldingTime, validityTime, timeQuotaThreshold, grantedUnit, finalUnitIndication, ratingGroup, resultCode, triggers, volumeQuotaThreshold, unitQuotaThreshold);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if ((that == null)||(this.getClass()!= that.getClass())) {
+            return false;
+        }
+        MultipleUnitInformation castThat = ((MultipleUnitInformation) that);
+        return ((((((((((Objects.equals(this.uPFID, castThat.uPFID)&&Objects.equals(this.quotaHoldingTime, castThat.quotaHoldingTime))&&Objects.equals(this.validityTime, castThat.validityTime))&&Objects.equals(this.timeQuotaThreshold, castThat.timeQuotaThreshold))&&Objects.equals(this.grantedUnit, castThat.grantedUnit))&&Objects.equals(this.finalUnitIndication, castThat.finalUnitIndication))&&Objects.equals(this.ratingGroup, castThat.ratingGroup))&&Objects.equals(this.resultCode, castThat.resultCode))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.volumeQuotaThreshold, castThat.volumeQuotaThreshold))&&Objects.equals(this.unitQuotaThreshold, castThat.unitQuotaThreshold));
+    }
+}

@@ -37,6 +37,7 @@ import com.helger.jcodemodel.JConditional;
 import com.helger.jcodemodel.JDefinedClass;
 import com.helger.jcodemodel.JExpr;
 import com.helger.jcodemodel.JFieldVar;
+import com.helger.jcodemodel.JInvocation;
 import com.helger.jcodemodel.JMethod;
 import com.helger.jcodemodel.JMod;
 import com.helger.jcodemodel.JPackage;
@@ -117,6 +118,10 @@ public class CodeGenerator {
         if(getCommandLineArgs().isToAddToString()) {
             createToStringFunction(jClass);
         }
+
+        if(getCommandLineArgs().isToAddHashcodeAndEquals()) {
+            createHashcodeAndEqualsFunctions(jClass);
+        }
     }
 
     protected void addFields(JDefinedClass jClass, PojoClassDefinitionContext pojoClassDefinitionContext) {
@@ -157,14 +162,17 @@ public class CodeGenerator {
         return getClassFunctions().getAttributeType(attribType, inputPackageClass);
     }
 
+    protected AbstractJClass getAbstractClass(Class<?> clazz) {
+        return this.modelResult.ref(clazz);
+    }
+
     protected AbstractJClass getNarrowedClass(Class<?> containerClazz, Object attributeType) {
         AbstractJClass result = null;
         if(attributeType instanceof String) {
             String className = (String) attributeType;
             result = getJClass(className);
         } else if(attributeType instanceof Class) {
-            result = this.modelResult
-                    .ref((Class<?>) attributeType);
+            result = getAbstractClass((Class<?>) attributeType);
         } else if(attributeType instanceof MyParameterizedType) {
             MyParameterizedType myParameterizedType = (MyParameterizedType) attributeType;
             result = getNarrowedClass(containerClazz, myParameterizedType.getRawType());
@@ -354,6 +362,93 @@ public class CodeGenerator {
         body._return(expression);
 
         return toString;
+    }
+
+
+    protected void createHashcodeAndEqualsFunctions(JDefinedClass definedClass) {
+        createHashcodeFunction(definedClass);
+        createEqualsFunction(definedClass);
+    }
+
+    protected JMethod createHashcodeFunction(JDefinedClass definedClass) {
+        // https://stackoverflow.com/questions/47872206/use-jcodemodel-to-generate-tostring-method
+        Map<String, JFieldVar> fields = definedClass.fields();
+        JMethod hashCode =
+                definedClass.method(JMod.PUBLIC, int.class, "hashCode");
+        hashCode.annotate(Override.class);
+
+        JBlock body = hashCode.body();
+
+        AbstractJClass objectsClass = getAbstractClass(Objects.class);
+        JInvocation invocation = objectsClass.staticInvoke("hash");
+
+        for(JFieldVar fieldVar: fields.values()) {
+            invocation = invocation.arg(fieldVar);
+        }
+
+        body._return(invocation);
+
+        return hashCode;
+    }
+
+    protected JMethod createEqualsFunction(JDefinedClass definedClass) {
+        // https://stackoverflow.com/questions/47872206/use-jcodemodel-to-generate-tostring-method
+        Map<String, JFieldVar> fields = definedClass.fields();
+        JMethod equals =
+                definedClass.method(JMod.PUBLIC, boolean.class, "equals");
+        equals.annotate(Override.class);
+        JVar thatParam = equals.param(getAbstractClass(Object.class), "that");
+
+        JBlock body = equals.body();
+
+        // https://sookocheff.com/post/java/generating-java-with-jcodemodel/
+
+//     if (this == that) {
+//      return true;
+//    }
+        JConditional condition = body._if(JExpr._this().eq(thatParam));
+        condition._then()._return(JExpr.lit(true));
+
+//        if (that == null || getClass() != that.getClass()) {
+//            return false;
+//        }
+        JConditional condition2 = body._if(
+                thatParam.eqNull()
+                        .cor(JExpr.invoke(JExpr._this(), "getClass")
+                                .ne(thatParam.invoke("getClass"))));
+        condition2._then()._return(JExpr.lit(false));
+
+//        MyClass chargingDataResponse = (MyClass) that;
+        JVar castThatVar = body.decl(definedClass, "castThat", JExpr.cast(definedClass, thatParam));
+
+//        return Objects.equals(this.invocationTimeStamp, chargingDataResponse.invocationTimeStamp) &&
+//                Objects.equals(this.invocationSequenceNumber, chargingDataResponse.invocationSequenceNumber) &&
+//                Objects.equals(this.invocationResult, chargingDataResponse.invocationResult) &&
+//                Objects.equals(this.sessionFailover, chargingDataResponse.sessionFailover) &&
+//                Objects.equals(this.multipleUnitInformation, chargingDataResponse.multipleUnitInformation) &&
+//                Objects.equals(this.triggers, chargingDataResponse.triggers) &&
+//                Objects.equals(this.pDUSessionChargingInformation, chargingDataResponse.pDUSessionChargingInformation) &&
+//                Objects.equals(this.roamingQBCInformation, chargingDataResponse.roamingQBCInformation);
+        JInvocation fieldEqualsInvocation = null;
+        IJExpression resultExpr = null;
+        for(JFieldVar fieldVar: fields.values()) {
+            fieldEqualsInvocation = getAbstractClass(Objects.class).staticInvoke("equals")
+                    .arg(JExpr._this().ref(fieldVar))
+                    .arg(castThatVar.ref(fieldVar));
+            if(resultExpr == null) {
+                resultExpr = fieldEqualsInvocation;
+            } else {
+                resultExpr = resultExpr.cand(fieldEqualsInvocation);
+            }
+        }
+
+        if(resultExpr == null) {
+            resultExpr = JExpr.lit(true);
+        }
+
+        body._return(resultExpr);
+
+        return equals;
     }
 
     protected SuperPojoModelGeneratorConfiguration getCommandLineArgs() {

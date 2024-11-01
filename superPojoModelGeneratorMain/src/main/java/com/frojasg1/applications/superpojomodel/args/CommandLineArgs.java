@@ -20,6 +20,7 @@
 package com.frojasg1.applications.superpojomodel.args;
 
 import com.frojasg1.applications.superpojomodel.config.SuperPojoModelGeneratorConfiguration;
+import com.frojasg1.applications.superpojomodel.patterns.SuperPojoCommonPatterns;
 import java.io.File;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -37,8 +38,8 @@ import org.slf4j.LoggerFactory;
 public class CommandLineArgs {
     private static final Logger LOGGER = LoggerFactory.getLogger(CommandLineArgs.class);
 
-    protected static final Pattern DEFAULT_GETTER_ATTRIBUTE_NAME_GETTER = Pattern.compile("^(is|get)([a-zA-z_][a-zA-Z_0-9]*)$");
-    protected static final Pattern DEFAULT_SETTER_ATTRIBUTE_NAME_GETTER = Pattern.compile("^set([a-zA-z_][a-zA-Z_0-9]*)$");
+    protected static final Pattern DEFAULT_GETTER_ATTRIBUTE_NAME_GETTER = SuperPojoCommonPatterns.DEFAULT_GETTER_ATTRIBUTE_NAME_GETTER;
+    protected static final Pattern DEFAULT_SETTER_ATTRIBUTE_NAME_GETTER = SuperPojoCommonPatterns.DEFAULT_SETTER_ATTRIBUTE_NAME_GETTER;
 
     protected String applicationName;
 
@@ -168,6 +169,7 @@ public class CommandLineArgs {
         result.setToAddListItemAdder(isToAddListItemAdder());
         result.setElementAndListOfElementsAreCompatible(elementAndListOfElementsAreCompatible());
         result.setToIgnoreErrors(isToIgnoreErrors());
+        result.setToAddHashcodeAndEquals(isToAddHashcodeAndEquals());
 
         return result;
     }
@@ -254,6 +256,12 @@ public class CommandLineArgs {
                 .hasArg(false)
                 .numberOfArgs(0)
                 .desc("flag to tell if attrib type List is compatible with ListElem (resulting in a List)").build());
+
+        options.addOption(Option.builder("hashcodeAndEquals")
+                .optionalArg(true)
+                .hasArg(false)
+                .numberOfArgs(0)
+                .desc("flag to tell if hashCode and equals functions are going to be created").build());
 
         return options;
     }
@@ -402,6 +410,10 @@ public class CommandLineArgs {
 
     public SuperPojoModelGeneratorConfiguration getConfiguration() {
         return configuration;
+    }
+
+    protected boolean isToAddHashcodeAndEquals() {
+        return getCommandLine().hasOption("hashcodeAndEquals");
     }
 
     public interface UnsafeFunction<CC>

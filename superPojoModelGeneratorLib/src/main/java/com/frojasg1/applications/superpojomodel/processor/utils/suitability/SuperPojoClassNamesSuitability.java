@@ -42,7 +42,7 @@ import java.util.stream.Collectors;
 
 public class SuperPojoClassNamesSuitability {
 
-    protected URLClassLoader urlClassLoader;
+    protected ClassLoader urlClassLoader;
     protected List<String> superPojoNestedClasses;
     protected SuperPojoModelGeneratorConfiguration commandLineArgs;
 
@@ -52,7 +52,7 @@ public class SuperPojoClassNamesSuitability {
     protected int numWarnings;
 
 
-    public SuperPojoClassNamesSuitability(URLClassLoader urlClassLoader, List<String> superPojoNestedClasses, SuperPojoModelGeneratorConfiguration commandLineArgs) {
+    public SuperPojoClassNamesSuitability(ClassLoader urlClassLoader, List<String> superPojoNestedClasses, SuperPojoModelGeneratorConfiguration commandLineArgs) {
         this.urlClassLoader = urlClassLoader;
         this.superPojoNestedClasses = superPojoNestedClasses;
         this.commandLineArgs = commandLineArgs;
@@ -72,7 +72,7 @@ public class SuperPojoClassNamesSuitability {
         return this;
     }
 
-    protected URLClassLoader getUrlClassLoader() {
+    protected ClassLoader getUrlClassLoader() {
         return urlClassLoader;
     }
 
@@ -151,8 +151,12 @@ public class SuperPojoClassNamesSuitability {
     }
 
     protected JavaSourceFileDefinitionContext calculateCurrentJavaDefinition(String inputPackageClassName) {
-        JavaSourceFileDefinitionContext result = null;
         Class<?> inputPackageClass = loadClass(inputPackageClassName);
+        return calculateCurrentJavaDefinition(inputPackageClass);
+    }
+
+    public JavaSourceFileDefinitionContext calculateCurrentJavaDefinition(Class<?> inputPackageClass) {
+        JavaSourceFileDefinitionContext result = null;
 
         if(inputPackageClass != null) {
             if(inputPackageClass.isEnum()) {

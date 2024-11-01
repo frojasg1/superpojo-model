@@ -1,0 +1,13 @@
+
+package com.frojasg1.nchf5g.superpojo.model;
+
+public enum ResultCode {
+    SUCCESS,
+    END_USER_SERVICE_DENIED,
+    QUOTA_MANAGEMENT_NOT_APPLICABLE,
+    QUOTA_LIMIT_REACHED,
+    END_USER_SERVICE_REJECTED,
+    USER_UNKNOWN,
+    RATING_FAILED,
+    QUOTA_MANAGEMENT;
+}

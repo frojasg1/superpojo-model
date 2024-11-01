@@ -16,6 +16,9 @@
         <module>./superPojoModelGeneratorLib</module>
         <module>./superPojoModelGeneratorMain</module>
         <module>./superPojoModelMapperLib</module>
+        <module>./inputModelsToSuperPojo5gExample</module>
+        <module>./superPojo5gModelsExample</module>
+        <module>./superPojoModelMapperTestFor5gExample</module>
     </modules>
 
 </project>

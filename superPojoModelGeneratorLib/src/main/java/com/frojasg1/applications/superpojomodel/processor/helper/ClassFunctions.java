@@ -24,7 +24,9 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
@@ -36,6 +38,7 @@ public class ClassFunctions {
     public static ClassFunctions instance() {
         return INSTANCE;
     }
+
 
     protected int lengthOfClassPrefix(Class<?> clazz) {
         int result = 0;
@@ -57,6 +60,15 @@ public class ClassFunctions {
                 .filter(clz -> Modifier.isStatic(clz.getModifiers()))
                 .collect(Collectors.toList());
     }
+
+    public Class<?> classForName( String className )
+    {
+        try {
+            return Class.forName(className);
+        } catch(Exception ex) {
+            throw new RuntimeException("Error loading class with name: " + className);
+        }
+   }
 
     public boolean isNestedClass(String className) {
         return className.contains("$");

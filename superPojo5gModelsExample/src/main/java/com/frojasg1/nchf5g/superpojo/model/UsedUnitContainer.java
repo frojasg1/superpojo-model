@@ -11,8 +11,8 @@ public class UsedUnitContainer {
     private Long totalVolume;
     private QuotaManagementIndicator quotaManagementIndicator;
     private List<Trigger> triggers;
-    private PDUContainerInformation pDUContainerInformation;
     private Integer localSequenceNumber;
+    private PDUContainerInformation pDUContainerInformation;
     private List<Date> eventTimeStamps;
     private Long downlinkVolume;
     private Long serviceSpecificUnits;
@@ -81,19 +81,6 @@ public class UsedUnitContainer {
         return this;
     }
 
-    public PDUContainerInformation getpDUContainerInformation() {
-        return pDUContainerInformation;
-    }
-
-    public void setpDUContainerInformation(PDUContainerInformation pDUContainerInformation) {
-        this.pDUContainerInformation = pDUContainerInformation;
-    }
-
-    public UsedUnitContainer pDUContainerInformation(PDUContainerInformation pDUContainerInformation) {
-        this.pDUContainerInformation = pDUContainerInformation;
-        return this;
-    }
-
     public Integer getLocalSequenceNumber() {
         return localSequenceNumber;
     }
@@ -104,6 +91,19 @@ public class UsedUnitContainer {
 
     public UsedUnitContainer localSequenceNumber(Integer localSequenceNumber) {
         this.localSequenceNumber = localSequenceNumber;
+        return this;
+    }
+
+    public PDUContainerInformation getpDUContainerInformation() {
+        return pDUContainerInformation;
+    }
+
+    public void setpDUContainerInformation(PDUContainerInformation pDUContainerInformation) {
+        this.pDUContainerInformation = pDUContainerInformation;
+    }
+
+    public UsedUnitContainer pDUContainerInformation(PDUContainerInformation pDUContainerInformation) {
+        this.pDUContainerInformation = pDUContainerInformation;
         return this;
     }
 
@@ -208,12 +208,12 @@ public class UsedUnitContainer {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((((((((((((((((((((("UsedUnitContainer {"+"nSPAContainerInformation = ")+ nSPAContainerInformation)+", ")+"totalVolume = ")+ totalVolume)+", ")+"quotaManagementIndicator = ")+ quotaManagementIndicator)+", ")+"triggers = ")+ triggers)+", ")+"pDUContainerInformation = ")+ pDUContainerInformation)+", ")+"localSequenceNumber = ")+ localSequenceNumber)+", ")+"eventTimeStamps = ")+ eventTimeStamps)+", ")+"downlinkVolume = ")+ downlinkVolume)+", ")+"serviceSpecificUnits = ")+ serviceSpecificUnits)+", ")+"uplinkVolume = ")+ uplinkVolume)+", ")+"time = ")+ time)+", ")+"serviceId = ")+ serviceId)+", ")+"triggerTimestamp = ")+ triggerTimestamp)+"}");
+        return ((((((((((((((((((((((((((((((((((((((("UsedUnitContainer {"+"nSPAContainerInformation = ")+ nSPAContainerInformation)+", ")+"totalVolume = ")+ totalVolume)+", ")+"quotaManagementIndicator = ")+ quotaManagementIndicator)+", ")+"triggers = ")+ triggers)+", ")+"localSequenceNumber = ")+ localSequenceNumber)+", ")+"pDUContainerInformation = ")+ pDUContainerInformation)+", ")+"eventTimeStamps = ")+ eventTimeStamps)+", ")+"downlinkVolume = ")+ downlinkVolume)+", ")+"serviceSpecificUnits = ")+ serviceSpecificUnits)+", ")+"uplinkVolume = ")+ uplinkVolume)+", ")+"time = ")+ time)+", ")+"serviceId = ")+ serviceId)+", ")+"triggerTimestamp = ")+ triggerTimestamp)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nSPAContainerInformation, totalVolume, quotaManagementIndicator, triggers, pDUContainerInformation, localSequenceNumber, eventTimeStamps, downlinkVolume, serviceSpecificUnits, uplinkVolume, time, serviceId, triggerTimestamp);
+        return Objects.hash(nSPAContainerInformation, totalVolume, quotaManagementIndicator, triggers, localSequenceNumber, pDUContainerInformation, eventTimeStamps, downlinkVolume, serviceSpecificUnits, uplinkVolume, time, serviceId, triggerTimestamp);
     }
 
     @Override
@@ -225,6 +225,6 @@ public class UsedUnitContainer {
             return false;
         }
         UsedUnitContainer castThat = ((UsedUnitContainer) that);
-        return ((((((((((((Objects.equals(this.nSPAContainerInformation, castThat.nSPAContainerInformation)&&Objects.equals(this.totalVolume, castThat.totalVolume))&&Objects.equals(this.quotaManagementIndicator, castThat.quotaManagementIndicator))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.pDUContainerInformation, castThat.pDUContainerInformation))&&Objects.equals(this.localSequenceNumber, castThat.localSequenceNumber))&&Objects.equals(this.eventTimeStamps, castThat.eventTimeStamps))&&Objects.equals(this.downlinkVolume, castThat.downlinkVolume))&&Objects.equals(this.serviceSpecificUnits, castThat.serviceSpecificUnits))&&Objects.equals(this.uplinkVolume, castThat.uplinkVolume))&&Objects.equals(this.time, castThat.time))&&Objects.equals(this.serviceId, castThat.serviceId))&&Objects.equals(this.triggerTimestamp, castThat.triggerTimestamp));
+        return ((((((((((((Objects.equals(this.nSPAContainerInformation, castThat.nSPAContainerInformation)&&Objects.equals(this.totalVolume, castThat.totalVolume))&&Objects.equals(this.quotaManagementIndicator, castThat.quotaManagementIndicator))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.localSequenceNumber, castThat.localSequenceNumber))&&Objects.equals(this.pDUContainerInformation, castThat.pDUContainerInformation))&&Objects.equals(this.eventTimeStamps, castThat.eventTimeStamps))&&Objects.equals(this.downlinkVolume, castThat.downlinkVolume))&&Objects.equals(this.serviceSpecificUnits, castThat.serviceSpecificUnits))&&Objects.equals(this.uplinkVolume, castThat.uplinkVolume))&&Objects.equals(this.time, castThat.time))&&Objects.equals(this.serviceId, castThat.serviceId))&&Objects.equals(this.triggerTimestamp, castThat.triggerTimestamp));
     }
 }

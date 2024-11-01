@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public class Arp {
     private PreemptionVulnerability preemptVuln;
-    private PreemptionCapability preemptCap;
     private Integer priorityLevel;
+    private PreemptionCapability preemptCap;
 
     public PreemptionVulnerability getPreemptVuln() {
         return preemptVuln;
@@ -18,19 +18,6 @@ public class Arp {
 
     public Arp preemptVuln(PreemptionVulnerability preemptVuln) {
         this.preemptVuln = preemptVuln;
-        return this;
-    }
-
-    public PreemptionCapability getPreemptCap() {
-        return preemptCap;
-    }
-
-    public void setPreemptCap(PreemptionCapability preemptCap) {
-        this.preemptCap = preemptCap;
-    }
-
-    public Arp preemptCap(PreemptionCapability preemptCap) {
-        this.preemptCap = preemptCap;
         return this;
     }
 
@@ -47,14 +34,27 @@ public class Arp {
         return this;
     }
 
+    public PreemptionCapability getPreemptCap() {
+        return preemptCap;
+    }
+
+    public void setPreemptCap(PreemptionCapability preemptCap) {
+        this.preemptCap = preemptCap;
+    }
+
+    public Arp preemptCap(PreemptionCapability preemptCap) {
+        this.preemptCap = preemptCap;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return ((((((((("Arp {"+"preemptVuln = ")+ preemptVuln)+", ")+"preemptCap = ")+ preemptCap)+", ")+"priorityLevel = ")+ priorityLevel)+"}");
+        return ((((((((("Arp {"+"preemptVuln = ")+ preemptVuln)+", ")+"priorityLevel = ")+ priorityLevel)+", ")+"preemptCap = ")+ preemptCap)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(preemptVuln, preemptCap, priorityLevel);
+        return Objects.hash(preemptVuln, priorityLevel, preemptCap);
     }
 
     @Override
@@ -66,6 +66,6 @@ public class Arp {
             return false;
         }
         Arp castThat = ((Arp) that);
-        return ((Objects.equals(this.preemptVuln, castThat.preemptVuln)&&Objects.equals(this.preemptCap, castThat.preemptCap))&&Objects.equals(this.priorityLevel, castThat.priorityLevel));
+        return ((Objects.equals(this.preemptVuln, castThat.preemptVuln)&&Objects.equals(this.priorityLevel, castThat.priorityLevel))&&Objects.equals(this.preemptCap, castThat.preemptCap));
     }
 }

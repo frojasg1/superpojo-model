@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class PDUSessionInformation {
-    private PlmnId servingCNPlmnId;
     private String chargingCharacteristics;
+    private PlmnId servingCNPlmnId;
     private Ambr subscribedSessionAMBR;
     private PDUAddress pduAddress;
     private SscMode sscMode;
@@ -32,19 +32,6 @@ public class PDUSessionInformation {
     private Integer pduSessionID;
     private SubscribedDefaultQos subscribedQoSInformation;
 
-    public PlmnId getServingCNPlmnId() {
-        return servingCNPlmnId;
-    }
-
-    public void setServingCNPlmnId(PlmnId servingCNPlmnId) {
-        this.servingCNPlmnId = servingCNPlmnId;
-    }
-
-    public PDUSessionInformation servingCNPlmnId(PlmnId servingCNPlmnId) {
-        this.servingCNPlmnId = servingCNPlmnId;
-        return this;
-    }
-
     public String getChargingCharacteristics() {
         return chargingCharacteristics;
     }
@@ -55,6 +42,19 @@ public class PDUSessionInformation {
 
     public PDUSessionInformation chargingCharacteristics(String chargingCharacteristics) {
         this.chargingCharacteristics = chargingCharacteristics;
+        return this;
+    }
+
+    public PlmnId getServingCNPlmnId() {
+        return servingCNPlmnId;
+    }
+
+    public void setServingCNPlmnId(PlmnId servingCNPlmnId) {
+        this.servingCNPlmnId = servingCNPlmnId;
+    }
+
+    public PDUSessionInformation servingCNPlmnId(PlmnId servingCNPlmnId) {
+        this.servingCNPlmnId = servingCNPlmnId;
         return this;
     }
 
@@ -354,12 +354,12 @@ public class PDUSessionInformation {
 
     @Override
     public String toString() {
-        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((("PDUSessionInformation {"+"servingCNPlmnId = ")+ servingCNPlmnId)+", ")+"chargingCharacteristics = ")+ chargingCharacteristics)+", ")+"subscribedSessionAMBR = ")+ subscribedSessionAMBR)+", ")+"pduAddress = ")+ pduAddress)+", ")+"sscMode = ")+ sscMode)+", ")+"authorizedSessionAMBR = ")+ authorizedSessionAMBR)+", ")+"ratType = ")+ ratType)+", ")+"chargingCharacteristicsSelectionMode = ")+ chargingCharacteristicsSelectionMode)+", ")+"networkSlicingInfo = ")+ networkSlicingInfo)+", ")+"dnnId = ")+ dnnId)+", ")+"enhancedDiagnostics = ")+ enhancedDiagnostics)+", ")+"pduType = ")+ pduType)+", ")+"mAPDUSessionInformation = ")+ mAPDUSessionInformation)+", ")+"hPlmnId = ")+ hPlmnId)+", ")+"servingNetworkFunctionID = ")+ servingNetworkFunctionID)+", ")+"diagnostics = ")+ diagnostics)+", ")+"dnnSelectionMode = ")+ dnnSelectionMode)+", ")+"mAPDUNon3GPPRATType = ")+ mAPDUNon3GPPRATType)+", ")+"authorizedQoSInformation = ")+ authorizedQoSInformation)+", ")+"startTime = ")+ startTime)+", ")+"stopTime = ")+ stopTime)+", ")+"sessionStopIndicator = ")+ sessionStopIndicator)+", ")+"pduSessionID = ")+ pduSessionID)+", ")+"subscribedQoSInformation = ")+ subscribedQoSInformation)+"}");
+        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((("PDUSessionInformation {"+"chargingCharacteristics = ")+ chargingCharacteristics)+", ")+"servingCNPlmnId = ")+ servingCNPlmnId)+", ")+"subscribedSessionAMBR = ")+ subscribedSessionAMBR)+", ")+"pduAddress = ")+ pduAddress)+", ")+"sscMode = ")+ sscMode)+", ")+"authorizedSessionAMBR = ")+ authorizedSessionAMBR)+", ")+"ratType = ")+ ratType)+", ")+"chargingCharacteristicsSelectionMode = ")+ chargingCharacteristicsSelectionMode)+", ")+"networkSlicingInfo = ")+ networkSlicingInfo)+", ")+"dnnId = ")+ dnnId)+", ")+"enhancedDiagnostics = ")+ enhancedDiagnostics)+", ")+"pduType = ")+ pduType)+", ")+"mAPDUSessionInformation = ")+ mAPDUSessionInformation)+", ")+"hPlmnId = ")+ hPlmnId)+", ")+"servingNetworkFunctionID = ")+ servingNetworkFunctionID)+", ")+"diagnostics = ")+ diagnostics)+", ")+"dnnSelectionMode = ")+ dnnSelectionMode)+", ")+"mAPDUNon3GPPRATType = ")+ mAPDUNon3GPPRATType)+", ")+"authorizedQoSInformation = ")+ authorizedQoSInformation)+", ")+"startTime = ")+ startTime)+", ")+"stopTime = ")+ stopTime)+", ")+"sessionStopIndicator = ")+ sessionStopIndicator)+", ")+"pduSessionID = ")+ pduSessionID)+", ")+"subscribedQoSInformation = ")+ subscribedQoSInformation)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(servingCNPlmnId, chargingCharacteristics, subscribedSessionAMBR, pduAddress, sscMode, authorizedSessionAMBR, ratType, chargingCharacteristicsSelectionMode, networkSlicingInfo, dnnId, enhancedDiagnostics, pduType, mAPDUSessionInformation, hPlmnId, servingNetworkFunctionID, diagnostics, dnnSelectionMode, mAPDUNon3GPPRATType, authorizedQoSInformation, startTime, stopTime, sessionStopIndicator, pduSessionID, subscribedQoSInformation);
+        return Objects.hash(chargingCharacteristics, servingCNPlmnId, subscribedSessionAMBR, pduAddress, sscMode, authorizedSessionAMBR, ratType, chargingCharacteristicsSelectionMode, networkSlicingInfo, dnnId, enhancedDiagnostics, pduType, mAPDUSessionInformation, hPlmnId, servingNetworkFunctionID, diagnostics, dnnSelectionMode, mAPDUNon3GPPRATType, authorizedQoSInformation, startTime, stopTime, sessionStopIndicator, pduSessionID, subscribedQoSInformation);
     }
 
     @Override
@@ -371,6 +371,6 @@ public class PDUSessionInformation {
             return false;
         }
         PDUSessionInformation castThat = ((PDUSessionInformation) that);
-        return (((((((((((((((((((((((Objects.equals(this.servingCNPlmnId, castThat.servingCNPlmnId)&&Objects.equals(this.chargingCharacteristics, castThat.chargingCharacteristics))&&Objects.equals(this.subscribedSessionAMBR, castThat.subscribedSessionAMBR))&&Objects.equals(this.pduAddress, castThat.pduAddress))&&Objects.equals(this.sscMode, castThat.sscMode))&&Objects.equals(this.authorizedSessionAMBR, castThat.authorizedSessionAMBR))&&Objects.equals(this.ratType, castThat.ratType))&&Objects.equals(this.chargingCharacteristicsSelectionMode, castThat.chargingCharacteristicsSelectionMode))&&Objects.equals(this.networkSlicingInfo, castThat.networkSlicingInfo))&&Objects.equals(this.dnnId, castThat.dnnId))&&Objects.equals(this.enhancedDiagnostics, castThat.enhancedDiagnostics))&&Objects.equals(this.pduType, castThat.pduType))&&Objects.equals(this.mAPDUSessionInformation, castThat.mAPDUSessionInformation))&&Objects.equals(this.hPlmnId, castThat.hPlmnId))&&Objects.equals(this.servingNetworkFunctionID, castThat.servingNetworkFunctionID))&&Objects.equals(this.diagnostics, castThat.diagnostics))&&Objects.equals(this.dnnSelectionMode, castThat.dnnSelectionMode))&&Objects.equals(this.mAPDUNon3GPPRATType, castThat.mAPDUNon3GPPRATType))&&Objects.equals(this.authorizedQoSInformation, castThat.authorizedQoSInformation))&&Objects.equals(this.startTime, castThat.startTime))&&Objects.equals(this.stopTime, castThat.stopTime))&&Objects.equals(this.sessionStopIndicator, castThat.sessionStopIndicator))&&Objects.equals(this.pduSessionID, castThat.pduSessionID))&&Objects.equals(this.subscribedQoSInformation, castThat.subscribedQoSInformation));
+        return (((((((((((((((((((((((Objects.equals(this.chargingCharacteristics, castThat.chargingCharacteristics)&&Objects.equals(this.servingCNPlmnId, castThat.servingCNPlmnId))&&Objects.equals(this.subscribedSessionAMBR, castThat.subscribedSessionAMBR))&&Objects.equals(this.pduAddress, castThat.pduAddress))&&Objects.equals(this.sscMode, castThat.sscMode))&&Objects.equals(this.authorizedSessionAMBR, castThat.authorizedSessionAMBR))&&Objects.equals(this.ratType, castThat.ratType))&&Objects.equals(this.chargingCharacteristicsSelectionMode, castThat.chargingCharacteristicsSelectionMode))&&Objects.equals(this.networkSlicingInfo, castThat.networkSlicingInfo))&&Objects.equals(this.dnnId, castThat.dnnId))&&Objects.equals(this.enhancedDiagnostics, castThat.enhancedDiagnostics))&&Objects.equals(this.pduType, castThat.pduType))&&Objects.equals(this.mAPDUSessionInformation, castThat.mAPDUSessionInformation))&&Objects.equals(this.hPlmnId, castThat.hPlmnId))&&Objects.equals(this.servingNetworkFunctionID, castThat.servingNetworkFunctionID))&&Objects.equals(this.diagnostics, castThat.diagnostics))&&Objects.equals(this.dnnSelectionMode, castThat.dnnSelectionMode))&&Objects.equals(this.mAPDUNon3GPPRATType, castThat.mAPDUNon3GPPRATType))&&Objects.equals(this.authorizedQoSInformation, castThat.authorizedQoSInformation))&&Objects.equals(this.startTime, castThat.startTime))&&Objects.equals(this.stopTime, castThat.stopTime))&&Objects.equals(this.sessionStopIndicator, castThat.sessionStopIndicator))&&Objects.equals(this.pduSessionID, castThat.pduSessionID))&&Objects.equals(this.subscribedQoSInformation, castThat.subscribedQoSInformation));
     }
 }

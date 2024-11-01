@@ -6,12 +6,12 @@ import java.util.Objects;
 public class NEFChargingInformation {
     private Integer aPIResultCode;
     private NFIdentification aPITargetNetworkFunction;
-    private String externalIndividualIdentifier;
     private String aPIContent;
+    private String externalIndividualIdentifier;
     private String aPIReference;
     private String externalGroupIdentifier;
-    private String groupIdentifier;
     private String aPIName;
+    private String groupIdentifier;
     private APIDirection aPIDirection;
 
     public Integer getaPIResultCode() {
@@ -40,19 +40,6 @@ public class NEFChargingInformation {
         return this;
     }
 
-    public String getExternalIndividualIdentifier() {
-        return externalIndividualIdentifier;
-    }
-
-    public void setExternalIndividualIdentifier(String externalIndividualIdentifier) {
-        this.externalIndividualIdentifier = externalIndividualIdentifier;
-    }
-
-    public NEFChargingInformation externalIndividualIdentifier(String externalIndividualIdentifier) {
-        this.externalIndividualIdentifier = externalIndividualIdentifier;
-        return this;
-    }
-
     public String getaPIContent() {
         return aPIContent;
     }
@@ -63,6 +50,19 @@ public class NEFChargingInformation {
 
     public NEFChargingInformation aPIContent(String aPIContent) {
         this.aPIContent = aPIContent;
+        return this;
+    }
+
+    public String getExternalIndividualIdentifier() {
+        return externalIndividualIdentifier;
+    }
+
+    public void setExternalIndividualIdentifier(String externalIndividualIdentifier) {
+        this.externalIndividualIdentifier = externalIndividualIdentifier;
+    }
+
+    public NEFChargingInformation externalIndividualIdentifier(String externalIndividualIdentifier) {
+        this.externalIndividualIdentifier = externalIndividualIdentifier;
         return this;
     }
 
@@ -92,19 +92,6 @@ public class NEFChargingInformation {
         return this;
     }
 
-    public String getGroupIdentifier() {
-        return groupIdentifier;
-    }
-
-    public void setGroupIdentifier(String groupIdentifier) {
-        this.groupIdentifier = groupIdentifier;
-    }
-
-    public NEFChargingInformation groupIdentifier(String groupIdentifier) {
-        this.groupIdentifier = groupIdentifier;
-        return this;
-    }
-
     public String getaPIName() {
         return aPIName;
     }
@@ -115,6 +102,19 @@ public class NEFChargingInformation {
 
     public NEFChargingInformation aPIName(String aPIName) {
         this.aPIName = aPIName;
+        return this;
+    }
+
+    public String getGroupIdentifier() {
+        return groupIdentifier;
+    }
+
+    public void setGroupIdentifier(String groupIdentifier) {
+        this.groupIdentifier = groupIdentifier;
+    }
+
+    public NEFChargingInformation groupIdentifier(String groupIdentifier) {
+        this.groupIdentifier = groupIdentifier;
         return this;
     }
 
@@ -133,12 +133,12 @@ public class NEFChargingInformation {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((((((((("NEFChargingInformation {"+"aPIResultCode = ")+ aPIResultCode)+", ")+"aPITargetNetworkFunction = ")+ aPITargetNetworkFunction)+", ")+"externalIndividualIdentifier = ")+ externalIndividualIdentifier)+", ")+"aPIContent = ")+ aPIContent)+", ")+"aPIReference = ")+ aPIReference)+", ")+"externalGroupIdentifier = ")+ externalGroupIdentifier)+", ")+"groupIdentifier = ")+ groupIdentifier)+", ")+"aPIName = ")+ aPIName)+", ")+"aPIDirection = ")+ aPIDirection)+"}");
+        return ((((((((((((((((((((((((((("NEFChargingInformation {"+"aPIResultCode = ")+ aPIResultCode)+", ")+"aPITargetNetworkFunction = ")+ aPITargetNetworkFunction)+", ")+"aPIContent = ")+ aPIContent)+", ")+"externalIndividualIdentifier = ")+ externalIndividualIdentifier)+", ")+"aPIReference = ")+ aPIReference)+", ")+"externalGroupIdentifier = ")+ externalGroupIdentifier)+", ")+"aPIName = ")+ aPIName)+", ")+"groupIdentifier = ")+ groupIdentifier)+", ")+"aPIDirection = ")+ aPIDirection)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aPIResultCode, aPITargetNetworkFunction, externalIndividualIdentifier, aPIContent, aPIReference, externalGroupIdentifier, groupIdentifier, aPIName, aPIDirection);
+        return Objects.hash(aPIResultCode, aPITargetNetworkFunction, aPIContent, externalIndividualIdentifier, aPIReference, externalGroupIdentifier, aPIName, groupIdentifier, aPIDirection);
     }
 
     @Override
@@ -150,6 +150,6 @@ public class NEFChargingInformation {
             return false;
         }
         NEFChargingInformation castThat = ((NEFChargingInformation) that);
-        return ((((((((Objects.equals(this.aPIResultCode, castThat.aPIResultCode)&&Objects.equals(this.aPITargetNetworkFunction, castThat.aPITargetNetworkFunction))&&Objects.equals(this.externalIndividualIdentifier, castThat.externalIndividualIdentifier))&&Objects.equals(this.aPIContent, castThat.aPIContent))&&Objects.equals(this.aPIReference, castThat.aPIReference))&&Objects.equals(this.externalGroupIdentifier, castThat.externalGroupIdentifier))&&Objects.equals(this.groupIdentifier, castThat.groupIdentifier))&&Objects.equals(this.aPIName, castThat.aPIName))&&Objects.equals(this.aPIDirection, castThat.aPIDirection));
+        return ((((((((Objects.equals(this.aPIResultCode, castThat.aPIResultCode)&&Objects.equals(this.aPITargetNetworkFunction, castThat.aPITargetNetworkFunction))&&Objects.equals(this.aPIContent, castThat.aPIContent))&&Objects.equals(this.externalIndividualIdentifier, castThat.externalIndividualIdentifier))&&Objects.equals(this.aPIReference, castThat.aPIReference))&&Objects.equals(this.externalGroupIdentifier, castThat.externalGroupIdentifier))&&Objects.equals(this.aPIName, castThat.aPIName))&&Objects.equals(this.groupIdentifier, castThat.groupIdentifier))&&Objects.equals(this.aPIDirection, castThat.aPIDirection));
     }
 }

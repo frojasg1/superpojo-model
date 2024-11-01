@@ -18,8 +18,8 @@ public class ServiceProfileChargingInformation {
     private List<Snssai> sNSSAIList;
     private Integer jitter;
     private Throughput dLThptPerUE;
-    private Throughput uLThptPerUE;
     private String addServiceProfileInfo;
+    private Throughput uLThptPerUE;
     private Integer maxNumberofPDUsessions;
     private Throughput uLThptPerSlice;
     private String coverageArea;
@@ -175,19 +175,6 @@ public class ServiceProfileChargingInformation {
         return this;
     }
 
-    public Throughput getuLThptPerUE() {
-        return uLThptPerUE;
-    }
-
-    public void setuLThptPerUE(Throughput uLThptPerUE) {
-        this.uLThptPerUE = uLThptPerUE;
-    }
-
-    public ServiceProfileChargingInformation uLThptPerUE(Throughput uLThptPerUE) {
-        this.uLThptPerUE = uLThptPerUE;
-        return this;
-    }
-
     public String getAddServiceProfileInfo() {
         return addServiceProfileInfo;
     }
@@ -198,6 +185,19 @@ public class ServiceProfileChargingInformation {
 
     public ServiceProfileChargingInformation addServiceProfileInfo(String addServiceProfileInfo) {
         this.addServiceProfileInfo = addServiceProfileInfo;
+        return this;
+    }
+
+    public Throughput getuLThptPerUE() {
+        return uLThptPerUE;
+    }
+
+    public void setuLThptPerUE(Throughput uLThptPerUE) {
+        this.uLThptPerUE = uLThptPerUE;
+    }
+
+    public ServiceProfileChargingInformation uLThptPerUE(Throughput uLThptPerUE) {
+        this.uLThptPerUE = uLThptPerUE;
         return this;
     }
 
@@ -242,12 +242,12 @@ public class ServiceProfileChargingInformation {
 
     @Override
     public String toString() {
-        return (((((((((((((((((((((((((((((((((((((((((((((((("ServiceProfileChargingInformation {"+"supportedAccessTechnology = ")+ supportedAccessTechnology)+", ")+"maxNumberofUEs = ")+ maxNumberofUEs)+", ")+"reliability = ")+ reliability)+", ")+"latency = ")+ latency)+", ")+"serviceProfileIdentifier = ")+ serviceProfileIdentifier)+", ")+"dLThptPerSlice = ")+ dLThptPerSlice)+", ")+"availability = ")+ availability)+", ")+"kPIMonitoringList = ")+ kPIMonitoringList)+", ")+"sNSSAIList = ")+ sNSSAIList)+", ")+"jitter = ")+ jitter)+", ")+"dLThptPerUE = ")+ dLThptPerUE)+", ")+"uLThptPerUE = ")+ uLThptPerUE)+", ")+"addServiceProfileInfo = ")+ addServiceProfileInfo)+", ")+"maxNumberofPDUsessions = ")+ maxNumberofPDUsessions)+", ")+"uLThptPerSlice = ")+ uLThptPerSlice)+", ")+"coverageArea = ")+ coverageArea)+"}");
+        return (((((((((((((((((((((((((((((((((((((((((((((((("ServiceProfileChargingInformation {"+"supportedAccessTechnology = ")+ supportedAccessTechnology)+", ")+"maxNumberofUEs = ")+ maxNumberofUEs)+", ")+"reliability = ")+ reliability)+", ")+"latency = ")+ latency)+", ")+"serviceProfileIdentifier = ")+ serviceProfileIdentifier)+", ")+"dLThptPerSlice = ")+ dLThptPerSlice)+", ")+"availability = ")+ availability)+", ")+"kPIMonitoringList = ")+ kPIMonitoringList)+", ")+"sNSSAIList = ")+ sNSSAIList)+", ")+"jitter = ")+ jitter)+", ")+"dLThptPerUE = ")+ dLThptPerUE)+", ")+"addServiceProfileInfo = ")+ addServiceProfileInfo)+", ")+"uLThptPerUE = ")+ uLThptPerUE)+", ")+"maxNumberofPDUsessions = ")+ maxNumberofPDUsessions)+", ")+"uLThptPerSlice = ")+ uLThptPerSlice)+", ")+"coverageArea = ")+ coverageArea)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(supportedAccessTechnology, maxNumberofUEs, reliability, latency, serviceProfileIdentifier, dLThptPerSlice, availability, kPIMonitoringList, sNSSAIList, jitter, dLThptPerUE, uLThptPerUE, addServiceProfileInfo, maxNumberofPDUsessions, uLThptPerSlice, coverageArea);
+        return Objects.hash(supportedAccessTechnology, maxNumberofUEs, reliability, latency, serviceProfileIdentifier, dLThptPerSlice, availability, kPIMonitoringList, sNSSAIList, jitter, dLThptPerUE, addServiceProfileInfo, uLThptPerUE, maxNumberofPDUsessions, uLThptPerSlice, coverageArea);
     }
 
     @Override
@@ -259,6 +259,6 @@ public class ServiceProfileChargingInformation {
             return false;
         }
         ServiceProfileChargingInformation castThat = ((ServiceProfileChargingInformation) that);
-        return (((((((((((((((Objects.equals(this.supportedAccessTechnology, castThat.supportedAccessTechnology)&&Objects.equals(this.maxNumberofUEs, castThat.maxNumberofUEs))&&Objects.equals(this.reliability, castThat.reliability))&&Objects.equals(this.latency, castThat.latency))&&Objects.equals(this.serviceProfileIdentifier, castThat.serviceProfileIdentifier))&&Objects.equals(this.dLThptPerSlice, castThat.dLThptPerSlice))&&Objects.equals(this.availability, castThat.availability))&&Objects.equals(this.kPIMonitoringList, castThat.kPIMonitoringList))&&Objects.equals(this.sNSSAIList, castThat.sNSSAIList))&&Objects.equals(this.jitter, castThat.jitter))&&Objects.equals(this.dLThptPerUE, castThat.dLThptPerUE))&&Objects.equals(this.uLThptPerUE, castThat.uLThptPerUE))&&Objects.equals(this.addServiceProfileInfo, castThat.addServiceProfileInfo))&&Objects.equals(this.maxNumberofPDUsessions, castThat.maxNumberofPDUsessions))&&Objects.equals(this.uLThptPerSlice, castThat.uLThptPerSlice))&&Objects.equals(this.coverageArea, castThat.coverageArea));
+        return (((((((((((((((Objects.equals(this.supportedAccessTechnology, castThat.supportedAccessTechnology)&&Objects.equals(this.maxNumberofUEs, castThat.maxNumberofUEs))&&Objects.equals(this.reliability, castThat.reliability))&&Objects.equals(this.latency, castThat.latency))&&Objects.equals(this.serviceProfileIdentifier, castThat.serviceProfileIdentifier))&&Objects.equals(this.dLThptPerSlice, castThat.dLThptPerSlice))&&Objects.equals(this.availability, castThat.availability))&&Objects.equals(this.kPIMonitoringList, castThat.kPIMonitoringList))&&Objects.equals(this.sNSSAIList, castThat.sNSSAIList))&&Objects.equals(this.jitter, castThat.jitter))&&Objects.equals(this.dLThptPerUE, castThat.dLThptPerUE))&&Objects.equals(this.addServiceProfileInfo, castThat.addServiceProfileInfo))&&Objects.equals(this.uLThptPerUE, castThat.uLThptPerUE))&&Objects.equals(this.maxNumberofPDUsessions, castThat.maxNumberofPDUsessions))&&Objects.equals(this.uLThptPerSlice, castThat.uLThptPerSlice))&&Objects.equals(this.coverageArea, castThat.coverageArea));
     }
 }

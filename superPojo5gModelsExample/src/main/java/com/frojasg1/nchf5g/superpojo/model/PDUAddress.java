@@ -8,8 +8,8 @@ import java.util.Objects;
 public class PDUAddress {
     private Ipv6Addr pduIPv6AddresswithPrefix;
     private List<Ipv6Prefix> addIpv6AddrPrefixList;
-    private Boolean iPv4dynamicAddressFlag;
     private Boolean iPv6dynamicPrefixFlag;
+    private Boolean iPv4dynamicAddressFlag;
     private Ipv6Prefix addIpv6AddrPrefixes;
     private Integer pduAddressprefixlength;
     private String pduIPv4Address;
@@ -48,19 +48,6 @@ public class PDUAddress {
         return this;
     }
 
-    public Boolean getiPv4dynamicAddressFlag() {
-        return iPv4dynamicAddressFlag;
-    }
-
-    public void setiPv4dynamicAddressFlag(Boolean iPv4dynamicAddressFlag) {
-        this.iPv4dynamicAddressFlag = iPv4dynamicAddressFlag;
-    }
-
-    public PDUAddress iPv4dynamicAddressFlag(Boolean iPv4dynamicAddressFlag) {
-        this.iPv4dynamicAddressFlag = iPv4dynamicAddressFlag;
-        return this;
-    }
-
     public Boolean getiPv6dynamicPrefixFlag() {
         return iPv6dynamicPrefixFlag;
     }
@@ -71,6 +58,19 @@ public class PDUAddress {
 
     public PDUAddress iPv6dynamicPrefixFlag(Boolean iPv6dynamicPrefixFlag) {
         this.iPv6dynamicPrefixFlag = iPv6dynamicPrefixFlag;
+        return this;
+    }
+
+    public Boolean getiPv4dynamicAddressFlag() {
+        return iPv4dynamicAddressFlag;
+    }
+
+    public void setiPv4dynamicAddressFlag(Boolean iPv4dynamicAddressFlag) {
+        this.iPv4dynamicAddressFlag = iPv4dynamicAddressFlag;
+    }
+
+    public PDUAddress iPv4dynamicAddressFlag(Boolean iPv4dynamicAddressFlag) {
+        this.iPv4dynamicAddressFlag = iPv4dynamicAddressFlag;
         return this;
     }
 
@@ -115,12 +115,12 @@ public class PDUAddress {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((("PDUAddress {"+"pduIPv6AddresswithPrefix = ")+ pduIPv6AddresswithPrefix)+", ")+"addIpv6AddrPrefixList = ")+ addIpv6AddrPrefixList)+", ")+"iPv4dynamicAddressFlag = ")+ iPv4dynamicAddressFlag)+", ")+"iPv6dynamicPrefixFlag = ")+ iPv6dynamicPrefixFlag)+", ")+"addIpv6AddrPrefixes = ")+ addIpv6AddrPrefixes)+", ")+"pduAddressprefixlength = ")+ pduAddressprefixlength)+", ")+"pduIPv4Address = ")+ pduIPv4Address)+"}");
+        return ((((((((((((((((((((("PDUAddress {"+"pduIPv6AddresswithPrefix = ")+ pduIPv6AddresswithPrefix)+", ")+"addIpv6AddrPrefixList = ")+ addIpv6AddrPrefixList)+", ")+"iPv6dynamicPrefixFlag = ")+ iPv6dynamicPrefixFlag)+", ")+"iPv4dynamicAddressFlag = ")+ iPv4dynamicAddressFlag)+", ")+"addIpv6AddrPrefixes = ")+ addIpv6AddrPrefixes)+", ")+"pduAddressprefixlength = ")+ pduAddressprefixlength)+", ")+"pduIPv4Address = ")+ pduIPv4Address)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pduIPv6AddresswithPrefix, addIpv6AddrPrefixList, iPv4dynamicAddressFlag, iPv6dynamicPrefixFlag, addIpv6AddrPrefixes, pduAddressprefixlength, pduIPv4Address);
+        return Objects.hash(pduIPv6AddresswithPrefix, addIpv6AddrPrefixList, iPv6dynamicPrefixFlag, iPv4dynamicAddressFlag, addIpv6AddrPrefixes, pduAddressprefixlength, pduIPv4Address);
     }
 
     @Override
@@ -132,6 +132,6 @@ public class PDUAddress {
             return false;
         }
         PDUAddress castThat = ((PDUAddress) that);
-        return ((((((Objects.equals(this.pduIPv6AddresswithPrefix, castThat.pduIPv6AddresswithPrefix)&&Objects.equals(this.addIpv6AddrPrefixList, castThat.addIpv6AddrPrefixList))&&Objects.equals(this.iPv4dynamicAddressFlag, castThat.iPv4dynamicAddressFlag))&&Objects.equals(this.iPv6dynamicPrefixFlag, castThat.iPv6dynamicPrefixFlag))&&Objects.equals(this.addIpv6AddrPrefixes, castThat.addIpv6AddrPrefixes))&&Objects.equals(this.pduAddressprefixlength, castThat.pduAddressprefixlength))&&Objects.equals(this.pduIPv4Address, castThat.pduIPv4Address));
+        return ((((((Objects.equals(this.pduIPv6AddresswithPrefix, castThat.pduIPv6AddresswithPrefix)&&Objects.equals(this.addIpv6AddrPrefixList, castThat.addIpv6AddrPrefixList))&&Objects.equals(this.iPv6dynamicPrefixFlag, castThat.iPv6dynamicPrefixFlag))&&Objects.equals(this.iPv4dynamicAddressFlag, castThat.iPv4dynamicAddressFlag))&&Objects.equals(this.addIpv6AddrPrefixes, castThat.addIpv6AddrPrefixes))&&Objects.equals(this.pduAddressprefixlength, castThat.pduAddressprefixlength))&&Objects.equals(this.pduIPv4Address, castThat.pduIPv4Address));
     }
 }

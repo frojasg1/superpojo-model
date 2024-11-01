@@ -9,8 +9,8 @@ public class NFIdentification {
     private String nFIPv4Address;
     private UUID nFName;
     private NodeFunctionality nodeFunctionality;
-    private String nFFqdn;
     private PlmnId nFPLMNID;
+    private String nFFqdn;
 
     public Ipv6Addr getnFIPv6Address() {
         return nFIPv6Address;
@@ -64,19 +64,6 @@ public class NFIdentification {
         return this;
     }
 
-    public String getnFFqdn() {
-        return nFFqdn;
-    }
-
-    public void setnFFqdn(String nFFqdn) {
-        this.nFFqdn = nFFqdn;
-    }
-
-    public NFIdentification nFFqdn(String nFFqdn) {
-        this.nFFqdn = nFFqdn;
-        return this;
-    }
-
     public PlmnId getnFPLMNID() {
         return nFPLMNID;
     }
@@ -90,14 +77,27 @@ public class NFIdentification {
         return this;
     }
 
+    public String getnFFqdn() {
+        return nFFqdn;
+    }
+
+    public void setnFFqdn(String nFFqdn) {
+        this.nFFqdn = nFFqdn;
+    }
+
+    public NFIdentification nFFqdn(String nFFqdn) {
+        this.nFFqdn = nFFqdn;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return (((((((((((((((((("NFIdentification {"+"nFIPv6Address = ")+ nFIPv6Address)+", ")+"nFIPv4Address = ")+ nFIPv4Address)+", ")+"nFName = ")+ nFName)+", ")+"nodeFunctionality = ")+ nodeFunctionality)+", ")+"nFFqdn = ")+ nFFqdn)+", ")+"nFPLMNID = ")+ nFPLMNID)+"}");
+        return (((((((((((((((((("NFIdentification {"+"nFIPv6Address = ")+ nFIPv6Address)+", ")+"nFIPv4Address = ")+ nFIPv4Address)+", ")+"nFName = ")+ nFName)+", ")+"nodeFunctionality = ")+ nodeFunctionality)+", ")+"nFPLMNID = ")+ nFPLMNID)+", ")+"nFFqdn = ")+ nFFqdn)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nFIPv6Address, nFIPv4Address, nFName, nodeFunctionality, nFFqdn, nFPLMNID);
+        return Objects.hash(nFIPv6Address, nFIPv4Address, nFName, nodeFunctionality, nFPLMNID, nFFqdn);
     }
 
     @Override
@@ -109,6 +109,6 @@ public class NFIdentification {
             return false;
         }
         NFIdentification castThat = ((NFIdentification) that);
-        return (((((Objects.equals(this.nFIPv6Address, castThat.nFIPv6Address)&&Objects.equals(this.nFIPv4Address, castThat.nFIPv4Address))&&Objects.equals(this.nFName, castThat.nFName))&&Objects.equals(this.nodeFunctionality, castThat.nodeFunctionality))&&Objects.equals(this.nFFqdn, castThat.nFFqdn))&&Objects.equals(this.nFPLMNID, castThat.nFPLMNID));
+        return (((((Objects.equals(this.nFIPv6Address, castThat.nFIPv6Address)&&Objects.equals(this.nFIPv4Address, castThat.nFIPv4Address))&&Objects.equals(this.nFName, castThat.nFName))&&Objects.equals(this.nodeFunctionality, castThat.nodeFunctionality))&&Objects.equals(this.nFPLMNID, castThat.nFPLMNID))&&Objects.equals(this.nFFqdn, castThat.nFFqdn));
     }
 }

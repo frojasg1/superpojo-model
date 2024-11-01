@@ -15,8 +15,8 @@ public class MultipleUnitInformation {
     private FinalUnitIndication finalUnitIndication;
     private Integer ratingGroup;
     private ResultCode resultCode;
-    private List<Trigger> triggers;
     private Long volumeQuotaThreshold;
+    private List<Trigger> triggers;
     private Integer unitQuotaThreshold;
 
     public UUID getuPFID() {
@@ -123,6 +123,19 @@ public class MultipleUnitInformation {
         return this;
     }
 
+    public Long getVolumeQuotaThreshold() {
+        return volumeQuotaThreshold;
+    }
+
+    public void setVolumeQuotaThreshold(Long volumeQuotaThreshold) {
+        this.volumeQuotaThreshold = volumeQuotaThreshold;
+    }
+
+    public MultipleUnitInformation volumeQuotaThreshold(Long volumeQuotaThreshold) {
+        this.volumeQuotaThreshold = volumeQuotaThreshold;
+        return this;
+    }
+
     public List<Trigger> getTriggers() {
         return triggers;
     }
@@ -144,19 +157,6 @@ public class MultipleUnitInformation {
         return this;
     }
 
-    public Long getVolumeQuotaThreshold() {
-        return volumeQuotaThreshold;
-    }
-
-    public void setVolumeQuotaThreshold(Long volumeQuotaThreshold) {
-        this.volumeQuotaThreshold = volumeQuotaThreshold;
-    }
-
-    public MultipleUnitInformation volumeQuotaThreshold(Long volumeQuotaThreshold) {
-        this.volumeQuotaThreshold = volumeQuotaThreshold;
-        return this;
-    }
-
     public Integer getUnitQuotaThreshold() {
         return unitQuotaThreshold;
     }
@@ -172,12 +172,12 @@ public class MultipleUnitInformation {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((((((((((((((("MultipleUnitInformation {"+"uPFID = ")+ uPFID)+", ")+"quotaHoldingTime = ")+ quotaHoldingTime)+", ")+"validityTime = ")+ validityTime)+", ")+"timeQuotaThreshold = ")+ timeQuotaThreshold)+", ")+"grantedUnit = ")+ grantedUnit)+", ")+"finalUnitIndication = ")+ finalUnitIndication)+", ")+"ratingGroup = ")+ ratingGroup)+", ")+"resultCode = ")+ resultCode)+", ")+"triggers = ")+ triggers)+", ")+"volumeQuotaThreshold = ")+ volumeQuotaThreshold)+", ")+"unitQuotaThreshold = ")+ unitQuotaThreshold)+"}");
+        return ((((((((((((((((((((((((((((((((("MultipleUnitInformation {"+"uPFID = ")+ uPFID)+", ")+"quotaHoldingTime = ")+ quotaHoldingTime)+", ")+"validityTime = ")+ validityTime)+", ")+"timeQuotaThreshold = ")+ timeQuotaThreshold)+", ")+"grantedUnit = ")+ grantedUnit)+", ")+"finalUnitIndication = ")+ finalUnitIndication)+", ")+"ratingGroup = ")+ ratingGroup)+", ")+"resultCode = ")+ resultCode)+", ")+"volumeQuotaThreshold = ")+ volumeQuotaThreshold)+", ")+"triggers = ")+ triggers)+", ")+"unitQuotaThreshold = ")+ unitQuotaThreshold)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uPFID, quotaHoldingTime, validityTime, timeQuotaThreshold, grantedUnit, finalUnitIndication, ratingGroup, resultCode, triggers, volumeQuotaThreshold, unitQuotaThreshold);
+        return Objects.hash(uPFID, quotaHoldingTime, validityTime, timeQuotaThreshold, grantedUnit, finalUnitIndication, ratingGroup, resultCode, volumeQuotaThreshold, triggers, unitQuotaThreshold);
     }
 
     @Override
@@ -189,6 +189,6 @@ public class MultipleUnitInformation {
             return false;
         }
         MultipleUnitInformation castThat = ((MultipleUnitInformation) that);
-        return ((((((((((Objects.equals(this.uPFID, castThat.uPFID)&&Objects.equals(this.quotaHoldingTime, castThat.quotaHoldingTime))&&Objects.equals(this.validityTime, castThat.validityTime))&&Objects.equals(this.timeQuotaThreshold, castThat.timeQuotaThreshold))&&Objects.equals(this.grantedUnit, castThat.grantedUnit))&&Objects.equals(this.finalUnitIndication, castThat.finalUnitIndication))&&Objects.equals(this.ratingGroup, castThat.ratingGroup))&&Objects.equals(this.resultCode, castThat.resultCode))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.volumeQuotaThreshold, castThat.volumeQuotaThreshold))&&Objects.equals(this.unitQuotaThreshold, castThat.unitQuotaThreshold));
+        return ((((((((((Objects.equals(this.uPFID, castThat.uPFID)&&Objects.equals(this.quotaHoldingTime, castThat.quotaHoldingTime))&&Objects.equals(this.validityTime, castThat.validityTime))&&Objects.equals(this.timeQuotaThreshold, castThat.timeQuotaThreshold))&&Objects.equals(this.grantedUnit, castThat.grantedUnit))&&Objects.equals(this.finalUnitIndication, castThat.finalUnitIndication))&&Objects.equals(this.ratingGroup, castThat.ratingGroup))&&Objects.equals(this.resultCode, castThat.resultCode))&&Objects.equals(this.volumeQuotaThreshold, castThat.volumeQuotaThreshold))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.unitQuotaThreshold, castThat.unitQuotaThreshold));
     }
 }

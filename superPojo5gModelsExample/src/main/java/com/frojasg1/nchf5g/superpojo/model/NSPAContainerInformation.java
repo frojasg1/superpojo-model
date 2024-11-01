@@ -5,11 +5,11 @@ import java.util.Objects;
 
 public class NSPAContainerInformation {
     private Integer theNumberOfPDUSessions;
-    private Integer theNumberOfRegisteredSubscribers;
     private Integer latency;
+    private Integer theNumberOfRegisteredSubscribers;
+    private Throughput throughput;
     private String maximumPacketLossRate;
     private ServiceExperienceInfo serviceExperienceStatisticsData;
-    private Throughput throughput;
     private NsiLoadLevelInfo loadLevel;
 
     public Integer getTheNumberOfPDUSessions() {
@@ -22,6 +22,19 @@ public class NSPAContainerInformation {
 
     public NSPAContainerInformation theNumberOfPDUSessions(Integer theNumberOfPDUSessions) {
         this.theNumberOfPDUSessions = theNumberOfPDUSessions;
+        return this;
+    }
+
+    public Integer getLatency() {
+        return latency;
+    }
+
+    public void setLatency(Integer latency) {
+        this.latency = latency;
+    }
+
+    public NSPAContainerInformation latency(Integer latency) {
+        this.latency = latency;
         return this;
     }
 
@@ -38,16 +51,16 @@ public class NSPAContainerInformation {
         return this;
     }
 
-    public Integer getLatency() {
-        return latency;
+    public Throughput getThroughput() {
+        return throughput;
     }
 
-    public void setLatency(Integer latency) {
-        this.latency = latency;
+    public void setThroughput(Throughput throughput) {
+        this.throughput = throughput;
     }
 
-    public NSPAContainerInformation latency(Integer latency) {
-        this.latency = latency;
+    public NSPAContainerInformation throughput(Throughput throughput) {
+        this.throughput = throughput;
         return this;
     }
 
@@ -77,19 +90,6 @@ public class NSPAContainerInformation {
         return this;
     }
 
-    public Throughput getThroughput() {
-        return throughput;
-    }
-
-    public void setThroughput(Throughput throughput) {
-        this.throughput = throughput;
-    }
-
-    public NSPAContainerInformation throughput(Throughput throughput) {
-        this.throughput = throughput;
-        return this;
-    }
-
     public NsiLoadLevelInfo getLoadLevel() {
         return loadLevel;
     }
@@ -105,12 +105,12 @@ public class NSPAContainerInformation {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((("NSPAContainerInformation {"+"theNumberOfPDUSessions = ")+ theNumberOfPDUSessions)+", ")+"theNumberOfRegisteredSubscribers = ")+ theNumberOfRegisteredSubscribers)+", ")+"latency = ")+ latency)+", ")+"maximumPacketLossRate = ")+ maximumPacketLossRate)+", ")+"serviceExperienceStatisticsData = ")+ serviceExperienceStatisticsData)+", ")+"throughput = ")+ throughput)+", ")+"loadLevel = ")+ loadLevel)+"}");
+        return ((((((((((((((((((((("NSPAContainerInformation {"+"theNumberOfPDUSessions = ")+ theNumberOfPDUSessions)+", ")+"latency = ")+ latency)+", ")+"theNumberOfRegisteredSubscribers = ")+ theNumberOfRegisteredSubscribers)+", ")+"throughput = ")+ throughput)+", ")+"maximumPacketLossRate = ")+ maximumPacketLossRate)+", ")+"serviceExperienceStatisticsData = ")+ serviceExperienceStatisticsData)+", ")+"loadLevel = ")+ loadLevel)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(theNumberOfPDUSessions, theNumberOfRegisteredSubscribers, latency, maximumPacketLossRate, serviceExperienceStatisticsData, throughput, loadLevel);
+        return Objects.hash(theNumberOfPDUSessions, latency, theNumberOfRegisteredSubscribers, throughput, maximumPacketLossRate, serviceExperienceStatisticsData, loadLevel);
     }
 
     @Override
@@ -122,6 +122,6 @@ public class NSPAContainerInformation {
             return false;
         }
         NSPAContainerInformation castThat = ((NSPAContainerInformation) that);
-        return ((((((Objects.equals(this.theNumberOfPDUSessions, castThat.theNumberOfPDUSessions)&&Objects.equals(this.theNumberOfRegisteredSubscribers, castThat.theNumberOfRegisteredSubscribers))&&Objects.equals(this.latency, castThat.latency))&&Objects.equals(this.maximumPacketLossRate, castThat.maximumPacketLossRate))&&Objects.equals(this.serviceExperienceStatisticsData, castThat.serviceExperienceStatisticsData))&&Objects.equals(this.throughput, castThat.throughput))&&Objects.equals(this.loadLevel, castThat.loadLevel));
+        return ((((((Objects.equals(this.theNumberOfPDUSessions, castThat.theNumberOfPDUSessions)&&Objects.equals(this.latency, castThat.latency))&&Objects.equals(this.theNumberOfRegisteredSubscribers, castThat.theNumberOfRegisteredSubscribers))&&Objects.equals(this.throughput, castThat.throughput))&&Objects.equals(this.maximumPacketLossRate, castThat.maximumPacketLossRate))&&Objects.equals(this.serviceExperienceStatisticsData, castThat.serviceExperienceStatisticsData))&&Objects.equals(this.loadLevel, castThat.loadLevel));
     }
 }

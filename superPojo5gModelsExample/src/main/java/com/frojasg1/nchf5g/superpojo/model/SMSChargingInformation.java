@@ -12,24 +12,24 @@ public class SMSChargingInformation {
     private RatType rATType;
     private Date sMDischargeTime;
     private String uetimeZone;
-    private SMPriority sMPriority;
     private String sMSCAddress;
+    private SMPriority sMPriority;
     private Integer sMDataCodingScheme;
     private OriginatorInfo originatorInfo;
-    private SMMessageType sMMessageType;
-    private Date submissionTime;
     private DeliveryReportRequested deliveryReportRequested;
+    private Date submissionTime;
+    private SMMessageType sMMessageType;
     private String userEquipmentInfo;
     private String sMStatus;
-    private SMServiceType sMServiceType;
     private ReplyPathRequested sMReplyPathRequested;
+    private SMServiceType sMServiceType;
     private MessageClass messageClass;
-    private Integer messageSize;
-    private List<RecipientInfo> recipientInfo;
     private Integer sMSequenceNumber;
+    private List<RecipientInfo> recipientInfo;
+    private Integer messageSize;
     private Integer sMSresult;
-    private String sMUserDataHeader;
     private UserLocation userLocationinfo;
+    private String sMUserDataHeader;
     private Integer numberofMessagesSent;
 
     public RoamerInOut getRoamerInOut() {
@@ -97,19 +97,6 @@ public class SMSChargingInformation {
         return this;
     }
 
-    public SMPriority getsMPriority() {
-        return sMPriority;
-    }
-
-    public void setsMPriority(SMPriority sMPriority) {
-        this.sMPriority = sMPriority;
-    }
-
-    public SMSChargingInformation sMPriority(SMPriority sMPriority) {
-        this.sMPriority = sMPriority;
-        return this;
-    }
-
     public String getsMSCAddress() {
         return sMSCAddress;
     }
@@ -120,6 +107,19 @@ public class SMSChargingInformation {
 
     public SMSChargingInformation sMSCAddress(String sMSCAddress) {
         this.sMSCAddress = sMSCAddress;
+        return this;
+    }
+
+    public SMPriority getsMPriority() {
+        return sMPriority;
+    }
+
+    public void setsMPriority(SMPriority sMPriority) {
+        this.sMPriority = sMPriority;
+    }
+
+    public SMSChargingInformation sMPriority(SMPriority sMPriority) {
+        this.sMPriority = sMPriority;
         return this;
     }
 
@@ -149,16 +149,16 @@ public class SMSChargingInformation {
         return this;
     }
 
-    public SMMessageType getsMMessageType() {
-        return sMMessageType;
+    public DeliveryReportRequested getDeliveryReportRequested() {
+        return deliveryReportRequested;
     }
 
-    public void setsMMessageType(SMMessageType sMMessageType) {
-        this.sMMessageType = sMMessageType;
+    public void setDeliveryReportRequested(DeliveryReportRequested deliveryReportRequested) {
+        this.deliveryReportRequested = deliveryReportRequested;
     }
 
-    public SMSChargingInformation sMMessageType(SMMessageType sMMessageType) {
-        this.sMMessageType = sMMessageType;
+    public SMSChargingInformation deliveryReportRequested(DeliveryReportRequested deliveryReportRequested) {
+        this.deliveryReportRequested = deliveryReportRequested;
         return this;
     }
 
@@ -175,16 +175,16 @@ public class SMSChargingInformation {
         return this;
     }
 
-    public DeliveryReportRequested getDeliveryReportRequested() {
-        return deliveryReportRequested;
+    public SMMessageType getsMMessageType() {
+        return sMMessageType;
     }
 
-    public void setDeliveryReportRequested(DeliveryReportRequested deliveryReportRequested) {
-        this.deliveryReportRequested = deliveryReportRequested;
+    public void setsMMessageType(SMMessageType sMMessageType) {
+        this.sMMessageType = sMMessageType;
     }
 
-    public SMSChargingInformation deliveryReportRequested(DeliveryReportRequested deliveryReportRequested) {
-        this.deliveryReportRequested = deliveryReportRequested;
+    public SMSChargingInformation sMMessageType(SMMessageType sMMessageType) {
+        this.sMMessageType = sMMessageType;
         return this;
     }
 
@@ -214,19 +214,6 @@ public class SMSChargingInformation {
         return this;
     }
 
-    public SMServiceType getsMServiceType() {
-        return sMServiceType;
-    }
-
-    public void setsMServiceType(SMServiceType sMServiceType) {
-        this.sMServiceType = sMServiceType;
-    }
-
-    public SMSChargingInformation sMServiceType(SMServiceType sMServiceType) {
-        this.sMServiceType = sMServiceType;
-        return this;
-    }
-
     public ReplyPathRequested getsMReplyPathRequested() {
         return sMReplyPathRequested;
     }
@@ -237,6 +224,19 @@ public class SMSChargingInformation {
 
     public SMSChargingInformation sMReplyPathRequested(ReplyPathRequested sMReplyPathRequested) {
         this.sMReplyPathRequested = sMReplyPathRequested;
+        return this;
+    }
+
+    public SMServiceType getsMServiceType() {
+        return sMServiceType;
+    }
+
+    public void setsMServiceType(SMServiceType sMServiceType) {
+        this.sMServiceType = sMServiceType;
+    }
+
+    public SMSChargingInformation sMServiceType(SMServiceType sMServiceType) {
+        this.sMServiceType = sMServiceType;
         return this;
     }
 
@@ -253,16 +253,16 @@ public class SMSChargingInformation {
         return this;
     }
 
-    public Integer getMessageSize() {
-        return messageSize;
+    public Integer getsMSequenceNumber() {
+        return sMSequenceNumber;
     }
 
-    public void setMessageSize(Integer messageSize) {
-        this.messageSize = messageSize;
+    public void setsMSequenceNumber(Integer sMSequenceNumber) {
+        this.sMSequenceNumber = sMSequenceNumber;
     }
 
-    public SMSChargingInformation messageSize(Integer messageSize) {
-        this.messageSize = messageSize;
+    public SMSChargingInformation sMSequenceNumber(Integer sMSequenceNumber) {
+        this.sMSequenceNumber = sMSequenceNumber;
         return this;
     }
 
@@ -287,16 +287,16 @@ public class SMSChargingInformation {
         return this;
     }
 
-    public Integer getsMSequenceNumber() {
-        return sMSequenceNumber;
+    public Integer getMessageSize() {
+        return messageSize;
     }
 
-    public void setsMSequenceNumber(Integer sMSequenceNumber) {
-        this.sMSequenceNumber = sMSequenceNumber;
+    public void setMessageSize(Integer messageSize) {
+        this.messageSize = messageSize;
     }
 
-    public SMSChargingInformation sMSequenceNumber(Integer sMSequenceNumber) {
-        this.sMSequenceNumber = sMSequenceNumber;
+    public SMSChargingInformation messageSize(Integer messageSize) {
+        this.messageSize = messageSize;
         return this;
     }
 
@@ -313,19 +313,6 @@ public class SMSChargingInformation {
         return this;
     }
 
-    public String getsMUserDataHeader() {
-        return sMUserDataHeader;
-    }
-
-    public void setsMUserDataHeader(String sMUserDataHeader) {
-        this.sMUserDataHeader = sMUserDataHeader;
-    }
-
-    public SMSChargingInformation sMUserDataHeader(String sMUserDataHeader) {
-        this.sMUserDataHeader = sMUserDataHeader;
-        return this;
-    }
-
     public UserLocation getUserLocationinfo() {
         return userLocationinfo;
     }
@@ -336,6 +323,19 @@ public class SMSChargingInformation {
 
     public SMSChargingInformation userLocationinfo(UserLocation userLocationinfo) {
         this.userLocationinfo = userLocationinfo;
+        return this;
+    }
+
+    public String getsMUserDataHeader() {
+        return sMUserDataHeader;
+    }
+
+    public void setsMUserDataHeader(String sMUserDataHeader) {
+        this.sMUserDataHeader = sMUserDataHeader;
+    }
+
+    public SMSChargingInformation sMUserDataHeader(String sMUserDataHeader) {
+        this.sMUserDataHeader = sMUserDataHeader;
         return this;
     }
 
@@ -354,12 +354,12 @@ public class SMSChargingInformation {
 
     @Override
     public String toString() {
-        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((("SMSChargingInformation {"+"roamerInOut = ")+ roamerInOut)+", ")+"messageReference = ")+ messageReference)+", ")+"rATType = ")+ rATType)+", ")+"sMDischargeTime = ")+ sMDischargeTime)+", ")+"uetimeZone = ")+ uetimeZone)+", ")+"sMPriority = ")+ sMPriority)+", ")+"sMSCAddress = ")+ sMSCAddress)+", ")+"sMDataCodingScheme = ")+ sMDataCodingScheme)+", ")+"originatorInfo = ")+ originatorInfo)+", ")+"sMMessageType = ")+ sMMessageType)+", ")+"submissionTime = ")+ submissionTime)+", ")+"deliveryReportRequested = ")+ deliveryReportRequested)+", ")+"userEquipmentInfo = ")+ userEquipmentInfo)+", ")+"sMStatus = ")+ sMStatus)+", ")+"sMServiceType = ")+ sMServiceType)+", ")+"sMReplyPathRequested = ")+ sMReplyPathRequested)+", ")+"messageClass = ")+ messageClass)+", ")+"messageSize = ")+ messageSize)+", ")+"recipientInfo = ")+ recipientInfo)+", ")+"sMSequenceNumber = ")+ sMSequenceNumber)+", ")+"sMSresult = ")+ sMSresult)+", ")+"sMUserDataHeader = ")+ sMUserDataHeader)+", ")+"userLocationinfo = ")+ userLocationinfo)+", ")+"numberofMessagesSent = ")+ numberofMessagesSent)+"}");
+        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((("SMSChargingInformation {"+"roamerInOut = ")+ roamerInOut)+", ")+"messageReference = ")+ messageReference)+", ")+"rATType = ")+ rATType)+", ")+"sMDischargeTime = ")+ sMDischargeTime)+", ")+"uetimeZone = ")+ uetimeZone)+", ")+"sMSCAddress = ")+ sMSCAddress)+", ")+"sMPriority = ")+ sMPriority)+", ")+"sMDataCodingScheme = ")+ sMDataCodingScheme)+", ")+"originatorInfo = ")+ originatorInfo)+", ")+"deliveryReportRequested = ")+ deliveryReportRequested)+", ")+"submissionTime = ")+ submissionTime)+", ")+"sMMessageType = ")+ sMMessageType)+", ")+"userEquipmentInfo = ")+ userEquipmentInfo)+", ")+"sMStatus = ")+ sMStatus)+", ")+"sMReplyPathRequested = ")+ sMReplyPathRequested)+", ")+"sMServiceType = ")+ sMServiceType)+", ")+"messageClass = ")+ messageClass)+", ")+"sMSequenceNumber = ")+ sMSequenceNumber)+", ")+"recipientInfo = ")+ recipientInfo)+", ")+"messageSize = ")+ messageSize)+", ")+"sMSresult = ")+ sMSresult)+", ")+"userLocationinfo = ")+ userLocationinfo)+", ")+"sMUserDataHeader = ")+ sMUserDataHeader)+", ")+"numberofMessagesSent = ")+ numberofMessagesSent)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(roamerInOut, messageReference, rATType, sMDischargeTime, uetimeZone, sMPriority, sMSCAddress, sMDataCodingScheme, originatorInfo, sMMessageType, submissionTime, deliveryReportRequested, userEquipmentInfo, sMStatus, sMServiceType, sMReplyPathRequested, messageClass, messageSize, recipientInfo, sMSequenceNumber, sMSresult, sMUserDataHeader, userLocationinfo, numberofMessagesSent);
+        return Objects.hash(roamerInOut, messageReference, rATType, sMDischargeTime, uetimeZone, sMSCAddress, sMPriority, sMDataCodingScheme, originatorInfo, deliveryReportRequested, submissionTime, sMMessageType, userEquipmentInfo, sMStatus, sMReplyPathRequested, sMServiceType, messageClass, sMSequenceNumber, recipientInfo, messageSize, sMSresult, userLocationinfo, sMUserDataHeader, numberofMessagesSent);
     }
 
     @Override
@@ -371,6 +371,6 @@ public class SMSChargingInformation {
             return false;
         }
         SMSChargingInformation castThat = ((SMSChargingInformation) that);
-        return (((((((((((((((((((((((Objects.equals(this.roamerInOut, castThat.roamerInOut)&&Objects.equals(this.messageReference, castThat.messageReference))&&Objects.equals(this.rATType, castThat.rATType))&&Objects.equals(this.sMDischargeTime, castThat.sMDischargeTime))&&Objects.equals(this.uetimeZone, castThat.uetimeZone))&&Objects.equals(this.sMPriority, castThat.sMPriority))&&Objects.equals(this.sMSCAddress, castThat.sMSCAddress))&&Objects.equals(this.sMDataCodingScheme, castThat.sMDataCodingScheme))&&Objects.equals(this.originatorInfo, castThat.originatorInfo))&&Objects.equals(this.sMMessageType, castThat.sMMessageType))&&Objects.equals(this.submissionTime, castThat.submissionTime))&&Objects.equals(this.deliveryReportRequested, castThat.deliveryReportRequested))&&Objects.equals(this.userEquipmentInfo, castThat.userEquipmentInfo))&&Objects.equals(this.sMStatus, castThat.sMStatus))&&Objects.equals(this.sMServiceType, castThat.sMServiceType))&&Objects.equals(this.sMReplyPathRequested, castThat.sMReplyPathRequested))&&Objects.equals(this.messageClass, castThat.messageClass))&&Objects.equals(this.messageSize, castThat.messageSize))&&Objects.equals(this.recipientInfo, castThat.recipientInfo))&&Objects.equals(this.sMSequenceNumber, castThat.sMSequenceNumber))&&Objects.equals(this.sMSresult, castThat.sMSresult))&&Objects.equals(this.sMUserDataHeader, castThat.sMUserDataHeader))&&Objects.equals(this.userLocationinfo, castThat.userLocationinfo))&&Objects.equals(this.numberofMessagesSent, castThat.numberofMessagesSent));
+        return (((((((((((((((((((((((Objects.equals(this.roamerInOut, castThat.roamerInOut)&&Objects.equals(this.messageReference, castThat.messageReference))&&Objects.equals(this.rATType, castThat.rATType))&&Objects.equals(this.sMDischargeTime, castThat.sMDischargeTime))&&Objects.equals(this.uetimeZone, castThat.uetimeZone))&&Objects.equals(this.sMSCAddress, castThat.sMSCAddress))&&Objects.equals(this.sMPriority, castThat.sMPriority))&&Objects.equals(this.sMDataCodingScheme, castThat.sMDataCodingScheme))&&Objects.equals(this.originatorInfo, castThat.originatorInfo))&&Objects.equals(this.deliveryReportRequested, castThat.deliveryReportRequested))&&Objects.equals(this.submissionTime, castThat.submissionTime))&&Objects.equals(this.sMMessageType, castThat.sMMessageType))&&Objects.equals(this.userEquipmentInfo, castThat.userEquipmentInfo))&&Objects.equals(this.sMStatus, castThat.sMStatus))&&Objects.equals(this.sMReplyPathRequested, castThat.sMReplyPathRequested))&&Objects.equals(this.sMServiceType, castThat.sMServiceType))&&Objects.equals(this.messageClass, castThat.messageClass))&&Objects.equals(this.sMSequenceNumber, castThat.sMSequenceNumber))&&Objects.equals(this.recipientInfo, castThat.recipientInfo))&&Objects.equals(this.messageSize, castThat.messageSize))&&Objects.equals(this.sMSresult, castThat.sMSresult))&&Objects.equals(this.userLocationinfo, castThat.userLocationinfo))&&Objects.equals(this.sMUserDataHeader, castThat.sMUserDataHeader))&&Objects.equals(this.numberofMessagesSent, castThat.numberofMessagesSent));
     }
 }

@@ -10,11 +10,11 @@ public class ChargingDataRequest {
     private SMSChargingInformation sMSChargingInformation;
     private String supportedFeatures;
     private String serviceSpecificationInfo;
-    private NFIdentification nfConsumerIdentification;
     private Integer chargingId;
+    private NFIdentification nfConsumerIdentification;
     private NSPAChargingInformation nSPAChargingInformation;
-    private NEFChargingInformation nEFChargingInformation;
     private RegistrationChargingInformation registrationChargingInformation;
+    private NEFChargingInformation nEFChargingInformation;
     private Date invocationTimeStamp;
     private PDUSessionChargingInformation pDUSessionChargingInformation;
     private Boolean retransmissionIndicator;
@@ -71,19 +71,6 @@ public class ChargingDataRequest {
         return this;
     }
 
-    public NFIdentification getNfConsumerIdentification() {
-        return nfConsumerIdentification;
-    }
-
-    public void setNfConsumerIdentification(NFIdentification nfConsumerIdentification) {
-        this.nfConsumerIdentification = nfConsumerIdentification;
-    }
-
-    public ChargingDataRequest nfConsumerIdentification(NFIdentification nfConsumerIdentification) {
-        this.nfConsumerIdentification = nfConsumerIdentification;
-        return this;
-    }
-
     public Integer getChargingId() {
         return chargingId;
     }
@@ -94,6 +81,19 @@ public class ChargingDataRequest {
 
     public ChargingDataRequest chargingId(Integer chargingId) {
         this.chargingId = chargingId;
+        return this;
+    }
+
+    public NFIdentification getNfConsumerIdentification() {
+        return nfConsumerIdentification;
+    }
+
+    public void setNfConsumerIdentification(NFIdentification nfConsumerIdentification) {
+        this.nfConsumerIdentification = nfConsumerIdentification;
+    }
+
+    public ChargingDataRequest nfConsumerIdentification(NFIdentification nfConsumerIdentification) {
+        this.nfConsumerIdentification = nfConsumerIdentification;
         return this;
     }
 
@@ -110,19 +110,6 @@ public class ChargingDataRequest {
         return this;
     }
 
-    public NEFChargingInformation getnEFChargingInformation() {
-        return nEFChargingInformation;
-    }
-
-    public void setnEFChargingInformation(NEFChargingInformation nEFChargingInformation) {
-        this.nEFChargingInformation = nEFChargingInformation;
-    }
-
-    public ChargingDataRequest nEFChargingInformation(NEFChargingInformation nEFChargingInformation) {
-        this.nEFChargingInformation = nEFChargingInformation;
-        return this;
-    }
-
     public RegistrationChargingInformation getRegistrationChargingInformation() {
         return registrationChargingInformation;
     }
@@ -133,6 +120,19 @@ public class ChargingDataRequest {
 
     public ChargingDataRequest registrationChargingInformation(RegistrationChargingInformation registrationChargingInformation) {
         this.registrationChargingInformation = registrationChargingInformation;
+        return this;
+    }
+
+    public NEFChargingInformation getnEFChargingInformation() {
+        return nEFChargingInformation;
+    }
+
+    public void setnEFChargingInformation(NEFChargingInformation nEFChargingInformation) {
+        this.nEFChargingInformation = nEFChargingInformation;
+    }
+
+    public ChargingDataRequest nEFChargingInformation(NEFChargingInformation nEFChargingInformation) {
+        this.nEFChargingInformation = nEFChargingInformation;
         return this;
     }
 
@@ -362,12 +362,12 @@ public class ChargingDataRequest {
 
     @Override
     public String toString() {
-        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((("ChargingDataRequest {"+"sMSChargingInformation = ")+ sMSChargingInformation)+", ")+"supportedFeatures = ")+ supportedFeatures)+", ")+"serviceSpecificationInfo = ")+ serviceSpecificationInfo)+", ")+"nfConsumerIdentification = ")+ nfConsumerIdentification)+", ")+"chargingId = ")+ chargingId)+", ")+"nSPAChargingInformation = ")+ nSPAChargingInformation)+", ")+"nEFChargingInformation = ")+ nEFChargingInformation)+", ")+"registrationChargingInformation = ")+ registrationChargingInformation)+", ")+"invocationTimeStamp = ")+ invocationTimeStamp)+", ")+"pDUSessionChargingInformation = ")+ pDUSessionChargingInformation)+", ")+"retransmissionIndicator = ")+ retransmissionIndicator)+", ")+"oneTimeEventType = ")+ oneTimeEventType)+", ")+"triggers = ")+ triggers)+", ")+"subscriberIdentifier = ")+ subscriberIdentifier)+", ")+"invocationSequenceNumber = ")+ invocationSequenceNumber)+", ")+"n2ConnectionChargingInformation = ")+ n2ConnectionChargingInformation)+", ")+"mnSConsumerIdentifier = ")+ mnSConsumerIdentifier)+", ")+"roamingQBCInformation = ")+ roamingQBCInformation)+", ")+"multipleUnitUsage = ")+ multipleUnitUsage)+", ")+"notifyUri = ")+ notifyUri)+", ")+"nSMChargingInformation = ")+ nSMChargingInformation)+", ")+"locationReportingChargingInformation = ")+ locationReportingChargingInformation)+", ")+"oneTimeEvent = ")+ oneTimeEvent)+", ")+"tenantIdentifier = ")+ tenantIdentifier)+"}");
+        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((("ChargingDataRequest {"+"sMSChargingInformation = ")+ sMSChargingInformation)+", ")+"supportedFeatures = ")+ supportedFeatures)+", ")+"serviceSpecificationInfo = ")+ serviceSpecificationInfo)+", ")+"chargingId = ")+ chargingId)+", ")+"nfConsumerIdentification = ")+ nfConsumerIdentification)+", ")+"nSPAChargingInformation = ")+ nSPAChargingInformation)+", ")+"registrationChargingInformation = ")+ registrationChargingInformation)+", ")+"nEFChargingInformation = ")+ nEFChargingInformation)+", ")+"invocationTimeStamp = ")+ invocationTimeStamp)+", ")+"pDUSessionChargingInformation = ")+ pDUSessionChargingInformation)+", ")+"retransmissionIndicator = ")+ retransmissionIndicator)+", ")+"oneTimeEventType = ")+ oneTimeEventType)+", ")+"triggers = ")+ triggers)+", ")+"subscriberIdentifier = ")+ subscriberIdentifier)+", ")+"invocationSequenceNumber = ")+ invocationSequenceNumber)+", ")+"n2ConnectionChargingInformation = ")+ n2ConnectionChargingInformation)+", ")+"mnSConsumerIdentifier = ")+ mnSConsumerIdentifier)+", ")+"roamingQBCInformation = ")+ roamingQBCInformation)+", ")+"multipleUnitUsage = ")+ multipleUnitUsage)+", ")+"notifyUri = ")+ notifyUri)+", ")+"nSMChargingInformation = ")+ nSMChargingInformation)+", ")+"locationReportingChargingInformation = ")+ locationReportingChargingInformation)+", ")+"oneTimeEvent = ")+ oneTimeEvent)+", ")+"tenantIdentifier = ")+ tenantIdentifier)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sMSChargingInformation, supportedFeatures, serviceSpecificationInfo, nfConsumerIdentification, chargingId, nSPAChargingInformation, nEFChargingInformation, registrationChargingInformation, invocationTimeStamp, pDUSessionChargingInformation, retransmissionIndicator, oneTimeEventType, triggers, subscriberIdentifier, invocationSequenceNumber, n2ConnectionChargingInformation, mnSConsumerIdentifier, roamingQBCInformation, multipleUnitUsage, notifyUri, nSMChargingInformation, locationReportingChargingInformation, oneTimeEvent, tenantIdentifier);
+        return Objects.hash(sMSChargingInformation, supportedFeatures, serviceSpecificationInfo, chargingId, nfConsumerIdentification, nSPAChargingInformation, registrationChargingInformation, nEFChargingInformation, invocationTimeStamp, pDUSessionChargingInformation, retransmissionIndicator, oneTimeEventType, triggers, subscriberIdentifier, invocationSequenceNumber, n2ConnectionChargingInformation, mnSConsumerIdentifier, roamingQBCInformation, multipleUnitUsage, notifyUri, nSMChargingInformation, locationReportingChargingInformation, oneTimeEvent, tenantIdentifier);
     }
 
     @Override
@@ -379,6 +379,6 @@ public class ChargingDataRequest {
             return false;
         }
         ChargingDataRequest castThat = ((ChargingDataRequest) that);
-        return (((((((((((((((((((((((Objects.equals(this.sMSChargingInformation, castThat.sMSChargingInformation)&&Objects.equals(this.supportedFeatures, castThat.supportedFeatures))&&Objects.equals(this.serviceSpecificationInfo, castThat.serviceSpecificationInfo))&&Objects.equals(this.nfConsumerIdentification, castThat.nfConsumerIdentification))&&Objects.equals(this.chargingId, castThat.chargingId))&&Objects.equals(this.nSPAChargingInformation, castThat.nSPAChargingInformation))&&Objects.equals(this.nEFChargingInformation, castThat.nEFChargingInformation))&&Objects.equals(this.registrationChargingInformation, castThat.registrationChargingInformation))&&Objects.equals(this.invocationTimeStamp, castThat.invocationTimeStamp))&&Objects.equals(this.pDUSessionChargingInformation, castThat.pDUSessionChargingInformation))&&Objects.equals(this.retransmissionIndicator, castThat.retransmissionIndicator))&&Objects.equals(this.oneTimeEventType, castThat.oneTimeEventType))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.subscriberIdentifier, castThat.subscriberIdentifier))&&Objects.equals(this.invocationSequenceNumber, castThat.invocationSequenceNumber))&&Objects.equals(this.n2ConnectionChargingInformation, castThat.n2ConnectionChargingInformation))&&Objects.equals(this.mnSConsumerIdentifier, castThat.mnSConsumerIdentifier))&&Objects.equals(this.roamingQBCInformation, castThat.roamingQBCInformation))&&Objects.equals(this.multipleUnitUsage, castThat.multipleUnitUsage))&&Objects.equals(this.notifyUri, castThat.notifyUri))&&Objects.equals(this.nSMChargingInformation, castThat.nSMChargingInformation))&&Objects.equals(this.locationReportingChargingInformation, castThat.locationReportingChargingInformation))&&Objects.equals(this.oneTimeEvent, castThat.oneTimeEvent))&&Objects.equals(this.tenantIdentifier, castThat.tenantIdentifier));
+        return (((((((((((((((((((((((Objects.equals(this.sMSChargingInformation, castThat.sMSChargingInformation)&&Objects.equals(this.supportedFeatures, castThat.supportedFeatures))&&Objects.equals(this.serviceSpecificationInfo, castThat.serviceSpecificationInfo))&&Objects.equals(this.chargingId, castThat.chargingId))&&Objects.equals(this.nfConsumerIdentification, castThat.nfConsumerIdentification))&&Objects.equals(this.nSPAChargingInformation, castThat.nSPAChargingInformation))&&Objects.equals(this.registrationChargingInformation, castThat.registrationChargingInformation))&&Objects.equals(this.nEFChargingInformation, castThat.nEFChargingInformation))&&Objects.equals(this.invocationTimeStamp, castThat.invocationTimeStamp))&&Objects.equals(this.pDUSessionChargingInformation, castThat.pDUSessionChargingInformation))&&Objects.equals(this.retransmissionIndicator, castThat.retransmissionIndicator))&&Objects.equals(this.oneTimeEventType, castThat.oneTimeEventType))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.subscriberIdentifier, castThat.subscriberIdentifier))&&Objects.equals(this.invocationSequenceNumber, castThat.invocationSequenceNumber))&&Objects.equals(this.n2ConnectionChargingInformation, castThat.n2ConnectionChargingInformation))&&Objects.equals(this.mnSConsumerIdentifier, castThat.mnSConsumerIdentifier))&&Objects.equals(this.roamingQBCInformation, castThat.roamingQBCInformation))&&Objects.equals(this.multipleUnitUsage, castThat.multipleUnitUsage))&&Objects.equals(this.notifyUri, castThat.notifyUri))&&Objects.equals(this.nSMChargingInformation, castThat.nSMChargingInformation))&&Objects.equals(this.locationReportingChargingInformation, castThat.locationReportingChargingInformation))&&Objects.equals(this.oneTimeEvent, castThat.oneTimeEvent))&&Objects.equals(this.tenantIdentifier, castThat.tenantIdentifier));
     }
 }

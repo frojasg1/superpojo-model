@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class N3gaLocation {
-    private TwapId twapId;
     private HfcNodeId hfcNodeId;
+    private TwapId twapId;
     private String ueIpv4Addr;
     private TransportProtocol protocol;
     private byte[] gli;
@@ -14,21 +14,8 @@ public class N3gaLocation {
     private Tai n3gppTai;
     private String gci;
     private Ipv6Addr ueIpv6Addr;
-    private String n3IwfId;
     private Integer portNumber;
-
-    public TwapId getTwapId() {
-        return twapId;
-    }
-
-    public void setTwapId(TwapId twapId) {
-        this.twapId = twapId;
-    }
-
-    public N3gaLocation twapId(TwapId twapId) {
-        this.twapId = twapId;
-        return this;
-    }
+    private String n3IwfId;
 
     public HfcNodeId getHfcNodeId() {
         return hfcNodeId;
@@ -40,6 +27,19 @@ public class N3gaLocation {
 
     public N3gaLocation hfcNodeId(HfcNodeId hfcNodeId) {
         this.hfcNodeId = hfcNodeId;
+        return this;
+    }
+
+    public TwapId getTwapId() {
+        return twapId;
+    }
+
+    public void setTwapId(TwapId twapId) {
+        this.twapId = twapId;
+    }
+
+    public N3gaLocation twapId(TwapId twapId) {
+        this.twapId = twapId;
         return this;
     }
 
@@ -147,19 +147,6 @@ public class N3gaLocation {
         return this;
     }
 
-    public String getN3IwfId() {
-        return n3IwfId;
-    }
-
-    public void setN3IwfId(String n3IwfId) {
-        this.n3IwfId = n3IwfId;
-    }
-
-    public N3gaLocation n3IwfId(String n3IwfId) {
-        this.n3IwfId = n3IwfId;
-        return this;
-    }
-
     public Integer getPortNumber() {
         return portNumber;
     }
@@ -173,14 +160,27 @@ public class N3gaLocation {
         return this;
     }
 
+    public String getN3IwfId() {
+        return n3IwfId;
+    }
+
+    public void setN3IwfId(String n3IwfId) {
+        this.n3IwfId = n3IwfId;
+    }
+
+    public N3gaLocation n3IwfId(String n3IwfId) {
+        this.n3IwfId = n3IwfId;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return (((((((((((((((((((((((((((((((((((("N3gaLocation {"+"twapId = ")+ twapId)+", ")+"hfcNodeId = ")+ hfcNodeId)+", ")+"ueIpv4Addr = ")+ ueIpv4Addr)+", ")+"protocol = ")+ protocol)+", ")+"gli = ")+ gli)+", ")+"tnapId = ")+ tnapId)+", ")+"w5gbanLineType = ")+ w5gbanLineType)+", ")+"n3gppTai = ")+ n3gppTai)+", ")+"gci = ")+ gci)+", ")+"ueIpv6Addr = ")+ ueIpv6Addr)+", ")+"n3IwfId = ")+ n3IwfId)+", ")+"portNumber = ")+ portNumber)+"}");
+        return (((((((((((((((((((((((((((((((((((("N3gaLocation {"+"hfcNodeId = ")+ hfcNodeId)+", ")+"twapId = ")+ twapId)+", ")+"ueIpv4Addr = ")+ ueIpv4Addr)+", ")+"protocol = ")+ protocol)+", ")+"gli = ")+ gli)+", ")+"tnapId = ")+ tnapId)+", ")+"w5gbanLineType = ")+ w5gbanLineType)+", ")+"n3gppTai = ")+ n3gppTai)+", ")+"gci = ")+ gci)+", ")+"ueIpv6Addr = ")+ ueIpv6Addr)+", ")+"portNumber = ")+ portNumber)+", ")+"n3IwfId = ")+ n3IwfId)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(twapId, hfcNodeId, ueIpv4Addr, protocol, gli, tnapId, w5gbanLineType, n3gppTai, gci, ueIpv6Addr, n3IwfId, portNumber);
+        return Objects.hash(hfcNodeId, twapId, ueIpv4Addr, protocol, gli, tnapId, w5gbanLineType, n3gppTai, gci, ueIpv6Addr, portNumber, n3IwfId);
     }
 
     @Override
@@ -192,6 +192,6 @@ public class N3gaLocation {
             return false;
         }
         N3gaLocation castThat = ((N3gaLocation) that);
-        return (((((((((((Objects.equals(this.twapId, castThat.twapId)&&Objects.equals(this.hfcNodeId, castThat.hfcNodeId))&&Objects.equals(this.ueIpv4Addr, castThat.ueIpv4Addr))&&Objects.equals(this.protocol, castThat.protocol))&&Objects.equals(this.gli, castThat.gli))&&Objects.equals(this.tnapId, castThat.tnapId))&&Objects.equals(this.w5gbanLineType, castThat.w5gbanLineType))&&Objects.equals(this.n3gppTai, castThat.n3gppTai))&&Objects.equals(this.gci, castThat.gci))&&Objects.equals(this.ueIpv6Addr, castThat.ueIpv6Addr))&&Objects.equals(this.n3IwfId, castThat.n3IwfId))&&Objects.equals(this.portNumber, castThat.portNumber));
+        return (((((((((((Objects.equals(this.hfcNodeId, castThat.hfcNodeId)&&Objects.equals(this.twapId, castThat.twapId))&&Objects.equals(this.ueIpv4Addr, castThat.ueIpv4Addr))&&Objects.equals(this.protocol, castThat.protocol))&&Objects.equals(this.gli, castThat.gli))&&Objects.equals(this.tnapId, castThat.tnapId))&&Objects.equals(this.w5gbanLineType, castThat.w5gbanLineType))&&Objects.equals(this.n3gppTai, castThat.n3gppTai))&&Objects.equals(this.gci, castThat.gci))&&Objects.equals(this.ueIpv6Addr, castThat.ueIpv6Addr))&&Objects.equals(this.portNumber, castThat.portNumber))&&Objects.equals(this.n3IwfId, castThat.n3IwfId));
     }
 }

@@ -13,8 +13,8 @@ public class MultipleQFIcontainer {
     private Integer time;
     private QFIContainerInformation qFIContainerInformation;
     private List<Trigger> triggers;
-    private Integer localSequenceNumber;
     private Date triggerTimestamp;
+    private Integer localSequenceNumber;
 
     public Long getTotalVolume() {
         return totalVolume;
@@ -102,19 +102,6 @@ public class MultipleQFIcontainer {
         return this;
     }
 
-    public Integer getLocalSequenceNumber() {
-        return localSequenceNumber;
-    }
-
-    public void setLocalSequenceNumber(Integer localSequenceNumber) {
-        this.localSequenceNumber = localSequenceNumber;
-    }
-
-    public MultipleQFIcontainer localSequenceNumber(Integer localSequenceNumber) {
-        this.localSequenceNumber = localSequenceNumber;
-        return this;
-    }
-
     public Date getTriggerTimestamp() {
         return triggerTimestamp;
     }
@@ -128,14 +115,27 @@ public class MultipleQFIcontainer {
         return this;
     }
 
+    public Integer getLocalSequenceNumber() {
+        return localSequenceNumber;
+    }
+
+    public void setLocalSequenceNumber(Integer localSequenceNumber) {
+        this.localSequenceNumber = localSequenceNumber;
+    }
+
+    public MultipleQFIcontainer localSequenceNumber(Integer localSequenceNumber) {
+        this.localSequenceNumber = localSequenceNumber;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return (((((((((((((((((((((((("MultipleQFIcontainer {"+"totalVolume = ")+ totalVolume)+", ")+"downlinkVolume = ")+ downlinkVolume)+", ")+"uplinkVolume = ")+ uplinkVolume)+", ")+"time = ")+ time)+", ")+"qFIContainerInformation = ")+ qFIContainerInformation)+", ")+"triggers = ")+ triggers)+", ")+"localSequenceNumber = ")+ localSequenceNumber)+", ")+"triggerTimestamp = ")+ triggerTimestamp)+"}");
+        return (((((((((((((((((((((((("MultipleQFIcontainer {"+"totalVolume = ")+ totalVolume)+", ")+"downlinkVolume = ")+ downlinkVolume)+", ")+"uplinkVolume = ")+ uplinkVolume)+", ")+"time = ")+ time)+", ")+"qFIContainerInformation = ")+ qFIContainerInformation)+", ")+"triggers = ")+ triggers)+", ")+"triggerTimestamp = ")+ triggerTimestamp)+", ")+"localSequenceNumber = ")+ localSequenceNumber)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalVolume, downlinkVolume, uplinkVolume, time, qFIContainerInformation, triggers, localSequenceNumber, triggerTimestamp);
+        return Objects.hash(totalVolume, downlinkVolume, uplinkVolume, time, qFIContainerInformation, triggers, triggerTimestamp, localSequenceNumber);
     }
 
     @Override
@@ -147,6 +147,6 @@ public class MultipleQFIcontainer {
             return false;
         }
         MultipleQFIcontainer castThat = ((MultipleQFIcontainer) that);
-        return (((((((Objects.equals(this.totalVolume, castThat.totalVolume)&&Objects.equals(this.downlinkVolume, castThat.downlinkVolume))&&Objects.equals(this.uplinkVolume, castThat.uplinkVolume))&&Objects.equals(this.time, castThat.time))&&Objects.equals(this.qFIContainerInformation, castThat.qFIContainerInformation))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.localSequenceNumber, castThat.localSequenceNumber))&&Objects.equals(this.triggerTimestamp, castThat.triggerTimestamp));
+        return (((((((Objects.equals(this.totalVolume, castThat.totalVolume)&&Objects.equals(this.downlinkVolume, castThat.downlinkVolume))&&Objects.equals(this.uplinkVolume, castThat.uplinkVolume))&&Objects.equals(this.time, castThat.time))&&Objects.equals(this.qFIContainerInformation, castThat.qFIContainerInformation))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.triggerTimestamp, castThat.triggerTimestamp))&&Objects.equals(this.localSequenceNumber, castThat.localSequenceNumber));
     }
 }

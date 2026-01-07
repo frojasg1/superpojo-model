@@ -8,23 +8,23 @@ import java.util.Map;
 import java.util.Objects;
 
 public class PDUContainerInformation {
-    private SteeringFunctionality mAPDUSteeringFunctionality;
-    private String applicationserviceProviderIdentity;
-    private SteeringMode mAPDUSteeringMode;
-    private RatType rATType;
-    private String chargingRuleBaseName;
-    private String afChargingIdString;
-    private QosCharacteristics qoSCharacteristics;
-    private String uetimeZone;
-    private UserLocation userLocationInformation;
-    private Integer afChargingIdentifier;
-    private Date timeofLastUsage;
-    private List<ServingNetworkFunctionID> servingNodeID;
-    private Map<String, PresenceInfo> presenceReportingAreaInformation;
-    private String sponsorIdentity;
-    private Date timeofFirstUsage;
-    private QosData qoSInformation;
-    private String aFCorrelationInformation;
+    public SteeringFunctionality mAPDUSteeringFunctionality;
+    public String applicationserviceProviderIdentity;
+    public SteeringMode mAPDUSteeringMode;
+    public RatType rATType;
+    public String chargingRuleBaseName;
+    public QosCharacteristics qoSCharacteristics;
+    public String afChargingIdString;
+    public String uetimeZone;
+    public UserLocation userLocationInformation;
+    public Integer afChargingIdentifier;
+    public Date timeofLastUsage;
+    public Map<String, PresenceInfo> presenceReportingAreaInformation;
+    public List<ServingNetworkFunctionID> servingNodeID;
+    public String sponsorIdentity;
+    public Date timeofFirstUsage;
+    public QosData qoSInformation;
+    public String aFCorrelationInformation;
 
     public SteeringFunctionality getmAPDUSteeringFunctionality() {
         return mAPDUSteeringFunctionality;
@@ -91,19 +91,6 @@ public class PDUContainerInformation {
         return this;
     }
 
-    public String getAfChargingIdString() {
-        return afChargingIdString;
-    }
-
-    public void setAfChargingIdString(String afChargingIdString) {
-        this.afChargingIdString = afChargingIdString;
-    }
-
-    public PDUContainerInformation afChargingIdString(String afChargingIdString) {
-        this.afChargingIdString = afChargingIdString;
-        return this;
-    }
-
     public QosCharacteristics getQoSCharacteristics() {
         return qoSCharacteristics;
     }
@@ -114,6 +101,19 @@ public class PDUContainerInformation {
 
     public PDUContainerInformation qoSCharacteristics(QosCharacteristics qoSCharacteristics) {
         this.qoSCharacteristics = qoSCharacteristics;
+        return this;
+    }
+
+    public String getAfChargingIdString() {
+        return afChargingIdString;
+    }
+
+    public void setAfChargingIdString(String afChargingIdString) {
+        this.afChargingIdString = afChargingIdString;
+    }
+
+    public PDUContainerInformation afChargingIdString(String afChargingIdString) {
+        this.afChargingIdString = afChargingIdString;
         return this;
     }
 
@@ -169,6 +169,19 @@ public class PDUContainerInformation {
         return this;
     }
 
+    public Map<String, PresenceInfo> getPresenceReportingAreaInformation() {
+        return presenceReportingAreaInformation;
+    }
+
+    public void setPresenceReportingAreaInformation(Map<String, PresenceInfo> presenceReportingAreaInformation) {
+        this.presenceReportingAreaInformation = presenceReportingAreaInformation;
+    }
+
+    public PDUContainerInformation presenceReportingAreaInformation(Map<String, PresenceInfo> presenceReportingAreaInformation) {
+        this.presenceReportingAreaInformation = presenceReportingAreaInformation;
+        return this;
+    }
+
     public List<ServingNetworkFunctionID> getServingNodeID() {
         return servingNodeID;
     }
@@ -187,19 +200,6 @@ public class PDUContainerInformation {
             this.servingNodeID = new ArrayList();
         }
         this.servingNodeID.add(item);
-        return this;
-    }
-
-    public Map<String, PresenceInfo> getPresenceReportingAreaInformation() {
-        return presenceReportingAreaInformation;
-    }
-
-    public void setPresenceReportingAreaInformation(Map<String, PresenceInfo> presenceReportingAreaInformation) {
-        this.presenceReportingAreaInformation = presenceReportingAreaInformation;
-    }
-
-    public PDUContainerInformation presenceReportingAreaInformation(Map<String, PresenceInfo> presenceReportingAreaInformation) {
-        this.presenceReportingAreaInformation = presenceReportingAreaInformation;
         return this;
     }
 
@@ -257,12 +257,12 @@ public class PDUContainerInformation {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((((((((((((((((((((((((((((((((("PDUContainerInformation {"+"mAPDUSteeringFunctionality = ")+ mAPDUSteeringFunctionality)+", ")+"applicationserviceProviderIdentity = ")+ applicationserviceProviderIdentity)+", ")+"mAPDUSteeringMode = ")+ mAPDUSteeringMode)+", ")+"rATType = ")+ rATType)+", ")+"chargingRuleBaseName = ")+ chargingRuleBaseName)+", ")+"afChargingIdString = ")+ afChargingIdString)+", ")+"qoSCharacteristics = ")+ qoSCharacteristics)+", ")+"uetimeZone = ")+ uetimeZone)+", ")+"userLocationInformation = ")+ userLocationInformation)+", ")+"afChargingIdentifier = ")+ afChargingIdentifier)+", ")+"timeofLastUsage = ")+ timeofLastUsage)+", ")+"servingNodeID = ")+ servingNodeID)+", ")+"presenceReportingAreaInformation = ")+ presenceReportingAreaInformation)+", ")+"sponsorIdentity = ")+ sponsorIdentity)+", ")+"timeofFirstUsage = ")+ timeofFirstUsage)+", ")+"qoSInformation = ")+ qoSInformation)+", ")+"aFCorrelationInformation = ")+ aFCorrelationInformation)+"}");
+        return ((((((((((((((((((((((((((((((((((((((((((((((((((("PDUContainerInformation {"+"mAPDUSteeringFunctionality = ")+ mAPDUSteeringFunctionality)+", ")+"applicationserviceProviderIdentity = ")+ applicationserviceProviderIdentity)+", ")+"mAPDUSteeringMode = ")+ mAPDUSteeringMode)+", ")+"rATType = ")+ rATType)+", ")+"chargingRuleBaseName = ")+ chargingRuleBaseName)+", ")+"qoSCharacteristics = ")+ qoSCharacteristics)+", ")+"afChargingIdString = ")+ afChargingIdString)+", ")+"uetimeZone = ")+ uetimeZone)+", ")+"userLocationInformation = ")+ userLocationInformation)+", ")+"afChargingIdentifier = ")+ afChargingIdentifier)+", ")+"timeofLastUsage = ")+ timeofLastUsage)+", ")+"presenceReportingAreaInformation = ")+ presenceReportingAreaInformation)+", ")+"servingNodeID = ")+ servingNodeID)+", ")+"sponsorIdentity = ")+ sponsorIdentity)+", ")+"timeofFirstUsage = ")+ timeofFirstUsage)+", ")+"qoSInformation = ")+ qoSInformation)+", ")+"aFCorrelationInformation = ")+ aFCorrelationInformation)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mAPDUSteeringFunctionality, applicationserviceProviderIdentity, mAPDUSteeringMode, rATType, chargingRuleBaseName, afChargingIdString, qoSCharacteristics, uetimeZone, userLocationInformation, afChargingIdentifier, timeofLastUsage, servingNodeID, presenceReportingAreaInformation, sponsorIdentity, timeofFirstUsage, qoSInformation, aFCorrelationInformation);
+        return Objects.hash(mAPDUSteeringFunctionality, applicationserviceProviderIdentity, mAPDUSteeringMode, rATType, chargingRuleBaseName, qoSCharacteristics, afChargingIdString, uetimeZone, userLocationInformation, afChargingIdentifier, timeofLastUsage, presenceReportingAreaInformation, servingNodeID, sponsorIdentity, timeofFirstUsage, qoSInformation, aFCorrelationInformation);
     }
 
     @Override
@@ -274,6 +274,6 @@ public class PDUContainerInformation {
             return false;
         }
         PDUContainerInformation castThat = ((PDUContainerInformation) that);
-        return ((((((((((((((((Objects.equals(this.mAPDUSteeringFunctionality, castThat.mAPDUSteeringFunctionality)&&Objects.equals(this.applicationserviceProviderIdentity, castThat.applicationserviceProviderIdentity))&&Objects.equals(this.mAPDUSteeringMode, castThat.mAPDUSteeringMode))&&Objects.equals(this.rATType, castThat.rATType))&&Objects.equals(this.chargingRuleBaseName, castThat.chargingRuleBaseName))&&Objects.equals(this.afChargingIdString, castThat.afChargingIdString))&&Objects.equals(this.qoSCharacteristics, castThat.qoSCharacteristics))&&Objects.equals(this.uetimeZone, castThat.uetimeZone))&&Objects.equals(this.userLocationInformation, castThat.userLocationInformation))&&Objects.equals(this.afChargingIdentifier, castThat.afChargingIdentifier))&&Objects.equals(this.timeofLastUsage, castThat.timeofLastUsage))&&Objects.equals(this.servingNodeID, castThat.servingNodeID))&&Objects.equals(this.presenceReportingAreaInformation, castThat.presenceReportingAreaInformation))&&Objects.equals(this.sponsorIdentity, castThat.sponsorIdentity))&&Objects.equals(this.timeofFirstUsage, castThat.timeofFirstUsage))&&Objects.equals(this.qoSInformation, castThat.qoSInformation))&&Objects.equals(this.aFCorrelationInformation, castThat.aFCorrelationInformation));
+        return ((((((((((((((((Objects.equals(this.mAPDUSteeringFunctionality, castThat.mAPDUSteeringFunctionality)&&Objects.equals(this.applicationserviceProviderIdentity, castThat.applicationserviceProviderIdentity))&&Objects.equals(this.mAPDUSteeringMode, castThat.mAPDUSteeringMode))&&Objects.equals(this.rATType, castThat.rATType))&&Objects.equals(this.chargingRuleBaseName, castThat.chargingRuleBaseName))&&Objects.equals(this.qoSCharacteristics, castThat.qoSCharacteristics))&&Objects.equals(this.afChargingIdString, castThat.afChargingIdString))&&Objects.equals(this.uetimeZone, castThat.uetimeZone))&&Objects.equals(this.userLocationInformation, castThat.userLocationInformation))&&Objects.equals(this.afChargingIdentifier, castThat.afChargingIdentifier))&&Objects.equals(this.timeofLastUsage, castThat.timeofLastUsage))&&Objects.equals(this.presenceReportingAreaInformation, castThat.presenceReportingAreaInformation))&&Objects.equals(this.servingNodeID, castThat.servingNodeID))&&Objects.equals(this.sponsorIdentity, castThat.sponsorIdentity))&&Objects.equals(this.timeofFirstUsage, castThat.timeofFirstUsage))&&Objects.equals(this.qoSInformation, castThat.qoSInformation))&&Objects.equals(this.aFCorrelationInformation, castThat.aFCorrelationInformation));
     }
 }

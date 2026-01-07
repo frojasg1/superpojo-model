@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class Throughput {
-    private Float maximumThpt;
-    private Float guaranteedThpt;
+    public Float maximumThpt;
+    public Float guaranteedThpt;
 
     public Float getMaximumThpt() {
         return maximumThpt;

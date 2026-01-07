@@ -4,13 +4,13 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class QosCharacteristics {
-    private Integer extMaxDataBurstVol;
-    private Integer priorityLevel;
-    private Integer maxDataBurstVol;
-    private String packetErrorRate;
-    private QosResourceType resourceType;
-    private Integer packetDelayBudget;
-    private Integer averagingWindow;
+    public Integer extMaxDataBurstVol;
+    public Integer priorityLevel;
+    public Integer maxDataBurstVol;
+    public String packetErrorRate;
+    public QosResourceType resourceType;
+    public Integer averagingWindow;
+    public Integer packetDelayBudget;
 
     public Integer getExtMaxDataBurstVol() {
         return extMaxDataBurstVol;
@@ -77,19 +77,6 @@ public class QosCharacteristics {
         return this;
     }
 
-    public Integer getPacketDelayBudget() {
-        return packetDelayBudget;
-    }
-
-    public void setPacketDelayBudget(Integer packetDelayBudget) {
-        this.packetDelayBudget = packetDelayBudget;
-    }
-
-    public QosCharacteristics packetDelayBudget(Integer packetDelayBudget) {
-        this.packetDelayBudget = packetDelayBudget;
-        return this;
-    }
-
     public Integer getAveragingWindow() {
         return averagingWindow;
     }
@@ -103,14 +90,27 @@ public class QosCharacteristics {
         return this;
     }
 
+    public Integer getPacketDelayBudget() {
+        return packetDelayBudget;
+    }
+
+    public void setPacketDelayBudget(Integer packetDelayBudget) {
+        this.packetDelayBudget = packetDelayBudget;
+    }
+
+    public QosCharacteristics packetDelayBudget(Integer packetDelayBudget) {
+        this.packetDelayBudget = packetDelayBudget;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return ((((((((((((((((((((("QosCharacteristics {"+"extMaxDataBurstVol = ")+ extMaxDataBurstVol)+", ")+"priorityLevel = ")+ priorityLevel)+", ")+"maxDataBurstVol = ")+ maxDataBurstVol)+", ")+"packetErrorRate = ")+ packetErrorRate)+", ")+"resourceType = ")+ resourceType)+", ")+"packetDelayBudget = ")+ packetDelayBudget)+", ")+"averagingWindow = ")+ averagingWindow)+"}");
+        return ((((((((((((((((((((("QosCharacteristics {"+"extMaxDataBurstVol = ")+ extMaxDataBurstVol)+", ")+"priorityLevel = ")+ priorityLevel)+", ")+"maxDataBurstVol = ")+ maxDataBurstVol)+", ")+"packetErrorRate = ")+ packetErrorRate)+", ")+"resourceType = ")+ resourceType)+", ")+"averagingWindow = ")+ averagingWindow)+", ")+"packetDelayBudget = ")+ packetDelayBudget)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(extMaxDataBurstVol, priorityLevel, maxDataBurstVol, packetErrorRate, resourceType, packetDelayBudget, averagingWindow);
+        return Objects.hash(extMaxDataBurstVol, priorityLevel, maxDataBurstVol, packetErrorRate, resourceType, averagingWindow, packetDelayBudget);
     }
 
     @Override
@@ -122,6 +122,6 @@ public class QosCharacteristics {
             return false;
         }
         QosCharacteristics castThat = ((QosCharacteristics) that);
-        return ((((((Objects.equals(this.extMaxDataBurstVol, castThat.extMaxDataBurstVol)&&Objects.equals(this.priorityLevel, castThat.priorityLevel))&&Objects.equals(this.maxDataBurstVol, castThat.maxDataBurstVol))&&Objects.equals(this.packetErrorRate, castThat.packetErrorRate))&&Objects.equals(this.resourceType, castThat.resourceType))&&Objects.equals(this.packetDelayBudget, castThat.packetDelayBudget))&&Objects.equals(this.averagingWindow, castThat.averagingWindow));
+        return ((((((Objects.equals(this.extMaxDataBurstVol, castThat.extMaxDataBurstVol)&&Objects.equals(this.priorityLevel, castThat.priorityLevel))&&Objects.equals(this.maxDataBurstVol, castThat.maxDataBurstVol))&&Objects.equals(this.packetErrorRate, castThat.packetErrorRate))&&Objects.equals(this.resourceType, castThat.resourceType))&&Objects.equals(this.averagingWindow, castThat.averagingWindow))&&Objects.equals(this.packetDelayBudget, castThat.packetDelayBudget));
     }
 }

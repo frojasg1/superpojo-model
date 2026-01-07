@@ -4,7 +4,7 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class SMAddressDomain {
-    private String domainName;
+    public String domainName;
 
     public String getDomainName() {
         return domainName;

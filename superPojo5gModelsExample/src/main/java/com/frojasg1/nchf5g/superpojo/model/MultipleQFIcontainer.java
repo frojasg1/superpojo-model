@@ -7,14 +7,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class MultipleQFIcontainer {
-    private Long totalVolume;
-    private Long downlinkVolume;
-    private Long uplinkVolume;
-    private Integer time;
-    private QFIContainerInformation qFIContainerInformation;
-    private List<Trigger> triggers;
-    private Date triggerTimestamp;
-    private Integer localSequenceNumber;
+    public Long totalVolume;
+    public Long downlinkVolume;
+    public Long uplinkVolume;
+    public Integer time;
+    public QFIContainerInformation qFIContainerInformation;
+    public List<Trigger> triggers;
+    public Date triggerTimestamp;
+    public Integer localSequenceNumber;
 
     public Long getTotalVolume() {
         return totalVolume;

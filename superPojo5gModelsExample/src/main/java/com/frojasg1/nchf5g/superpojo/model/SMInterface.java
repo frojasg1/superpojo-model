@@ -4,10 +4,10 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class SMInterface {
-    private InterfaceType interfaceType;
-    private String interfacePort;
-    private String interfaceId;
-    private String interfaceText;
+    public InterfaceType interfaceType;
+    public String interfacePort;
+    public String interfaceId;
+    public String interfaceText;
 
     public InterfaceType getInterfaceType() {
         return interfaceType;

@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class PlmnId {
-    private String mcc;
-    private String mnc;
+    public String mcc;
+    public String mnc;
 
     public String getMcc() {
         return mcc;

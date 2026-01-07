@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class Tai {
-    private String nid;
-    private String tac;
-    private PlmnId plmnId;
+    public String nid;
+    public String tac;
+    public PlmnId plmnId;
 
     public String getNid() {
         return nid;

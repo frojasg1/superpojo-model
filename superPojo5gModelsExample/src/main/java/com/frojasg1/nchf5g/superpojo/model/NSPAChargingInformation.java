@@ -4,7 +4,7 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class NSPAChargingInformation {
-    private Snssai singleNSSAI;
+    public Snssai singleNSSAI;
 
     public Snssai getSingleNSSAI() {
         return singleNSSAI;

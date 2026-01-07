@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class AtsssCapability {
-    private Boolean atsssLL;
-    private Boolean mptcp;
-    private Boolean rttWithoutPmf;
+    public Boolean atsssLL;
+    public Boolean mptcp;
+    public Boolean rttWithoutPmf;
 
     public Boolean getAtsssLL() {
         return atsssLL;

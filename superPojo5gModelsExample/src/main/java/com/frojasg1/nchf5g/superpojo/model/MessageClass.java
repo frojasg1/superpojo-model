@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class MessageClass {
-    private String tokenText;
-    private ClassIdentifier classIdentifier;
+    public String tokenText;
+    public ClassIdentifier classIdentifier;
 
     public String getTokenText() {
         return tokenText;

@@ -5,13 +5,13 @@ import java.util.Map;
 import java.util.Objects;
 
 public class LocationReportingChargingInformation {
-    private Map<String, PresenceInfo> presenceReportingAreaInformation;
-    private PSCellInformation pSCellInformation;
-    private RatType rATType;
-    private UserInformation userInformation;
-    private String uetimeZone;
-    private UserLocation userLocationinfo;
-    private Integer locationReportingMessageType;
+    public Map<String, PresenceInfo> presenceReportingAreaInformation;
+    public PSCellInformation pSCellInformation;
+    public RatType rATType;
+    public UserInformation userInformation;
+    public String uetimeZone;
+    public UserLocation userLocationinfo;
+    public Integer locationReportingMessageType;
 
     public Map<String, PresenceInfo> getPresenceReportingAreaInformation() {
         return presenceReportingAreaInformation;

@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class RedirectServer {
-    private RedirectAddressType redirectAddressType;
-    private String redirectServerAddress;
+    public RedirectAddressType redirectAddressType;
+    public String redirectServerAddress;
 
     public RedirectAddressType getRedirectAddressType() {
         return redirectAddressType;

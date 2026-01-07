@@ -4,15 +4,15 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class NEFChargingInformation {
-    private Integer aPIResultCode;
-    private NFIdentification aPITargetNetworkFunction;
-    private String aPIContent;
-    private String externalIndividualIdentifier;
-    private String aPIReference;
-    private String externalGroupIdentifier;
-    private String aPIName;
-    private String groupIdentifier;
-    private APIDirection aPIDirection;
+    public Integer aPIResultCode;
+    public NFIdentification aPITargetNetworkFunction;
+    public String aPIContent;
+    public String externalIndividualIdentifier;
+    public String aPIReference;
+    public String externalGroupIdentifier;
+    public String aPIName;
+    public String groupIdentifier;
+    public APIDirection aPIDirection;
 
     public Integer getaPIResultCode() {
         return aPIResultCode;

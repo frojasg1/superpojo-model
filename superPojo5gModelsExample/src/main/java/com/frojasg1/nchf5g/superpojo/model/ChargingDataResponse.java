@@ -7,16 +7,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class ChargingDataResponse {
-    private List<MultipleUnitInformation> multipleUnitInformation;
-    private InvocationResult invocationResult;
-    private SessionFailover sessionFailover;
-    private String supportedFeatures;
-    private Integer invocationSequenceNumber;
-    private RoamingQBCInformation roamingQBCInformation;
-    private Date invocationTimeStamp;
-    private PDUSessionChargingInformation pDUSessionChargingInformation;
-    private List<Trigger> triggers;
-    private LocationReportingChargingInformation locationReportingChargingInformation;
+    public List<MultipleUnitInformation> multipleUnitInformation;
+    public SessionFailover sessionFailover;
+    public InvocationResult invocationResult;
+    public String supportedFeatures;
+    public Integer invocationSequenceNumber;
+    public Date invocationTimeStamp;
+    public RoamingQBCInformation roamingQBCInformation;
+    public PDUSessionChargingInformation pDUSessionChargingInformation;
+    public List<Trigger> triggers;
+    public LocationReportingChargingInformation locationReportingChargingInformation;
 
     public List<MultipleUnitInformation> getMultipleUnitInformation() {
         return multipleUnitInformation;
@@ -39,19 +39,6 @@ public class ChargingDataResponse {
         return this;
     }
 
-    public InvocationResult getInvocationResult() {
-        return invocationResult;
-    }
-
-    public void setInvocationResult(InvocationResult invocationResult) {
-        this.invocationResult = invocationResult;
-    }
-
-    public ChargingDataResponse invocationResult(InvocationResult invocationResult) {
-        this.invocationResult = invocationResult;
-        return this;
-    }
-
     public SessionFailover getSessionFailover() {
         return sessionFailover;
     }
@@ -62,6 +49,19 @@ public class ChargingDataResponse {
 
     public ChargingDataResponse sessionFailover(SessionFailover sessionFailover) {
         this.sessionFailover = sessionFailover;
+        return this;
+    }
+
+    public InvocationResult getInvocationResult() {
+        return invocationResult;
+    }
+
+    public void setInvocationResult(InvocationResult invocationResult) {
+        this.invocationResult = invocationResult;
+    }
+
+    public ChargingDataResponse invocationResult(InvocationResult invocationResult) {
+        this.invocationResult = invocationResult;
         return this;
     }
 
@@ -91,19 +91,6 @@ public class ChargingDataResponse {
         return this;
     }
 
-    public RoamingQBCInformation getRoamingQBCInformation() {
-        return roamingQBCInformation;
-    }
-
-    public void setRoamingQBCInformation(RoamingQBCInformation roamingQBCInformation) {
-        this.roamingQBCInformation = roamingQBCInformation;
-    }
-
-    public ChargingDataResponse roamingQBCInformation(RoamingQBCInformation roamingQBCInformation) {
-        this.roamingQBCInformation = roamingQBCInformation;
-        return this;
-    }
-
     public Date getInvocationTimeStamp() {
         return invocationTimeStamp;
     }
@@ -114,6 +101,19 @@ public class ChargingDataResponse {
 
     public ChargingDataResponse invocationTimeStamp(Date invocationTimeStamp) {
         this.invocationTimeStamp = invocationTimeStamp;
+        return this;
+    }
+
+    public RoamingQBCInformation getRoamingQBCInformation() {
+        return roamingQBCInformation;
+    }
+
+    public void setRoamingQBCInformation(RoamingQBCInformation roamingQBCInformation) {
+        this.roamingQBCInformation = roamingQBCInformation;
+    }
+
+    public ChargingDataResponse roamingQBCInformation(RoamingQBCInformation roamingQBCInformation) {
+        this.roamingQBCInformation = roamingQBCInformation;
         return this;
     }
 
@@ -166,12 +166,12 @@ public class ChargingDataResponse {
 
     @Override
     public String toString() {
-        return (((((((((((((((((((((((((((((("ChargingDataResponse {"+"multipleUnitInformation = ")+ multipleUnitInformation)+", ")+"invocationResult = ")+ invocationResult)+", ")+"sessionFailover = ")+ sessionFailover)+", ")+"supportedFeatures = ")+ supportedFeatures)+", ")+"invocationSequenceNumber = ")+ invocationSequenceNumber)+", ")+"roamingQBCInformation = ")+ roamingQBCInformation)+", ")+"invocationTimeStamp = ")+ invocationTimeStamp)+", ")+"pDUSessionChargingInformation = ")+ pDUSessionChargingInformation)+", ")+"triggers = ")+ triggers)+", ")+"locationReportingChargingInformation = ")+ locationReportingChargingInformation)+"}");
+        return (((((((((((((((((((((((((((((("ChargingDataResponse {"+"multipleUnitInformation = ")+ multipleUnitInformation)+", ")+"sessionFailover = ")+ sessionFailover)+", ")+"invocationResult = ")+ invocationResult)+", ")+"supportedFeatures = ")+ supportedFeatures)+", ")+"invocationSequenceNumber = ")+ invocationSequenceNumber)+", ")+"invocationTimeStamp = ")+ invocationTimeStamp)+", ")+"roamingQBCInformation = ")+ roamingQBCInformation)+", ")+"pDUSessionChargingInformation = ")+ pDUSessionChargingInformation)+", ")+"triggers = ")+ triggers)+", ")+"locationReportingChargingInformation = ")+ locationReportingChargingInformation)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(multipleUnitInformation, invocationResult, sessionFailover, supportedFeatures, invocationSequenceNumber, roamingQBCInformation, invocationTimeStamp, pDUSessionChargingInformation, triggers, locationReportingChargingInformation);
+        return Objects.hash(multipleUnitInformation, sessionFailover, invocationResult, supportedFeatures, invocationSequenceNumber, invocationTimeStamp, roamingQBCInformation, pDUSessionChargingInformation, triggers, locationReportingChargingInformation);
     }
 
     @Override
@@ -183,6 +183,6 @@ public class ChargingDataResponse {
             return false;
         }
         ChargingDataResponse castThat = ((ChargingDataResponse) that);
-        return (((((((((Objects.equals(this.multipleUnitInformation, castThat.multipleUnitInformation)&&Objects.equals(this.invocationResult, castThat.invocationResult))&&Objects.equals(this.sessionFailover, castThat.sessionFailover))&&Objects.equals(this.supportedFeatures, castThat.supportedFeatures))&&Objects.equals(this.invocationSequenceNumber, castThat.invocationSequenceNumber))&&Objects.equals(this.roamingQBCInformation, castThat.roamingQBCInformation))&&Objects.equals(this.invocationTimeStamp, castThat.invocationTimeStamp))&&Objects.equals(this.pDUSessionChargingInformation, castThat.pDUSessionChargingInformation))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.locationReportingChargingInformation, castThat.locationReportingChargingInformation));
+        return (((((((((Objects.equals(this.multipleUnitInformation, castThat.multipleUnitInformation)&&Objects.equals(this.sessionFailover, castThat.sessionFailover))&&Objects.equals(this.invocationResult, castThat.invocationResult))&&Objects.equals(this.supportedFeatures, castThat.supportedFeatures))&&Objects.equals(this.invocationSequenceNumber, castThat.invocationSequenceNumber))&&Objects.equals(this.invocationTimeStamp, castThat.invocationTimeStamp))&&Objects.equals(this.roamingQBCInformation, castThat.roamingQBCInformation))&&Objects.equals(this.pDUSessionChargingInformation, castThat.pDUSessionChargingInformation))&&Objects.equals(this.triggers, castThat.triggers))&&Objects.equals(this.locationReportingChargingInformation, castThat.locationReportingChargingInformation));
     }
 }

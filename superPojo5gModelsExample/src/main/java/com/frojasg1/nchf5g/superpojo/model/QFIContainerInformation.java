@@ -8,19 +8,19 @@ import java.util.Map;
 import java.util.Objects;
 
 public class QFIContainerInformation {
-    private RatType rATType;
-    private QosCharacteristics qoSCharacteristics;
-    private String uetimeZone;
-    private List<String> enhancedDiagnostics;
-    private UserLocation userLocationInformation;
-    private List<ServingNetworkFunctionID> servingNetworkFunctionID;
-    private Integer diagnostics;
-    private Date timeofLastUsage;
-    private Map<String, PresenceInfo> presenceReportingAreaInformation;
-    private Integer qFI;
-    private Date timeofFirstUsage;
-    private QosData qoSInformation;
-    private Date reportTime;
+    public RatType rATType;
+    public QosCharacteristics qoSCharacteristics;
+    public String uetimeZone;
+    public List<String> enhancedDiagnostics;
+    public UserLocation userLocationInformation;
+    public List<ServingNetworkFunctionID> servingNetworkFunctionID;
+    public Integer diagnostics;
+    public Date timeofLastUsage;
+    public Map<String, PresenceInfo> presenceReportingAreaInformation;
+    public Integer qFI;
+    public Date timeofFirstUsage;
+    public QosData qoSInformation;
+    public Date reportTime;
 
     public RatType getrATType() {
         return rATType;

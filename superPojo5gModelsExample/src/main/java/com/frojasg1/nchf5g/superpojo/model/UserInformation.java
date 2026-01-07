@@ -4,10 +4,10 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class UserInformation {
-    private RoamerInOut roamerInOut;
-    private Boolean unauthenticatedFlag;
-    private String servedPEI;
-    private String servedGPSI;
+    public RoamerInOut roamerInOut;
+    public Boolean unauthenticatedFlag;
+    public String servedGPSI;
+    public String servedPEI;
 
     public RoamerInOut getRoamerInOut() {
         return roamerInOut;
@@ -35,19 +35,6 @@ public class UserInformation {
         return this;
     }
 
-    public String getServedPEI() {
-        return servedPEI;
-    }
-
-    public void setServedPEI(String servedPEI) {
-        this.servedPEI = servedPEI;
-    }
-
-    public UserInformation servedPEI(String servedPEI) {
-        this.servedPEI = servedPEI;
-        return this;
-    }
-
     public String getServedGPSI() {
         return servedGPSI;
     }
@@ -61,14 +48,27 @@ public class UserInformation {
         return this;
     }
 
+    public String getServedPEI() {
+        return servedPEI;
+    }
+
+    public void setServedPEI(String servedPEI) {
+        this.servedPEI = servedPEI;
+    }
+
+    public UserInformation servedPEI(String servedPEI) {
+        this.servedPEI = servedPEI;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return (((((((((((("UserInformation {"+"roamerInOut = ")+ roamerInOut)+", ")+"unauthenticatedFlag = ")+ unauthenticatedFlag)+", ")+"servedPEI = ")+ servedPEI)+", ")+"servedGPSI = ")+ servedGPSI)+"}");
+        return (((((((((((("UserInformation {"+"roamerInOut = ")+ roamerInOut)+", ")+"unauthenticatedFlag = ")+ unauthenticatedFlag)+", ")+"servedGPSI = ")+ servedGPSI)+", ")+"servedPEI = ")+ servedPEI)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(roamerInOut, unauthenticatedFlag, servedPEI, servedGPSI);
+        return Objects.hash(roamerInOut, unauthenticatedFlag, servedGPSI, servedPEI);
     }
 
     @Override
@@ -80,6 +80,6 @@ public class UserInformation {
             return false;
         }
         UserInformation castThat = ((UserInformation) that);
-        return (((Objects.equals(this.roamerInOut, castThat.roamerInOut)&&Objects.equals(this.unauthenticatedFlag, castThat.unauthenticatedFlag))&&Objects.equals(this.servedPEI, castThat.servedPEI))&&Objects.equals(this.servedGPSI, castThat.servedGPSI));
+        return (((Objects.equals(this.roamerInOut, castThat.roamerInOut)&&Objects.equals(this.unauthenticatedFlag, castThat.unauthenticatedFlag))&&Objects.equals(this.servedGPSI, castThat.servedGPSI))&&Objects.equals(this.servedPEI, castThat.servedPEI));
     }
 }

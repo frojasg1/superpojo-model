@@ -7,9 +7,9 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class RoamingQBCInformation {
-    private UUID uPFID;
-    private RoamingChargingProfile roamingChargingProfile;
-    private List<MultipleQFIcontainer> multipleQFIcontainer;
+    public UUID uPFID;
+    public RoamingChargingProfile roamingChargingProfile;
+    public List<MultipleQFIcontainer> multipleQFIcontainer;
 
     public UUID getuPFID() {
         return uPFID;

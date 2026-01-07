@@ -7,22 +7,22 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class AccessTokenReq {
-    private UUID nfInstanceId;
-    private String targetNfSetId;
-    private NFType nfType;
-    private List<PlmnIdNid> requesterSnpnList;
-    private PlmnId requesterPlmn;
-    private NFType targetNfType;
-    private PlmnId targetPlmn;
-    private UUID targetNfInstanceId;
-    private List<Snssai> requesterSnssaiList;
-    private String targetNfServiceSetId;
-    private String scope;
-    private List<String> targetNsiList;
-    private List<Snssai> targetSnssaiList;
-    private List<PlmnId> requesterPlmnList;
-    private AccessTokenReq.GrantTypeEnum grantType;
-    private String requesterFqdn;
+    public UUID nfInstanceId;
+    public String targetNfSetId;
+    public List<PlmnIdNid> requesterSnpnList;
+    public NFType nfType;
+    public PlmnId requesterPlmn;
+    public NFType targetNfType;
+    public UUID targetNfInstanceId;
+    public PlmnId targetPlmn;
+    public List<Snssai> requesterSnssaiList;
+    public String targetNfServiceSetId;
+    public String scope;
+    public List<String> targetNsiList;
+    public List<Snssai> targetSnssaiList;
+    public List<PlmnId> requesterPlmnList;
+    public AccessTokenReq.GrantTypeEnum grantType;
+    public String requesterFqdn;
 
     public UUID getNfInstanceId() {
         return nfInstanceId;
@@ -50,19 +50,6 @@ public class AccessTokenReq {
         return this;
     }
 
-    public NFType getNfType() {
-        return nfType;
-    }
-
-    public void setNfType(NFType nfType) {
-        this.nfType = nfType;
-    }
-
-    public AccessTokenReq nfType(NFType nfType) {
-        this.nfType = nfType;
-        return this;
-    }
-
     public List<PlmnIdNid> getRequesterSnpnList() {
         return requesterSnpnList;
     }
@@ -81,6 +68,19 @@ public class AccessTokenReq {
             this.requesterSnpnList = new ArrayList();
         }
         this.requesterSnpnList.add(item);
+        return this;
+    }
+
+    public NFType getNfType() {
+        return nfType;
+    }
+
+    public void setNfType(NFType nfType) {
+        this.nfType = nfType;
+    }
+
+    public AccessTokenReq nfType(NFType nfType) {
+        this.nfType = nfType;
         return this;
     }
 
@@ -110,19 +110,6 @@ public class AccessTokenReq {
         return this;
     }
 
-    public PlmnId getTargetPlmn() {
-        return targetPlmn;
-    }
-
-    public void setTargetPlmn(PlmnId targetPlmn) {
-        this.targetPlmn = targetPlmn;
-    }
-
-    public AccessTokenReq targetPlmn(PlmnId targetPlmn) {
-        this.targetPlmn = targetPlmn;
-        return this;
-    }
-
     public UUID getTargetNfInstanceId() {
         return targetNfInstanceId;
     }
@@ -133,6 +120,19 @@ public class AccessTokenReq {
 
     public AccessTokenReq targetNfInstanceId(UUID targetNfInstanceId) {
         this.targetNfInstanceId = targetNfInstanceId;
+        return this;
+    }
+
+    public PlmnId getTargetPlmn() {
+        return targetPlmn;
+    }
+
+    public void setTargetPlmn(PlmnId targetPlmn) {
+        this.targetPlmn = targetPlmn;
+    }
+
+    public AccessTokenReq targetPlmn(PlmnId targetPlmn) {
+        this.targetPlmn = targetPlmn;
         return this;
     }
 
@@ -274,12 +274,12 @@ public class AccessTokenReq {
 
     @Override
     public String toString() {
-        return (((((((((((((((((((((((((((((((((((((((((((((((("AccessTokenReq {"+"nfInstanceId = ")+ nfInstanceId)+", ")+"targetNfSetId = ")+ targetNfSetId)+", ")+"nfType = ")+ nfType)+", ")+"requesterSnpnList = ")+ requesterSnpnList)+", ")+"requesterPlmn = ")+ requesterPlmn)+", ")+"targetNfType = ")+ targetNfType)+", ")+"targetPlmn = ")+ targetPlmn)+", ")+"targetNfInstanceId = ")+ targetNfInstanceId)+", ")+"requesterSnssaiList = ")+ requesterSnssaiList)+", ")+"targetNfServiceSetId = ")+ targetNfServiceSetId)+", ")+"scope = ")+ scope)+", ")+"targetNsiList = ")+ targetNsiList)+", ")+"targetSnssaiList = ")+ targetSnssaiList)+", ")+"requesterPlmnList = ")+ requesterPlmnList)+", ")+"grantType = ")+ grantType)+", ")+"requesterFqdn = ")+ requesterFqdn)+"}");
+        return (((((((((((((((((((((((((((((((((((((((((((((((("AccessTokenReq {"+"nfInstanceId = ")+ nfInstanceId)+", ")+"targetNfSetId = ")+ targetNfSetId)+", ")+"requesterSnpnList = ")+ requesterSnpnList)+", ")+"nfType = ")+ nfType)+", ")+"requesterPlmn = ")+ requesterPlmn)+", ")+"targetNfType = ")+ targetNfType)+", ")+"targetNfInstanceId = ")+ targetNfInstanceId)+", ")+"targetPlmn = ")+ targetPlmn)+", ")+"requesterSnssaiList = ")+ requesterSnssaiList)+", ")+"targetNfServiceSetId = ")+ targetNfServiceSetId)+", ")+"scope = ")+ scope)+", ")+"targetNsiList = ")+ targetNsiList)+", ")+"targetSnssaiList = ")+ targetSnssaiList)+", ")+"requesterPlmnList = ")+ requesterPlmnList)+", ")+"grantType = ")+ grantType)+", ")+"requesterFqdn = ")+ requesterFqdn)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nfInstanceId, targetNfSetId, nfType, requesterSnpnList, requesterPlmn, targetNfType, targetPlmn, targetNfInstanceId, requesterSnssaiList, targetNfServiceSetId, scope, targetNsiList, targetSnssaiList, requesterPlmnList, grantType, requesterFqdn);
+        return Objects.hash(nfInstanceId, targetNfSetId, requesterSnpnList, nfType, requesterPlmn, targetNfType, targetNfInstanceId, targetPlmn, requesterSnssaiList, targetNfServiceSetId, scope, targetNsiList, targetSnssaiList, requesterPlmnList, grantType, requesterFqdn);
     }
 
     @Override
@@ -291,7 +291,7 @@ public class AccessTokenReq {
             return false;
         }
         AccessTokenReq castThat = ((AccessTokenReq) that);
-        return (((((((((((((((Objects.equals(this.nfInstanceId, castThat.nfInstanceId)&&Objects.equals(this.targetNfSetId, castThat.targetNfSetId))&&Objects.equals(this.nfType, castThat.nfType))&&Objects.equals(this.requesterSnpnList, castThat.requesterSnpnList))&&Objects.equals(this.requesterPlmn, castThat.requesterPlmn))&&Objects.equals(this.targetNfType, castThat.targetNfType))&&Objects.equals(this.targetPlmn, castThat.targetPlmn))&&Objects.equals(this.targetNfInstanceId, castThat.targetNfInstanceId))&&Objects.equals(this.requesterSnssaiList, castThat.requesterSnssaiList))&&Objects.equals(this.targetNfServiceSetId, castThat.targetNfServiceSetId))&&Objects.equals(this.scope, castThat.scope))&&Objects.equals(this.targetNsiList, castThat.targetNsiList))&&Objects.equals(this.targetSnssaiList, castThat.targetSnssaiList))&&Objects.equals(this.requesterPlmnList, castThat.requesterPlmnList))&&Objects.equals(this.grantType, castThat.grantType))&&Objects.equals(this.requesterFqdn, castThat.requesterFqdn));
+        return (((((((((((((((Objects.equals(this.nfInstanceId, castThat.nfInstanceId)&&Objects.equals(this.targetNfSetId, castThat.targetNfSetId))&&Objects.equals(this.requesterSnpnList, castThat.requesterSnpnList))&&Objects.equals(this.nfType, castThat.nfType))&&Objects.equals(this.requesterPlmn, castThat.requesterPlmn))&&Objects.equals(this.targetNfType, castThat.targetNfType))&&Objects.equals(this.targetNfInstanceId, castThat.targetNfInstanceId))&&Objects.equals(this.targetPlmn, castThat.targetPlmn))&&Objects.equals(this.requesterSnssaiList, castThat.requesterSnssaiList))&&Objects.equals(this.targetNfServiceSetId, castThat.targetNfServiceSetId))&&Objects.equals(this.scope, castThat.scope))&&Objects.equals(this.targetNsiList, castThat.targetNsiList))&&Objects.equals(this.targetSnssaiList, castThat.targetSnssaiList))&&Objects.equals(this.requesterPlmnList, castThat.requesterPlmnList))&&Objects.equals(this.grantType, castThat.grantType))&&Objects.equals(this.requesterFqdn, castThat.requesterFqdn));
     }
 
     public static enum GrantTypeEnum {

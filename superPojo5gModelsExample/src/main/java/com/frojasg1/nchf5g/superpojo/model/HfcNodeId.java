@@ -4,7 +4,7 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class HfcNodeId {
-    private String hfcNId;
+    public String hfcNId;
 
     public String getHfcNId() {
         return hfcNId;

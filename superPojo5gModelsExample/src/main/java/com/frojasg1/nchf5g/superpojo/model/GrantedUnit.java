@@ -5,12 +5,12 @@ import java.util.Date;
 import java.util.Objects;
 
 public class GrantedUnit {
-    private Long totalVolume;
-    private Date tariffTimeChange;
-    private Long downlinkVolume;
-    private Long serviceSpecificUnits;
-    private Long uplinkVolume;
-    private Integer time;
+    public Long totalVolume;
+    public Date tariffTimeChange;
+    public Long downlinkVolume;
+    public Long serviceSpecificUnits;
+    public Long uplinkVolume;
+    public Integer time;
 
     public Long getTotalVolume() {
         return totalVolume;

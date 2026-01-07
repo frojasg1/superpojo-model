@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class PlmnIdNid {
-    private String nid;
-    private String mnc;
-    private String mcc;
+    public String nid;
+    public String mnc;
+    public String mcc;
 
     public String getNid() {
         return nid;

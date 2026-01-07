@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class ServingNetworkFunctionID {
-    private NFIdentification servingNetworkFunctionInformation;
-    private String aMFId;
+    public NFIdentification servingNetworkFunctionInformation;
+    public String aMFId;
 
     public NFIdentification getServingNetworkFunctionInformation() {
         return servingNetworkFunctionInformation;

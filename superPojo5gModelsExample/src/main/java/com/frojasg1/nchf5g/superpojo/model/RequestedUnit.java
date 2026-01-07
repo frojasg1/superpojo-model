@@ -4,11 +4,11 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class RequestedUnit {
-    private Long totalVolume;
-    private Long uplinkVolume;
-    private Long downlinkVolume;
-    private Long serviceSpecificUnits;
-    private Integer time;
+    public Long totalVolume;
+    public Long uplinkVolume;
+    public Long downlinkVolume;
+    public Long serviceSpecificUnits;
+    public Integer time;
 
     public Long getTotalVolume() {
         return totalVolume;

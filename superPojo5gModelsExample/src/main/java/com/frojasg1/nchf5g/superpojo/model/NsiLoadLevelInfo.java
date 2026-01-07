@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class NsiLoadLevelInfo {
-    private Snssai snssai;
-    private Integer loadLevelInformation;
-    private String nsiId;
+    public Snssai snssai;
+    public Integer loadLevelInformation;
+    public String nsiId;
 
     public Snssai getSnssai() {
         return snssai;

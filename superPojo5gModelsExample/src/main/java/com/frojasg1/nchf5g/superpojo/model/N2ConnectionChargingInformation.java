@@ -6,21 +6,21 @@ import java.util.List;
 import java.util.Objects;
 
 public class N2ConnectionChargingInformation {
-    private List<CoreNetworkType> restrictedCnList;
-    private Integer n2ConnectionMessageType;
-    private GlobalRanNodeId ranNodeId;
-    private List<Snssai> allowedNSSAI;
-    private PSCellInformation pSCellInformation;
-    private RatType rATType;
-    private String uetimeZone;
-    private Integer ranUeNgapId;
-    private List<Area> forbiddenAreaList;
-    private Integer amfUeNgapId;
-    private String rrcEstCause;
-    private UserInformation userInformation;
-    private List<RatType> restrictedRatList;
-    private List<ServiceAreaRestriction> serviceAreaRestriction;
-    private UserLocation userLocationinfo;
+    public List<CoreNetworkType> restrictedCnList;
+    public Integer n2ConnectionMessageType;
+    public GlobalRanNodeId ranNodeId;
+    public List<Snssai> allowedNSSAI;
+    public PSCellInformation pSCellInformation;
+    public RatType rATType;
+    public String uetimeZone;
+    public Integer ranUeNgapId;
+    public List<Area> forbiddenAreaList;
+    public Integer amfUeNgapId;
+    public String rrcEstCause;
+    public UserInformation userInformation;
+    public List<RatType> restrictedRatList;
+    public List<ServiceAreaRestriction> serviceAreaRestriction;
+    public UserLocation userLocationinfo;
 
     public List<CoreNetworkType> getRestrictedCnList() {
         return restrictedCnList;

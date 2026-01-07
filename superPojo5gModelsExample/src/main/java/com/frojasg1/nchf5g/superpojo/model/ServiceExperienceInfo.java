@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class ServiceExperienceInfo {
-    private NetworkAreaInfo networkArea;
-    private Snssai snssai;
-    private Float svcExprcVariance;
-    private List<String> supis;
-    private SvcExperience svcExprc;
-    private String dnn;
-    private Integer confidence;
-    private String appId;
-    private String nsiId;
-    private Integer ratio;
+    public NetworkAreaInfo networkArea;
+    public Snssai snssai;
+    public Float svcExprcVariance;
+    public List<String> supis;
+    public SvcExperience svcExprc;
+    public String dnn;
+    public String appId;
+    public Integer confidence;
+    public String nsiId;
+    public Integer ratio;
 
     public NetworkAreaInfo getNetworkArea() {
         return networkArea;
@@ -103,19 +103,6 @@ public class ServiceExperienceInfo {
         return this;
     }
 
-    public Integer getConfidence() {
-        return confidence;
-    }
-
-    public void setConfidence(Integer confidence) {
-        this.confidence = confidence;
-    }
-
-    public ServiceExperienceInfo confidence(Integer confidence) {
-        this.confidence = confidence;
-        return this;
-    }
-
     public String getAppId() {
         return appId;
     }
@@ -126,6 +113,19 @@ public class ServiceExperienceInfo {
 
     public ServiceExperienceInfo appId(String appId) {
         this.appId = appId;
+        return this;
+    }
+
+    public Integer getConfidence() {
+        return confidence;
+    }
+
+    public void setConfidence(Integer confidence) {
+        this.confidence = confidence;
+    }
+
+    public ServiceExperienceInfo confidence(Integer confidence) {
+        this.confidence = confidence;
         return this;
     }
 
@@ -157,12 +157,12 @@ public class ServiceExperienceInfo {
 
     @Override
     public String toString() {
-        return (((((((((((((((((((((((((((((("ServiceExperienceInfo {"+"networkArea = ")+ networkArea)+", ")+"snssai = ")+ snssai)+", ")+"svcExprcVariance = ")+ svcExprcVariance)+", ")+"supis = ")+ supis)+", ")+"svcExprc = ")+ svcExprc)+", ")+"dnn = ")+ dnn)+", ")+"confidence = ")+ confidence)+", ")+"appId = ")+ appId)+", ")+"nsiId = ")+ nsiId)+", ")+"ratio = ")+ ratio)+"}");
+        return (((((((((((((((((((((((((((((("ServiceExperienceInfo {"+"networkArea = ")+ networkArea)+", ")+"snssai = ")+ snssai)+", ")+"svcExprcVariance = ")+ svcExprcVariance)+", ")+"supis = ")+ supis)+", ")+"svcExprc = ")+ svcExprc)+", ")+"dnn = ")+ dnn)+", ")+"appId = ")+ appId)+", ")+"confidence = ")+ confidence)+", ")+"nsiId = ")+ nsiId)+", ")+"ratio = ")+ ratio)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(networkArea, snssai, svcExprcVariance, supis, svcExprc, dnn, confidence, appId, nsiId, ratio);
+        return Objects.hash(networkArea, snssai, svcExprcVariance, supis, svcExprc, dnn, appId, confidence, nsiId, ratio);
     }
 
     @Override
@@ -174,6 +174,6 @@ public class ServiceExperienceInfo {
             return false;
         }
         ServiceExperienceInfo castThat = ((ServiceExperienceInfo) that);
-        return (((((((((Objects.equals(this.networkArea, castThat.networkArea)&&Objects.equals(this.snssai, castThat.snssai))&&Objects.equals(this.svcExprcVariance, castThat.svcExprcVariance))&&Objects.equals(this.supis, castThat.supis))&&Objects.equals(this.svcExprc, castThat.svcExprc))&&Objects.equals(this.dnn, castThat.dnn))&&Objects.equals(this.confidence, castThat.confidence))&&Objects.equals(this.appId, castThat.appId))&&Objects.equals(this.nsiId, castThat.nsiId))&&Objects.equals(this.ratio, castThat.ratio));
+        return (((((((((Objects.equals(this.networkArea, castThat.networkArea)&&Objects.equals(this.snssai, castThat.snssai))&&Objects.equals(this.svcExprcVariance, castThat.svcExprcVariance))&&Objects.equals(this.supis, castThat.supis))&&Objects.equals(this.svcExprc, castThat.svcExprc))&&Objects.equals(this.dnn, castThat.dnn))&&Objects.equals(this.appId, castThat.appId))&&Objects.equals(this.confidence, castThat.confidence))&&Objects.equals(this.nsiId, castThat.nsiId))&&Objects.equals(this.ratio, castThat.ratio));
     }
 }

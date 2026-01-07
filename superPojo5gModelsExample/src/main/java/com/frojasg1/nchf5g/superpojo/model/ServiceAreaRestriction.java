@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class ServiceAreaRestriction {
-    private Integer maxNumOfTAsForNotAllowedAreas;
-    private Integer maxNumOfTAs;
-    private List<Area> areas;
-    private RestrictionType restrictionType;
+    public Integer maxNumOfTAsForNotAllowedAreas;
+    public Integer maxNumOfTAs;
+    public List<Area> areas;
+    public RestrictionType restrictionType;
 
     public Integer getMaxNumOfTAsForNotAllowedAreas() {
         return maxNumOfTAsForNotAllowedAreas;

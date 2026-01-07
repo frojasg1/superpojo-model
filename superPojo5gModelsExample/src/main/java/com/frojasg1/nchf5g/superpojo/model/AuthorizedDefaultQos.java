@@ -4,15 +4,15 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class AuthorizedDefaultQos {
-    private Integer extMaxDataBurstVol;
-    private Integer priorityLevel;
-    private String gbrDl;
-    private Integer maxDataBurstVol;
-    private String gbrUl;
-    private String maxbrDl;
-    private String maxbrUl;
-    private Arp arp;
-    private Integer averWindow;
+    public Integer extMaxDataBurstVol;
+    public Integer priorityLevel;
+    public Integer maxDataBurstVol;
+    public String gbrDl;
+    public String gbrUl;
+    public String maxbrDl;
+    public String maxbrUl;
+    public Arp arp;
+    public Integer averWindow;
 
     public Integer getExtMaxDataBurstVol() {
         return extMaxDataBurstVol;
@@ -40,19 +40,6 @@ public class AuthorizedDefaultQos {
         return this;
     }
 
-    public String getGbrDl() {
-        return gbrDl;
-    }
-
-    public void setGbrDl(String gbrDl) {
-        this.gbrDl = gbrDl;
-    }
-
-    public AuthorizedDefaultQos gbrDl(String gbrDl) {
-        this.gbrDl = gbrDl;
-        return this;
-    }
-
     public Integer getMaxDataBurstVol() {
         return maxDataBurstVol;
     }
@@ -63,6 +50,19 @@ public class AuthorizedDefaultQos {
 
     public AuthorizedDefaultQos maxDataBurstVol(Integer maxDataBurstVol) {
         this.maxDataBurstVol = maxDataBurstVol;
+        return this;
+    }
+
+    public String getGbrDl() {
+        return gbrDl;
+    }
+
+    public void setGbrDl(String gbrDl) {
+        this.gbrDl = gbrDl;
+    }
+
+    public AuthorizedDefaultQos gbrDl(String gbrDl) {
+        this.gbrDl = gbrDl;
         return this;
     }
 
@@ -133,12 +133,12 @@ public class AuthorizedDefaultQos {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((((((((("AuthorizedDefaultQos {"+"extMaxDataBurstVol = ")+ extMaxDataBurstVol)+", ")+"priorityLevel = ")+ priorityLevel)+", ")+"gbrDl = ")+ gbrDl)+", ")+"maxDataBurstVol = ")+ maxDataBurstVol)+", ")+"gbrUl = ")+ gbrUl)+", ")+"maxbrDl = ")+ maxbrDl)+", ")+"maxbrUl = ")+ maxbrUl)+", ")+"arp = ")+ arp)+", ")+"averWindow = ")+ averWindow)+"}");
+        return ((((((((((((((((((((((((((("AuthorizedDefaultQos {"+"extMaxDataBurstVol = ")+ extMaxDataBurstVol)+", ")+"priorityLevel = ")+ priorityLevel)+", ")+"maxDataBurstVol = ")+ maxDataBurstVol)+", ")+"gbrDl = ")+ gbrDl)+", ")+"gbrUl = ")+ gbrUl)+", ")+"maxbrDl = ")+ maxbrDl)+", ")+"maxbrUl = ")+ maxbrUl)+", ")+"arp = ")+ arp)+", ")+"averWindow = ")+ averWindow)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(extMaxDataBurstVol, priorityLevel, gbrDl, maxDataBurstVol, gbrUl, maxbrDl, maxbrUl, arp, averWindow);
+        return Objects.hash(extMaxDataBurstVol, priorityLevel, maxDataBurstVol, gbrDl, gbrUl, maxbrDl, maxbrUl, arp, averWindow);
     }
 
     @Override
@@ -150,6 +150,6 @@ public class AuthorizedDefaultQos {
             return false;
         }
         AuthorizedDefaultQos castThat = ((AuthorizedDefaultQos) that);
-        return ((((((((Objects.equals(this.extMaxDataBurstVol, castThat.extMaxDataBurstVol)&&Objects.equals(this.priorityLevel, castThat.priorityLevel))&&Objects.equals(this.gbrDl, castThat.gbrDl))&&Objects.equals(this.maxDataBurstVol, castThat.maxDataBurstVol))&&Objects.equals(this.gbrUl, castThat.gbrUl))&&Objects.equals(this.maxbrDl, castThat.maxbrDl))&&Objects.equals(this.maxbrUl, castThat.maxbrUl))&&Objects.equals(this.arp, castThat.arp))&&Objects.equals(this.averWindow, castThat.averWindow));
+        return ((((((((Objects.equals(this.extMaxDataBurstVol, castThat.extMaxDataBurstVol)&&Objects.equals(this.priorityLevel, castThat.priorityLevel))&&Objects.equals(this.maxDataBurstVol, castThat.maxDataBurstVol))&&Objects.equals(this.gbrDl, castThat.gbrDl))&&Objects.equals(this.gbrUl, castThat.gbrUl))&&Objects.equals(this.maxbrDl, castThat.maxbrDl))&&Objects.equals(this.maxbrUl, castThat.maxbrUl))&&Objects.equals(this.arp, castThat.arp))&&Objects.equals(this.averWindow, castThat.averWindow));
     }
 }

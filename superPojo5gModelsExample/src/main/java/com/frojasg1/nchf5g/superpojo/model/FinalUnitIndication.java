@@ -4,10 +4,10 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class FinalUnitIndication {
-    private String filterId;
-    private FinalUnitAction finalUnitAction;
-    private String restrictionFilterRule;
-    private RedirectServer redirectServer;
+    public String filterId;
+    public FinalUnitAction finalUnitAction;
+    public String restrictionFilterRule;
+    public RedirectServer redirectServer;
 
     public String getFilterId() {
         return filterId;

@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class ChargingNotifyRequest {
-    private List<ReauthorizationDetails> reauthorizationDetails;
-    private NotificationType notificationType;
+    public List<ReauthorizationDetails> reauthorizationDetails;
+    public NotificationType notificationType;
 
     public List<ReauthorizationDetails> getReauthorizationDetails() {
         return reauthorizationDetails;

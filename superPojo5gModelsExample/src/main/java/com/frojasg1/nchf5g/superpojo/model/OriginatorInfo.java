@@ -4,13 +4,13 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class OriginatorInfo {
-    private String originatorSUPI;
-    private String sMOriginatorProtocolId;
-    private String originatorGPSI;
-    private SMAddressInfo originatorReceivedAddress;
-    private SMInterface sMOriginatorInterface;
-    private String originatorSCCPAddress;
-    private SMAddressInfo originatorOtherAddress;
+    public String originatorSUPI;
+    public String sMOriginatorProtocolId;
+    public String originatorGPSI;
+    public SMAddressInfo originatorReceivedAddress;
+    public SMInterface sMOriginatorInterface;
+    public SMAddressInfo originatorOtherAddress;
+    public String originatorSCCPAddress;
 
     public String getOriginatorSUPI() {
         return originatorSUPI;
@@ -77,19 +77,6 @@ public class OriginatorInfo {
         return this;
     }
 
-    public String getOriginatorSCCPAddress() {
-        return originatorSCCPAddress;
-    }
-
-    public void setOriginatorSCCPAddress(String originatorSCCPAddress) {
-        this.originatorSCCPAddress = originatorSCCPAddress;
-    }
-
-    public OriginatorInfo originatorSCCPAddress(String originatorSCCPAddress) {
-        this.originatorSCCPAddress = originatorSCCPAddress;
-        return this;
-    }
-
     public SMAddressInfo getOriginatorOtherAddress() {
         return originatorOtherAddress;
     }
@@ -103,14 +90,27 @@ public class OriginatorInfo {
         return this;
     }
 
+    public String getOriginatorSCCPAddress() {
+        return originatorSCCPAddress;
+    }
+
+    public void setOriginatorSCCPAddress(String originatorSCCPAddress) {
+        this.originatorSCCPAddress = originatorSCCPAddress;
+    }
+
+    public OriginatorInfo originatorSCCPAddress(String originatorSCCPAddress) {
+        this.originatorSCCPAddress = originatorSCCPAddress;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return ((((((((((((((((((((("OriginatorInfo {"+"originatorSUPI = ")+ originatorSUPI)+", ")+"sMOriginatorProtocolId = ")+ sMOriginatorProtocolId)+", ")+"originatorGPSI = ")+ originatorGPSI)+", ")+"originatorReceivedAddress = ")+ originatorReceivedAddress)+", ")+"sMOriginatorInterface = ")+ sMOriginatorInterface)+", ")+"originatorSCCPAddress = ")+ originatorSCCPAddress)+", ")+"originatorOtherAddress = ")+ originatorOtherAddress)+"}");
+        return ((((((((((((((((((((("OriginatorInfo {"+"originatorSUPI = ")+ originatorSUPI)+", ")+"sMOriginatorProtocolId = ")+ sMOriginatorProtocolId)+", ")+"originatorGPSI = ")+ originatorGPSI)+", ")+"originatorReceivedAddress = ")+ originatorReceivedAddress)+", ")+"sMOriginatorInterface = ")+ sMOriginatorInterface)+", ")+"originatorOtherAddress = ")+ originatorOtherAddress)+", ")+"originatorSCCPAddress = ")+ originatorSCCPAddress)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(originatorSUPI, sMOriginatorProtocolId, originatorGPSI, originatorReceivedAddress, sMOriginatorInterface, originatorSCCPAddress, originatorOtherAddress);
+        return Objects.hash(originatorSUPI, sMOriginatorProtocolId, originatorGPSI, originatorReceivedAddress, sMOriginatorInterface, originatorOtherAddress, originatorSCCPAddress);
     }
 
     @Override
@@ -122,6 +122,6 @@ public class OriginatorInfo {
             return false;
         }
         OriginatorInfo castThat = ((OriginatorInfo) that);
-        return ((((((Objects.equals(this.originatorSUPI, castThat.originatorSUPI)&&Objects.equals(this.sMOriginatorProtocolId, castThat.sMOriginatorProtocolId))&&Objects.equals(this.originatorGPSI, castThat.originatorGPSI))&&Objects.equals(this.originatorReceivedAddress, castThat.originatorReceivedAddress))&&Objects.equals(this.sMOriginatorInterface, castThat.sMOriginatorInterface))&&Objects.equals(this.originatorSCCPAddress, castThat.originatorSCCPAddress))&&Objects.equals(this.originatorOtherAddress, castThat.originatorOtherAddress));
+        return ((((((Objects.equals(this.originatorSUPI, castThat.originatorSUPI)&&Objects.equals(this.sMOriginatorProtocolId, castThat.sMOriginatorProtocolId))&&Objects.equals(this.originatorGPSI, castThat.originatorGPSI))&&Objects.equals(this.originatorReceivedAddress, castThat.originatorReceivedAddress))&&Objects.equals(this.sMOriginatorInterface, castThat.sMOriginatorInterface))&&Objects.equals(this.originatorOtherAddress, castThat.originatorOtherAddress))&&Objects.equals(this.originatorSCCPAddress, castThat.originatorSCCPAddress));
     }
 }

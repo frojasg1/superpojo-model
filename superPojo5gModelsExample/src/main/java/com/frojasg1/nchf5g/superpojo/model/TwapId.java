@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class TwapId {
-    private byte[] civicAddress;
-    private String ssId;
-    private String bssId;
+    public byte[] civicAddress;
+    public String ssId;
+    public String bssId;
 
     public byte[] getCivicAddress() {
         return civicAddress;

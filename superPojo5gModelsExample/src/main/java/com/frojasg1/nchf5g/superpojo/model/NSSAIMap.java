@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class NSSAIMap {
-    private Snssai servingSnssai;
-    private Snssai homeSnssai;
+    public Snssai servingSnssai;
+    public Snssai homeSnssai;
 
     public Snssai getServingSnssai() {
         return servingSnssai;

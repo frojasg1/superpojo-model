@@ -5,14 +5,14 @@ import java.util.Date;
 import java.util.Objects;
 
 public class UtraLocation {
-    private String geographicalInformation;
-    private Integer ageOfLocationInformation;
-    private CellGlobalId cgi;
-    private LocationAreaId lai;
-    private ServiceAreaId sai;
-    private RoutingAreaId rai;
-    private Date ueLocationTimestamp;
-    private String geodeticInformation;
+    public String geographicalInformation;
+    public Integer ageOfLocationInformation;
+    public CellGlobalId cgi;
+    public LocationAreaId lai;
+    public ServiceAreaId sai;
+    public RoutingAreaId rai;
+    public Date ueLocationTimestamp;
+    public String geodeticInformation;
 
     public String getGeographicalInformation() {
         return geographicalInformation;

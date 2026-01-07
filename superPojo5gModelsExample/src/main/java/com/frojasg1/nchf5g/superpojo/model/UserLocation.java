@@ -4,11 +4,11 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class UserLocation {
-    private GeraLocation geraLocation;
-    private NrLocation nrLocation;
-    private UtraLocation utraLocation;
-    private N3gaLocation n3gaLocation;
-    private EutraLocation eutraLocation;
+    public GeraLocation geraLocation;
+    public NrLocation nrLocation;
+    public UtraLocation utraLocation;
+    public N3gaLocation n3gaLocation;
+    public EutraLocation eutraLocation;
 
     public GeraLocation getGeraLocation() {
         return geraLocation;

@@ -137,8 +137,21 @@ public class CodeGenerator {
             attributeType = entry.getValue().getAttributeType();
 
             jType = getJType(attributeType, pojoClassDefinitionContext);
-            jClass.field(JMod.PRIVATE, jType, attributeName);
+            jClass.field(getFieldModifier(), jType, attributeName);
         }
+    }
+
+    protected int getFieldModifier() {
+        int result = JMod.PRIVATE;
+        String fieldModifierStr = getCommandLineArgs().getFieldModifier();
+        switch (fieldModifierStr) {
+            case "private": return JMod.PRIVATE;
+            case "none": return JMod.NONE;
+            case "protected": return JMod.PROTECTED;
+            case "public": return JMod.PUBLIC;
+        }
+
+        return result;
     }
 
     protected AbstractJType getJType(Object attributeType, PojoClassDefinitionContext pojoClassDefinitionContext) {

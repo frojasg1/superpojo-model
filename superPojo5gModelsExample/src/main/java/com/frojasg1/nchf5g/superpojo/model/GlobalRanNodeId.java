@@ -4,14 +4,14 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class GlobalRanNodeId {
-    private String eNbId;
-    private String wagfId;
-    private String tngfId;
-    private GNbId gNbId;
-    private String nid;
-    private PlmnId plmnId;
-    private String n3IwfId;
-    private String ngeNbId;
+    public String eNbId;
+    public String wagfId;
+    public String tngfId;
+    public GNbId gNbId;
+    public String nid;
+    public PlmnId plmnId;
+    public String n3IwfId;
+    public String ngeNbId;
 
     public String geteNbId() {
         return eNbId;

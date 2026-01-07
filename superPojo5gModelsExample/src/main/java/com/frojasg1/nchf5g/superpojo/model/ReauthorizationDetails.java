@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class ReauthorizationDetails {
-    private QuotaManagementIndicator quotaManagementIndicator;
-    private Integer serviceId;
-    private Integer ratingGroup;
+    public QuotaManagementIndicator quotaManagementIndicator;
+    public Integer serviceId;
+    public Integer ratingGroup;
 
     public QuotaManagementIndicator getQuotaManagementIndicator() {
         return quotaManagementIndicator;

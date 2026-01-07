@@ -5,14 +5,14 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Trigger {
-    private Integer timeLimit;
-    private Date tariffTimeChange;
-    private Long volumeLimit64;
-    private Integer maxNumberOfccc;
-    private Integer eventLimit;
-    private Integer volumeLimit;
-    private TriggerType triggerType;
-    private TriggerCategory triggerCategory;
+    public Integer timeLimit;
+    public Date tariffTimeChange;
+    public Long volumeLimit64;
+    public Integer maxNumberOfccc;
+    public Integer eventLimit;
+    public Integer volumeLimit;
+    public TriggerType triggerType;
+    public TriggerCategory triggerCategory;
 
     public Integer getTimeLimit() {
         return timeLimit;

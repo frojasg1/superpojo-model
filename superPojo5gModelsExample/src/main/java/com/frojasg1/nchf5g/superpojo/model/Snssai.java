@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class Snssai {
-    private String sd;
-    private Integer sst;
+    public String sd;
+    public Integer sst;
 
     public String getSd() {
         return sd;

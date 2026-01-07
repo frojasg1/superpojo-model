@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class RanNasRelCause {
-    private String epsCause;
-    private NgApCause ngApCause;
+    public String epsCause;
+    public NgApCause ngApCause;
 
     public String getEpsCause() {
         return epsCause;

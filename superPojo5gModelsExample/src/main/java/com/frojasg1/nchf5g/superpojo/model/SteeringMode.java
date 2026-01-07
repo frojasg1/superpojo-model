@@ -4,10 +4,10 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class SteeringMode {
-    private AccessType active;
-    private SteerModeValue steerModeValue;
-    private AccessType prioAcc;
-    private AccessType standby;
+    public AccessType active;
+    public SteerModeValue steerModeValue;
+    public AccessType standby;
+    public AccessType prioAcc;
 
     public AccessType getActive() {
         return active;
@@ -35,19 +35,6 @@ public class SteeringMode {
         return this;
     }
 
-    public AccessType getPrioAcc() {
-        return prioAcc;
-    }
-
-    public void setPrioAcc(AccessType prioAcc) {
-        this.prioAcc = prioAcc;
-    }
-
-    public SteeringMode prioAcc(AccessType prioAcc) {
-        this.prioAcc = prioAcc;
-        return this;
-    }
-
     public AccessType getStandby() {
         return standby;
     }
@@ -61,14 +48,27 @@ public class SteeringMode {
         return this;
     }
 
+    public AccessType getPrioAcc() {
+        return prioAcc;
+    }
+
+    public void setPrioAcc(AccessType prioAcc) {
+        this.prioAcc = prioAcc;
+    }
+
+    public SteeringMode prioAcc(AccessType prioAcc) {
+        this.prioAcc = prioAcc;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return (((((((((((("SteeringMode {"+"active = ")+ active)+", ")+"steerModeValue = ")+ steerModeValue)+", ")+"prioAcc = ")+ prioAcc)+", ")+"standby = ")+ standby)+"}");
+        return (((((((((((("SteeringMode {"+"active = ")+ active)+", ")+"steerModeValue = ")+ steerModeValue)+", ")+"standby = ")+ standby)+", ")+"prioAcc = ")+ prioAcc)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(active, steerModeValue, prioAcc, standby);
+        return Objects.hash(active, steerModeValue, standby, prioAcc);
     }
 
     @Override
@@ -80,6 +80,6 @@ public class SteeringMode {
             return false;
         }
         SteeringMode castThat = ((SteeringMode) that);
-        return (((Objects.equals(this.active, castThat.active)&&Objects.equals(this.steerModeValue, castThat.steerModeValue))&&Objects.equals(this.prioAcc, castThat.prioAcc))&&Objects.equals(this.standby, castThat.standby));
+        return (((Objects.equals(this.active, castThat.active)&&Objects.equals(this.steerModeValue, castThat.steerModeValue))&&Objects.equals(this.standby, castThat.standby))&&Objects.equals(this.prioAcc, castThat.prioAcc));
     }
 }

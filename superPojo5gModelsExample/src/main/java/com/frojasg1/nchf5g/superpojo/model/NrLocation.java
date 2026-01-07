@@ -5,14 +5,14 @@ import java.util.Date;
 import java.util.Objects;
 
 public class NrLocation {
-    private Boolean ignoreNcgi;
-    private GlobalRanNodeId globalGnbId;
-    private String geographicalInformation;
-    private Integer ageOfLocationInformation;
-    private Ncgi ncgi;
-    private Date ueLocationTimestamp;
-    private Tai tai;
-    private String geodeticInformation;
+    public Boolean ignoreNcgi;
+    public String geographicalInformation;
+    public GlobalRanNodeId globalGnbId;
+    public Integer ageOfLocationInformation;
+    public Ncgi ncgi;
+    public Date ueLocationTimestamp;
+    public Tai tai;
+    public String geodeticInformation;
 
     public Boolean getIgnoreNcgi() {
         return ignoreNcgi;
@@ -27,19 +27,6 @@ public class NrLocation {
         return this;
     }
 
-    public GlobalRanNodeId getGlobalGnbId() {
-        return globalGnbId;
-    }
-
-    public void setGlobalGnbId(GlobalRanNodeId globalGnbId) {
-        this.globalGnbId = globalGnbId;
-    }
-
-    public NrLocation globalGnbId(GlobalRanNodeId globalGnbId) {
-        this.globalGnbId = globalGnbId;
-        return this;
-    }
-
     public String getGeographicalInformation() {
         return geographicalInformation;
     }
@@ -50,6 +37,19 @@ public class NrLocation {
 
     public NrLocation geographicalInformation(String geographicalInformation) {
         this.geographicalInformation = geographicalInformation;
+        return this;
+    }
+
+    public GlobalRanNodeId getGlobalGnbId() {
+        return globalGnbId;
+    }
+
+    public void setGlobalGnbId(GlobalRanNodeId globalGnbId) {
+        this.globalGnbId = globalGnbId;
+    }
+
+    public NrLocation globalGnbId(GlobalRanNodeId globalGnbId) {
+        this.globalGnbId = globalGnbId;
         return this;
     }
 
@@ -120,12 +120,12 @@ public class NrLocation {
 
     @Override
     public String toString() {
-        return (((((((((((((((((((((((("NrLocation {"+"ignoreNcgi = ")+ ignoreNcgi)+", ")+"globalGnbId = ")+ globalGnbId)+", ")+"geographicalInformation = ")+ geographicalInformation)+", ")+"ageOfLocationInformation = ")+ ageOfLocationInformation)+", ")+"ncgi = ")+ ncgi)+", ")+"ueLocationTimestamp = ")+ ueLocationTimestamp)+", ")+"tai = ")+ tai)+", ")+"geodeticInformation = ")+ geodeticInformation)+"}");
+        return (((((((((((((((((((((((("NrLocation {"+"ignoreNcgi = ")+ ignoreNcgi)+", ")+"geographicalInformation = ")+ geographicalInformation)+", ")+"globalGnbId = ")+ globalGnbId)+", ")+"ageOfLocationInformation = ")+ ageOfLocationInformation)+", ")+"ncgi = ")+ ncgi)+", ")+"ueLocationTimestamp = ")+ ueLocationTimestamp)+", ")+"tai = ")+ tai)+", ")+"geodeticInformation = ")+ geodeticInformation)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ignoreNcgi, globalGnbId, geographicalInformation, ageOfLocationInformation, ncgi, ueLocationTimestamp, tai, geodeticInformation);
+        return Objects.hash(ignoreNcgi, geographicalInformation, globalGnbId, ageOfLocationInformation, ncgi, ueLocationTimestamp, tai, geodeticInformation);
     }
 
     @Override
@@ -137,6 +137,6 @@ public class NrLocation {
             return false;
         }
         NrLocation castThat = ((NrLocation) that);
-        return (((((((Objects.equals(this.ignoreNcgi, castThat.ignoreNcgi)&&Objects.equals(this.globalGnbId, castThat.globalGnbId))&&Objects.equals(this.geographicalInformation, castThat.geographicalInformation))&&Objects.equals(this.ageOfLocationInformation, castThat.ageOfLocationInformation))&&Objects.equals(this.ncgi, castThat.ncgi))&&Objects.equals(this.ueLocationTimestamp, castThat.ueLocationTimestamp))&&Objects.equals(this.tai, castThat.tai))&&Objects.equals(this.geodeticInformation, castThat.geodeticInformation));
+        return (((((((Objects.equals(this.ignoreNcgi, castThat.ignoreNcgi)&&Objects.equals(this.geographicalInformation, castThat.geographicalInformation))&&Objects.equals(this.globalGnbId, castThat.globalGnbId))&&Objects.equals(this.ageOfLocationInformation, castThat.ageOfLocationInformation))&&Objects.equals(this.ncgi, castThat.ncgi))&&Objects.equals(this.ueLocationTimestamp, castThat.ueLocationTimestamp))&&Objects.equals(this.tai, castThat.tai))&&Objects.equals(this.geodeticInformation, castThat.geodeticInformation));
     }
 }

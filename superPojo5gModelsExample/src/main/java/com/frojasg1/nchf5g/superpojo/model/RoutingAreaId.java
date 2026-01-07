@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class RoutingAreaId {
-    private PlmnId plmnId;
-    private String rac;
-    private String lac;
+    public PlmnId plmnId;
+    public String rac;
+    public String lac;
 
     public PlmnId getPlmnId() {
         return plmnId;

@@ -4,25 +4,25 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class QosData {
-    private Integer extMaxDataBurstVol;
-    private Boolean defQosFlowIndication;
-    private String sharingKeyUl;
-    private Integer maxPacketLossRateDl;
-    private String gbrDl;
-    private Integer maxDataBurstVol;
-    private Boolean qnc;
-    private String packetErrorRate;
-    private String maxbrDl;
-    private Integer packetDelayBudget;
-    private Boolean reflectiveQos;
-    private String sharingKeyDl;
-    private Integer priorityLevel;
-    private Integer maxPacketLossRateUl;
-    private String gbrUl;
-    private String qosId;
-    private String maxbrUl;
-    private Arp arp;
-    private Integer averWindow;
+    public Integer extMaxDataBurstVol;
+    public Boolean defQosFlowIndication;
+    public String sharingKeyUl;
+    public Integer maxPacketLossRateDl;
+    public Integer maxDataBurstVol;
+    public String gbrDl;
+    public Boolean qnc;
+    public String packetErrorRate;
+    public String maxbrDl;
+    public Integer packetDelayBudget;
+    public Boolean reflectiveQos;
+    public Integer priorityLevel;
+    public String sharingKeyDl;
+    public Integer maxPacketLossRateUl;
+    public String gbrUl;
+    public String qosId;
+    public String maxbrUl;
+    public Arp arp;
+    public Integer averWindow;
 
     public Integer getExtMaxDataBurstVol() {
         return extMaxDataBurstVol;
@@ -76,19 +76,6 @@ public class QosData {
         return this;
     }
 
-    public String getGbrDl() {
-        return gbrDl;
-    }
-
-    public void setGbrDl(String gbrDl) {
-        this.gbrDl = gbrDl;
-    }
-
-    public QosData gbrDl(String gbrDl) {
-        this.gbrDl = gbrDl;
-        return this;
-    }
-
     public Integer getMaxDataBurstVol() {
         return maxDataBurstVol;
     }
@@ -99,6 +86,19 @@ public class QosData {
 
     public QosData maxDataBurstVol(Integer maxDataBurstVol) {
         this.maxDataBurstVol = maxDataBurstVol;
+        return this;
+    }
+
+    public String getGbrDl() {
+        return gbrDl;
+    }
+
+    public void setGbrDl(String gbrDl) {
+        this.gbrDl = gbrDl;
+    }
+
+    public QosData gbrDl(String gbrDl) {
+        this.gbrDl = gbrDl;
         return this;
     }
 
@@ -167,19 +167,6 @@ public class QosData {
         return this;
     }
 
-    public String getSharingKeyDl() {
-        return sharingKeyDl;
-    }
-
-    public void setSharingKeyDl(String sharingKeyDl) {
-        this.sharingKeyDl = sharingKeyDl;
-    }
-
-    public QosData sharingKeyDl(String sharingKeyDl) {
-        this.sharingKeyDl = sharingKeyDl;
-        return this;
-    }
-
     public Integer getPriorityLevel() {
         return priorityLevel;
     }
@@ -190,6 +177,19 @@ public class QosData {
 
     public QosData priorityLevel(Integer priorityLevel) {
         this.priorityLevel = priorityLevel;
+        return this;
+    }
+
+    public String getSharingKeyDl() {
+        return sharingKeyDl;
+    }
+
+    public void setSharingKeyDl(String sharingKeyDl) {
+        this.sharingKeyDl = sharingKeyDl;
+    }
+
+    public QosData sharingKeyDl(String sharingKeyDl) {
+        this.sharingKeyDl = sharingKeyDl;
         return this;
     }
 
@@ -273,12 +273,12 @@ public class QosData {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((((((((((((((((((((((((((((((((((((((("QosData {"+"extMaxDataBurstVol = ")+ extMaxDataBurstVol)+", ")+"defQosFlowIndication = ")+ defQosFlowIndication)+", ")+"sharingKeyUl = ")+ sharingKeyUl)+", ")+"maxPacketLossRateDl = ")+ maxPacketLossRateDl)+", ")+"gbrDl = ")+ gbrDl)+", ")+"maxDataBurstVol = ")+ maxDataBurstVol)+", ")+"qnc = ")+ qnc)+", ")+"packetErrorRate = ")+ packetErrorRate)+", ")+"maxbrDl = ")+ maxbrDl)+", ")+"packetDelayBudget = ")+ packetDelayBudget)+", ")+"reflectiveQos = ")+ reflectiveQos)+", ")+"sharingKeyDl = ")+ sharingKeyDl)+", ")+"priorityLevel = ")+ priorityLevel)+", ")+"maxPacketLossRateUl = ")+ maxPacketLossRateUl)+", ")+"gbrUl = ")+ gbrUl)+", ")+"qosId = ")+ qosId)+", ")+"maxbrUl = ")+ maxbrUl)+", ")+"arp = ")+ arp)+", ")+"averWindow = ")+ averWindow)+"}");
+        return ((((((((((((((((((((((((((((((((((((((((((((((((((((((((("QosData {"+"extMaxDataBurstVol = ")+ extMaxDataBurstVol)+", ")+"defQosFlowIndication = ")+ defQosFlowIndication)+", ")+"sharingKeyUl = ")+ sharingKeyUl)+", ")+"maxPacketLossRateDl = ")+ maxPacketLossRateDl)+", ")+"maxDataBurstVol = ")+ maxDataBurstVol)+", ")+"gbrDl = ")+ gbrDl)+", ")+"qnc = ")+ qnc)+", ")+"packetErrorRate = ")+ packetErrorRate)+", ")+"maxbrDl = ")+ maxbrDl)+", ")+"packetDelayBudget = ")+ packetDelayBudget)+", ")+"reflectiveQos = ")+ reflectiveQos)+", ")+"priorityLevel = ")+ priorityLevel)+", ")+"sharingKeyDl = ")+ sharingKeyDl)+", ")+"maxPacketLossRateUl = ")+ maxPacketLossRateUl)+", ")+"gbrUl = ")+ gbrUl)+", ")+"qosId = ")+ qosId)+", ")+"maxbrUl = ")+ maxbrUl)+", ")+"arp = ")+ arp)+", ")+"averWindow = ")+ averWindow)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(extMaxDataBurstVol, defQosFlowIndication, sharingKeyUl, maxPacketLossRateDl, gbrDl, maxDataBurstVol, qnc, packetErrorRate, maxbrDl, packetDelayBudget, reflectiveQos, sharingKeyDl, priorityLevel, maxPacketLossRateUl, gbrUl, qosId, maxbrUl, arp, averWindow);
+        return Objects.hash(extMaxDataBurstVol, defQosFlowIndication, sharingKeyUl, maxPacketLossRateDl, maxDataBurstVol, gbrDl, qnc, packetErrorRate, maxbrDl, packetDelayBudget, reflectiveQos, priorityLevel, sharingKeyDl, maxPacketLossRateUl, gbrUl, qosId, maxbrUl, arp, averWindow);
     }
 
     @Override
@@ -290,6 +290,6 @@ public class QosData {
             return false;
         }
         QosData castThat = ((QosData) that);
-        return ((((((((((((((((((Objects.equals(this.extMaxDataBurstVol, castThat.extMaxDataBurstVol)&&Objects.equals(this.defQosFlowIndication, castThat.defQosFlowIndication))&&Objects.equals(this.sharingKeyUl, castThat.sharingKeyUl))&&Objects.equals(this.maxPacketLossRateDl, castThat.maxPacketLossRateDl))&&Objects.equals(this.gbrDl, castThat.gbrDl))&&Objects.equals(this.maxDataBurstVol, castThat.maxDataBurstVol))&&Objects.equals(this.qnc, castThat.qnc))&&Objects.equals(this.packetErrorRate, castThat.packetErrorRate))&&Objects.equals(this.maxbrDl, castThat.maxbrDl))&&Objects.equals(this.packetDelayBudget, castThat.packetDelayBudget))&&Objects.equals(this.reflectiveQos, castThat.reflectiveQos))&&Objects.equals(this.sharingKeyDl, castThat.sharingKeyDl))&&Objects.equals(this.priorityLevel, castThat.priorityLevel))&&Objects.equals(this.maxPacketLossRateUl, castThat.maxPacketLossRateUl))&&Objects.equals(this.gbrUl, castThat.gbrUl))&&Objects.equals(this.qosId, castThat.qosId))&&Objects.equals(this.maxbrUl, castThat.maxbrUl))&&Objects.equals(this.arp, castThat.arp))&&Objects.equals(this.averWindow, castThat.averWindow));
+        return ((((((((((((((((((Objects.equals(this.extMaxDataBurstVol, castThat.extMaxDataBurstVol)&&Objects.equals(this.defQosFlowIndication, castThat.defQosFlowIndication))&&Objects.equals(this.sharingKeyUl, castThat.sharingKeyUl))&&Objects.equals(this.maxPacketLossRateDl, castThat.maxPacketLossRateDl))&&Objects.equals(this.maxDataBurstVol, castThat.maxDataBurstVol))&&Objects.equals(this.gbrDl, castThat.gbrDl))&&Objects.equals(this.qnc, castThat.qnc))&&Objects.equals(this.packetErrorRate, castThat.packetErrorRate))&&Objects.equals(this.maxbrDl, castThat.maxbrDl))&&Objects.equals(this.packetDelayBudget, castThat.packetDelayBudget))&&Objects.equals(this.reflectiveQos, castThat.reflectiveQos))&&Objects.equals(this.priorityLevel, castThat.priorityLevel))&&Objects.equals(this.sharingKeyDl, castThat.sharingKeyDl))&&Objects.equals(this.maxPacketLossRateUl, castThat.maxPacketLossRateUl))&&Objects.equals(this.gbrUl, castThat.gbrUl))&&Objects.equals(this.qosId, castThat.qosId))&&Objects.equals(this.maxbrUl, castThat.maxbrUl))&&Objects.equals(this.arp, castThat.arp))&&Objects.equals(this.averWindow, castThat.averWindow));
     }
 }

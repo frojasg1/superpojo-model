@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class RANSecondaryRATUsageReport {
-    private List<QosFlowsUsageReport> qosFlowsUsageReports;
-    private RatType rANSecondaryRATType;
+    public List<QosFlowsUsageReport> qosFlowsUsageReports;
+    public RatType rANSecondaryRATType;
 
     public List<QosFlowsUsageReport> getQosFlowsUsageReports() {
         return qosFlowsUsageReports;

@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class Ncgi {
-    private String nid;
-    private PlmnId plmnId;
-    private String nrCellId;
+    public String nid;
+    public PlmnId plmnId;
+    public String nrCellId;
 
     public String getNid() {
         return nid;

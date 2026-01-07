@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class MAPDUSessionInformation {
-    private AtsssCapability aTSSSCapability;
-    private MaPduIndication mAPDUSessionIndicator;
+    public AtsssCapability aTSSSCapability;
+    public MaPduIndication mAPDUSessionIndicator;
 
     public AtsssCapability getaTSSSCapability() {
         return aTSSSCapability;

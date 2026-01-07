@@ -40,6 +40,7 @@ public class SuperPojoModelGeneratorConfiguration {
     protected String outputFolder;
 
     protected String outputPackage;
+    protected String fieldModifier;
 
     public String[] getInputJars() {
         return inputJars;
@@ -145,6 +146,15 @@ public class SuperPojoModelGeneratorConfiguration {
 
     public SuperPojoModelGeneratorConfiguration setOutputPackage(String outputPackage) {
         this.outputPackage = outputPackage;
+        return this;
+    }
+
+    public String getFieldModifier() {
+        return fieldModifier;
+    }
+
+    public SuperPojoModelGeneratorConfiguration setFieldModifier(String fieldModifier) {
+        this.fieldModifier = fieldModifier;
         return this;
     }
 }

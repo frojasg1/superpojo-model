@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class PresenceInfo {
-    private String additionalPraId;
-    private List<Ecgi> ecgiList;
-    private List<GlobalRanNodeId> globalRanNodeIdList;
-    private PresenceState presenceState;
-    private String praId;
-    private List<Ncgi> ncgiList;
-    private List<Tai> trackingAreaList;
-    private List<GlobalRanNodeId> globaleNbIdList;
+    public String additionalPraId;
+    public List<Ecgi> ecgiList;
+    public List<GlobalRanNodeId> globalRanNodeIdList;
+    public PresenceState presenceState;
+    public String praId;
+    public List<Ncgi> ncgiList;
+    public List<Tai> trackingAreaList;
+    public List<GlobalRanNodeId> globaleNbIdList;
 
     public String getAdditionalPraId() {
         return additionalPraId;

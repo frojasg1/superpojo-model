@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class RoamingChargingProfile {
-    private List<Trigger> triggers;
-    private PartialRecordMethod partialRecordMethod;
+    public List<Trigger> triggers;
+    public PartialRecordMethod partialRecordMethod;
 
     public List<Trigger> getTriggers() {
         return triggers;

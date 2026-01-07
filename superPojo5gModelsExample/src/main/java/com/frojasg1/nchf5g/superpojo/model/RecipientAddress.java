@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class RecipientAddress {
-    private SMAddressInfo recipientAddressInfo;
-    private SMAddresseeType sMaddresseeType;
+    public SMAddressInfo recipientAddressInfo;
+    public SMAddresseeType sMaddresseeType;
 
     public SMAddressInfo getRecipientAddressInfo() {
         return recipientAddressInfo;

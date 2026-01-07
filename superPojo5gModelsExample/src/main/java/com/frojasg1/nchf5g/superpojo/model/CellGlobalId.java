@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class CellGlobalId {
-    private PlmnId plmnId;
-    private String cellId;
-    private String lac;
+    public PlmnId plmnId;
+    public String cellId;
+    public String lac;
 
     public PlmnId getPlmnId() {
         return plmnId;

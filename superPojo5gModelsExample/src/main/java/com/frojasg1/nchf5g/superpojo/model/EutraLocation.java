@@ -5,16 +5,16 @@ import java.util.Date;
 import java.util.Objects;
 
 public class EutraLocation {
-    private String geographicalInformation;
-    private GlobalRanNodeId globalNgenbId;
-    private Integer ageOfLocationInformation;
-    private Boolean ignoreEcgi;
-    private GlobalRanNodeId globalENbId;
-    private Boolean ignoreTai;
-    private Date ueLocationTimestamp;
-    private Tai tai;
-    private String geodeticInformation;
-    private Ecgi ecgi;
+    public String geographicalInformation;
+    public GlobalRanNodeId globalNgenbId;
+    public Integer ageOfLocationInformation;
+    public Boolean ignoreEcgi;
+    public GlobalRanNodeId globalENbId;
+    public Boolean ignoreTai;
+    public Date ueLocationTimestamp;
+    public Tai tai;
+    public String geodeticInformation;
+    public Ecgi ecgi;
 
     public String getGeographicalInformation() {
         return geographicalInformation;

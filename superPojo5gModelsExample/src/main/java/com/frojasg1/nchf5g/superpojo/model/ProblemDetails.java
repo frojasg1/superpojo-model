@@ -6,17 +6,17 @@ import java.util.List;
 import java.util.Objects;
 
 public class ProblemDetails {
-    private String instance;
-    private String supportedFeatures;
-    private AccessTokenReq accessTokenRequest;
-    private List<InvalidParam> invalidParams;
-    private String cause;
-    private String detail;
-    private String type;
-    private String title;
-    private AccessTokenErr accessTokenError;
-    private String nrfId;
-    private Integer status;
+    public String instance;
+    public String supportedFeatures;
+    public AccessTokenReq accessTokenRequest;
+    public List<InvalidParam> invalidParams;
+    public String cause;
+    public String detail;
+    public String type;
+    public String title;
+    public AccessTokenErr accessTokenError;
+    public String nrfId;
+    public Integer status;
 
     public String getInstance() {
         return instance;

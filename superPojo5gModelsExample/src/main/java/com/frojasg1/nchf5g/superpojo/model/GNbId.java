@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class GNbId {
-    private Integer bitLength;
-    private String gNBValue;
+    public Integer bitLength;
+    public String gNBValue;
 
     public Integer getBitLength() {
         return bitLength;

@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class SubscribedDefaultQos {
-    private Integer priorityLevel;
-    private Arp arp;
+    public Integer priorityLevel;
+    public Arp arp;
 
     public Integer getPriorityLevel() {
         return priorityLevel;

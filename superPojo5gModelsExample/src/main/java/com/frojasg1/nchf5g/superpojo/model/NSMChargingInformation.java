@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class NSMChargingInformation {
-    private List<ServiceProfileChargingInformation> listOfserviceProfileChargingInformation;
-    private ManagementOperation managementOperation;
-    private ManagementOperationStatus managementOperationStatus;
-    private String idNetworkSliceInstance;
+    public List<ServiceProfileChargingInformation> listOfserviceProfileChargingInformation;
+    public ManagementOperation managementOperation;
+    public ManagementOperationStatus managementOperationStatus;
+    public String idNetworkSliceInstance;
 
     public List<ServiceProfileChargingInformation> getListOfserviceProfileChargingInformation() {
         return listOfserviceProfileChargingInformation;

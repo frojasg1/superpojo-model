@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class LocationAreaId {
-    private PlmnId plmnId;
-    private String lac;
+    public PlmnId plmnId;
+    public String lac;
 
     public PlmnId getPlmnId() {
         return plmnId;

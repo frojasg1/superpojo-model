@@ -4,21 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class Ambr {
-    private String uplink;
-    private String downlink;
-
-    public String getUplink() {
-        return uplink;
-    }
-
-    public void setUplink(String uplink) {
-        this.uplink = uplink;
-    }
-
-    public Ambr uplink(String uplink) {
-        this.uplink = uplink;
-        return this;
-    }
+    public String downlink;
+    public String uplink;
 
     public String getDownlink() {
         return downlink;
@@ -33,14 +20,27 @@ public class Ambr {
         return this;
     }
 
+    public String getUplink() {
+        return uplink;
+    }
+
+    public void setUplink(String uplink) {
+        this.uplink = uplink;
+    }
+
+    public Ambr uplink(String uplink) {
+        this.uplink = uplink;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return (((((("Ambr {"+"uplink = ")+ uplink)+", ")+"downlink = ")+ downlink)+"}");
+        return (((((("Ambr {"+"downlink = ")+ downlink)+", ")+"uplink = ")+ uplink)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uplink, downlink);
+        return Objects.hash(downlink, uplink);
     }
 
     @Override
@@ -52,6 +52,6 @@ public class Ambr {
             return false;
         }
         Ambr castThat = ((Ambr) that);
-        return (Objects.equals(this.uplink, castThat.uplink)&&Objects.equals(this.downlink, castThat.downlink));
+        return (Objects.equals(this.downlink, castThat.downlink)&&Objects.equals(this.uplink, castThat.uplink));
     }
 }

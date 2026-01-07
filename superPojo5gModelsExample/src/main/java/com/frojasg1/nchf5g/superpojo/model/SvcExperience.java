@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class SvcExperience {
-    private Float mos;
-    private Float lowerRange;
-    private Float upperRange;
+    public Float mos;
+    public Float lowerRange;
+    public Float upperRange;
 
     public Float getMos() {
         return mos;

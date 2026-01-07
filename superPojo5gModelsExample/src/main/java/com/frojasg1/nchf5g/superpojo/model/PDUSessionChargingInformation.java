@@ -6,19 +6,19 @@ import java.util.Map;
 import java.util.Objects;
 
 public class PDUSessionChargingInformation {
-    private PDUSessionInformation pduSessionInformation;
-    private Date non3GPPUserLocationTime;
-    private Map<String, PresenceInfo> presenceReportingAreaInformation;
-    private Integer chargingId;
-    private UserInformation userInformation;
-    private UserLocation mAPDUNon3GPPUserLocationInfo;
-    private String uetimeZone;
-    private RANSecondaryRATUsageReport rANSecondaryRATUsageReport;
-    private Date userLocationTime;
-    private Integer homeProvidedChargingId;
-    private Date mAPDUNon3GPPUserLocationTime;
-    private Integer unitCountInactivityTimer;
-    private UserLocation userLocationinfo;
+    public PDUSessionInformation pduSessionInformation;
+    public Date non3GPPUserLocationTime;
+    public Map<String, PresenceInfo> presenceReportingAreaInformation;
+    public Integer chargingId;
+    public UserInformation userInformation;
+    public UserLocation mAPDUNon3GPPUserLocationInfo;
+    public String uetimeZone;
+    public RANSecondaryRATUsageReport rANSecondaryRATUsageReport;
+    public Date userLocationTime;
+    public Integer homeProvidedChargingId;
+    public Date mAPDUNon3GPPUserLocationTime;
+    public UserLocation userLocationinfo;
+    public Integer unitCountInactivityTimer;
 
     public PDUSessionInformation getPduSessionInformation() {
         return pduSessionInformation;
@@ -163,19 +163,6 @@ public class PDUSessionChargingInformation {
         return this;
     }
 
-    public Integer getUnitCountInactivityTimer() {
-        return unitCountInactivityTimer;
-    }
-
-    public void setUnitCountInactivityTimer(Integer unitCountInactivityTimer) {
-        this.unitCountInactivityTimer = unitCountInactivityTimer;
-    }
-
-    public PDUSessionChargingInformation unitCountInactivityTimer(Integer unitCountInactivityTimer) {
-        this.unitCountInactivityTimer = unitCountInactivityTimer;
-        return this;
-    }
-
     public UserLocation getUserLocationinfo() {
         return userLocationinfo;
     }
@@ -189,14 +176,27 @@ public class PDUSessionChargingInformation {
         return this;
     }
 
+    public Integer getUnitCountInactivityTimer() {
+        return unitCountInactivityTimer;
+    }
+
+    public void setUnitCountInactivityTimer(Integer unitCountInactivityTimer) {
+        this.unitCountInactivityTimer = unitCountInactivityTimer;
+    }
+
+    public PDUSessionChargingInformation unitCountInactivityTimer(Integer unitCountInactivityTimer) {
+        this.unitCountInactivityTimer = unitCountInactivityTimer;
+        return this;
+    }
+
     @Override
     public String toString() {
-        return ((((((((((((((((((((((((((((((((((((((("PDUSessionChargingInformation {"+"pduSessionInformation = ")+ pduSessionInformation)+", ")+"non3GPPUserLocationTime = ")+ non3GPPUserLocationTime)+", ")+"presenceReportingAreaInformation = ")+ presenceReportingAreaInformation)+", ")+"chargingId = ")+ chargingId)+", ")+"userInformation = ")+ userInformation)+", ")+"mAPDUNon3GPPUserLocationInfo = ")+ mAPDUNon3GPPUserLocationInfo)+", ")+"uetimeZone = ")+ uetimeZone)+", ")+"rANSecondaryRATUsageReport = ")+ rANSecondaryRATUsageReport)+", ")+"userLocationTime = ")+ userLocationTime)+", ")+"homeProvidedChargingId = ")+ homeProvidedChargingId)+", ")+"mAPDUNon3GPPUserLocationTime = ")+ mAPDUNon3GPPUserLocationTime)+", ")+"unitCountInactivityTimer = ")+ unitCountInactivityTimer)+", ")+"userLocationinfo = ")+ userLocationinfo)+"}");
+        return ((((((((((((((((((((((((((((((((((((((("PDUSessionChargingInformation {"+"pduSessionInformation = ")+ pduSessionInformation)+", ")+"non3GPPUserLocationTime = ")+ non3GPPUserLocationTime)+", ")+"presenceReportingAreaInformation = ")+ presenceReportingAreaInformation)+", ")+"chargingId = ")+ chargingId)+", ")+"userInformation = ")+ userInformation)+", ")+"mAPDUNon3GPPUserLocationInfo = ")+ mAPDUNon3GPPUserLocationInfo)+", ")+"uetimeZone = ")+ uetimeZone)+", ")+"rANSecondaryRATUsageReport = ")+ rANSecondaryRATUsageReport)+", ")+"userLocationTime = ")+ userLocationTime)+", ")+"homeProvidedChargingId = ")+ homeProvidedChargingId)+", ")+"mAPDUNon3GPPUserLocationTime = ")+ mAPDUNon3GPPUserLocationTime)+", ")+"userLocationinfo = ")+ userLocationinfo)+", ")+"unitCountInactivityTimer = ")+ unitCountInactivityTimer)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pduSessionInformation, non3GPPUserLocationTime, presenceReportingAreaInformation, chargingId, userInformation, mAPDUNon3GPPUserLocationInfo, uetimeZone, rANSecondaryRATUsageReport, userLocationTime, homeProvidedChargingId, mAPDUNon3GPPUserLocationTime, unitCountInactivityTimer, userLocationinfo);
+        return Objects.hash(pduSessionInformation, non3GPPUserLocationTime, presenceReportingAreaInformation, chargingId, userInformation, mAPDUNon3GPPUserLocationInfo, uetimeZone, rANSecondaryRATUsageReport, userLocationTime, homeProvidedChargingId, mAPDUNon3GPPUserLocationTime, userLocationinfo, unitCountInactivityTimer);
     }
 
     @Override
@@ -208,6 +208,6 @@ public class PDUSessionChargingInformation {
             return false;
         }
         PDUSessionChargingInformation castThat = ((PDUSessionChargingInformation) that);
-        return ((((((((((((Objects.equals(this.pduSessionInformation, castThat.pduSessionInformation)&&Objects.equals(this.non3GPPUserLocationTime, castThat.non3GPPUserLocationTime))&&Objects.equals(this.presenceReportingAreaInformation, castThat.presenceReportingAreaInformation))&&Objects.equals(this.chargingId, castThat.chargingId))&&Objects.equals(this.userInformation, castThat.userInformation))&&Objects.equals(this.mAPDUNon3GPPUserLocationInfo, castThat.mAPDUNon3GPPUserLocationInfo))&&Objects.equals(this.uetimeZone, castThat.uetimeZone))&&Objects.equals(this.rANSecondaryRATUsageReport, castThat.rANSecondaryRATUsageReport))&&Objects.equals(this.userLocationTime, castThat.userLocationTime))&&Objects.equals(this.homeProvidedChargingId, castThat.homeProvidedChargingId))&&Objects.equals(this.mAPDUNon3GPPUserLocationTime, castThat.mAPDUNon3GPPUserLocationTime))&&Objects.equals(this.unitCountInactivityTimer, castThat.unitCountInactivityTimer))&&Objects.equals(this.userLocationinfo, castThat.userLocationinfo));
+        return ((((((((((((Objects.equals(this.pduSessionInformation, castThat.pduSessionInformation)&&Objects.equals(this.non3GPPUserLocationTime, castThat.non3GPPUserLocationTime))&&Objects.equals(this.presenceReportingAreaInformation, castThat.presenceReportingAreaInformation))&&Objects.equals(this.chargingId, castThat.chargingId))&&Objects.equals(this.userInformation, castThat.userInformation))&&Objects.equals(this.mAPDUNon3GPPUserLocationInfo, castThat.mAPDUNon3GPPUserLocationInfo))&&Objects.equals(this.uetimeZone, castThat.uetimeZone))&&Objects.equals(this.rANSecondaryRATUsageReport, castThat.rANSecondaryRATUsageReport))&&Objects.equals(this.userLocationTime, castThat.userLocationTime))&&Objects.equals(this.homeProvidedChargingId, castThat.homeProvidedChargingId))&&Objects.equals(this.mAPDUNon3GPPUserLocationTime, castThat.mAPDUNon3GPPUserLocationTime))&&Objects.equals(this.userLocationinfo, castThat.userLocationinfo))&&Objects.equals(this.unitCountInactivityTimer, castThat.unitCountInactivityTimer));
     }
 }

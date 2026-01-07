@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class SMAddressInfo {
-    private SMAddressDomain sMaddressDomain;
-    private SMAddressType sMaddressType;
-    private String sMaddressData;
+    public SMAddressDomain sMaddressDomain;
+    public SMAddressType sMaddressType;
+    public String sMaddressData;
 
     public SMAddressDomain getsMaddressDomain() {
         return sMaddressDomain;

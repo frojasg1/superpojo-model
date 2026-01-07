@@ -6,23 +6,23 @@ import java.util.List;
 import java.util.Objects;
 
 public class RegistrationChargingInformation {
-    private SmsIndication smsIndication;
-    private RegistrationMessageType registrationMessagetype;
-    private GlobalRanNodeId ranNodeId;
-    private List<Snssai> allowedNSSAI;
-    private PSCellInformation pSCellInformation;
-    private RatType rATType;
-    private String uetimeZone;
-    private MICOModeIndication mICOModeIndication;
-    private Integer ranUeNgapId;
-    private List<NSSAIMap> nSSAIMapList;
-    private Integer amfUeNgapId;
-    private UserInformation userInformation;
-    private List<ServiceAreaRestriction> serviceAreaRestriction;
-    private List<Snssai> requestedNSSAI;
-    private List<Tai> taiList;
-    private List<Snssai> rejectedNSSAI;
-    private UserLocation userLocationinfo;
+    public SmsIndication smsIndication;
+    public RegistrationMessageType registrationMessagetype;
+    public GlobalRanNodeId ranNodeId;
+    public List<Snssai> allowedNSSAI;
+    public PSCellInformation pSCellInformation;
+    public RatType rATType;
+    public String uetimeZone;
+    public MICOModeIndication mICOModeIndication;
+    public Integer ranUeNgapId;
+    public List<NSSAIMap> nSSAIMapList;
+    public Integer amfUeNgapId;
+    public UserInformation userInformation;
+    public List<ServiceAreaRestriction> serviceAreaRestriction;
+    public List<Snssai> requestedNSSAI;
+    public UserLocation userLocationinfo;
+    public List<Snssai> rejectedNSSAI;
+    public List<Tai> taiList;
 
     public SmsIndication getSmsIndication() {
         return smsIndication;
@@ -238,24 +238,16 @@ public class RegistrationChargingInformation {
         return this;
     }
 
-    public List<Tai> getTaiList() {
-        return taiList;
+    public UserLocation getUserLocationinfo() {
+        return userLocationinfo;
     }
 
-    public void setTaiList(List<Tai> taiList) {
-        this.taiList = taiList;
+    public void setUserLocationinfo(UserLocation userLocationinfo) {
+        this.userLocationinfo = userLocationinfo;
     }
 
-    public RegistrationChargingInformation taiList(List<Tai> taiList) {
-        this.taiList = taiList;
-        return this;
-    }
-
-    public RegistrationChargingInformation addTaiListItem(Tai item) {
-        if (this.taiList == null) {
-            this.taiList = new ArrayList();
-        }
-        this.taiList.add(item);
+    public RegistrationChargingInformation userLocationinfo(UserLocation userLocationinfo) {
+        this.userLocationinfo = userLocationinfo;
         return this;
     }
 
@@ -280,27 +272,35 @@ public class RegistrationChargingInformation {
         return this;
     }
 
-    public UserLocation getUserLocationinfo() {
-        return userLocationinfo;
+    public List<Tai> getTaiList() {
+        return taiList;
     }
 
-    public void setUserLocationinfo(UserLocation userLocationinfo) {
-        this.userLocationinfo = userLocationinfo;
+    public void setTaiList(List<Tai> taiList) {
+        this.taiList = taiList;
     }
 
-    public RegistrationChargingInformation userLocationinfo(UserLocation userLocationinfo) {
-        this.userLocationinfo = userLocationinfo;
+    public RegistrationChargingInformation taiList(List<Tai> taiList) {
+        this.taiList = taiList;
+        return this;
+    }
+
+    public RegistrationChargingInformation addTaiListItem(Tai item) {
+        if (this.taiList == null) {
+            this.taiList = new ArrayList();
+        }
+        this.taiList.add(item);
         return this;
     }
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((((((((((((((((((((((((((((((((("RegistrationChargingInformation {"+"smsIndication = ")+ smsIndication)+", ")+"registrationMessagetype = ")+ registrationMessagetype)+", ")+"ranNodeId = ")+ ranNodeId)+", ")+"allowedNSSAI = ")+ allowedNSSAI)+", ")+"pSCellInformation = ")+ pSCellInformation)+", ")+"rATType = ")+ rATType)+", ")+"uetimeZone = ")+ uetimeZone)+", ")+"mICOModeIndication = ")+ mICOModeIndication)+", ")+"ranUeNgapId = ")+ ranUeNgapId)+", ")+"nSSAIMapList = ")+ nSSAIMapList)+", ")+"amfUeNgapId = ")+ amfUeNgapId)+", ")+"userInformation = ")+ userInformation)+", ")+"serviceAreaRestriction = ")+ serviceAreaRestriction)+", ")+"requestedNSSAI = ")+ requestedNSSAI)+", ")+"taiList = ")+ taiList)+", ")+"rejectedNSSAI = ")+ rejectedNSSAI)+", ")+"userLocationinfo = ")+ userLocationinfo)+"}");
+        return ((((((((((((((((((((((((((((((((((((((((((((((((((("RegistrationChargingInformation {"+"smsIndication = ")+ smsIndication)+", ")+"registrationMessagetype = ")+ registrationMessagetype)+", ")+"ranNodeId = ")+ ranNodeId)+", ")+"allowedNSSAI = ")+ allowedNSSAI)+", ")+"pSCellInformation = ")+ pSCellInformation)+", ")+"rATType = ")+ rATType)+", ")+"uetimeZone = ")+ uetimeZone)+", ")+"mICOModeIndication = ")+ mICOModeIndication)+", ")+"ranUeNgapId = ")+ ranUeNgapId)+", ")+"nSSAIMapList = ")+ nSSAIMapList)+", ")+"amfUeNgapId = ")+ amfUeNgapId)+", ")+"userInformation = ")+ userInformation)+", ")+"serviceAreaRestriction = ")+ serviceAreaRestriction)+", ")+"requestedNSSAI = ")+ requestedNSSAI)+", ")+"userLocationinfo = ")+ userLocationinfo)+", ")+"rejectedNSSAI = ")+ rejectedNSSAI)+", ")+"taiList = ")+ taiList)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(smsIndication, registrationMessagetype, ranNodeId, allowedNSSAI, pSCellInformation, rATType, uetimeZone, mICOModeIndication, ranUeNgapId, nSSAIMapList, amfUeNgapId, userInformation, serviceAreaRestriction, requestedNSSAI, taiList, rejectedNSSAI, userLocationinfo);
+        return Objects.hash(smsIndication, registrationMessagetype, ranNodeId, allowedNSSAI, pSCellInformation, rATType, uetimeZone, mICOModeIndication, ranUeNgapId, nSSAIMapList, amfUeNgapId, userInformation, serviceAreaRestriction, requestedNSSAI, userLocationinfo, rejectedNSSAI, taiList);
     }
 
     @Override
@@ -312,6 +312,6 @@ public class RegistrationChargingInformation {
             return false;
         }
         RegistrationChargingInformation castThat = ((RegistrationChargingInformation) that);
-        return ((((((((((((((((Objects.equals(this.smsIndication, castThat.smsIndication)&&Objects.equals(this.registrationMessagetype, castThat.registrationMessagetype))&&Objects.equals(this.ranNodeId, castThat.ranNodeId))&&Objects.equals(this.allowedNSSAI, castThat.allowedNSSAI))&&Objects.equals(this.pSCellInformation, castThat.pSCellInformation))&&Objects.equals(this.rATType, castThat.rATType))&&Objects.equals(this.uetimeZone, castThat.uetimeZone))&&Objects.equals(this.mICOModeIndication, castThat.mICOModeIndication))&&Objects.equals(this.ranUeNgapId, castThat.ranUeNgapId))&&Objects.equals(this.nSSAIMapList, castThat.nSSAIMapList))&&Objects.equals(this.amfUeNgapId, castThat.amfUeNgapId))&&Objects.equals(this.userInformation, castThat.userInformation))&&Objects.equals(this.serviceAreaRestriction, castThat.serviceAreaRestriction))&&Objects.equals(this.requestedNSSAI, castThat.requestedNSSAI))&&Objects.equals(this.taiList, castThat.taiList))&&Objects.equals(this.rejectedNSSAI, castThat.rejectedNSSAI))&&Objects.equals(this.userLocationinfo, castThat.userLocationinfo));
+        return ((((((((((((((((Objects.equals(this.smsIndication, castThat.smsIndication)&&Objects.equals(this.registrationMessagetype, castThat.registrationMessagetype))&&Objects.equals(this.ranNodeId, castThat.ranNodeId))&&Objects.equals(this.allowedNSSAI, castThat.allowedNSSAI))&&Objects.equals(this.pSCellInformation, castThat.pSCellInformation))&&Objects.equals(this.rATType, castThat.rATType))&&Objects.equals(this.uetimeZone, castThat.uetimeZone))&&Objects.equals(this.mICOModeIndication, castThat.mICOModeIndication))&&Objects.equals(this.ranUeNgapId, castThat.ranUeNgapId))&&Objects.equals(this.nSSAIMapList, castThat.nSSAIMapList))&&Objects.equals(this.amfUeNgapId, castThat.amfUeNgapId))&&Objects.equals(this.userInformation, castThat.userInformation))&&Objects.equals(this.serviceAreaRestriction, castThat.serviceAreaRestriction))&&Objects.equals(this.requestedNSSAI, castThat.requestedNSSAI))&&Objects.equals(this.userLocationinfo, castThat.userLocationinfo))&&Objects.equals(this.rejectedNSSAI, castThat.rejectedNSSAI))&&Objects.equals(this.taiList, castThat.taiList));
     }
 }

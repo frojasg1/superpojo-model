@@ -4,7 +4,7 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class NetworkSlicingInfo {
-    private Snssai sNSSAI;
+    public Snssai sNSSAI;
 
     public Snssai getsNSSAI() {
         return sNSSAI;

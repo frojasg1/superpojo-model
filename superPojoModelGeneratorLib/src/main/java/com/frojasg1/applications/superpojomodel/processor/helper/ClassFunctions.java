@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
+//import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 
 public class ClassFunctions {
 
@@ -89,14 +89,14 @@ public class ClassFunctions {
 
     protected Object getParametrizedType(ParameterizedType typeClassParameters, Class<?> inputPackageClass) {
         Object result = getAttributeType(typeClassParameters.getRawType(), inputPackageClass);
-        if(typeClassParameters instanceof ParameterizedTypeImpl) {
+//        if(typeClassParameters instanceof ParameterizedTypeImpl) {
             MyParameterizedType myParameterizedType = new MyParameterizedType(result);
 
             for(Type parameterType: typeClassParameters.getActualTypeArguments()) {
                 myParameterizedType.addTypeParameter(getAttributeType(parameterType, inputPackageClass));
             }
             result = myParameterizedType;
-        }
+//        }
 
         return result;
     }

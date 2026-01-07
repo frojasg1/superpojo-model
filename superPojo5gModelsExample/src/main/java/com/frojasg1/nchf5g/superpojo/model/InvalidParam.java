@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class InvalidParam {
-    private String reason;
-    private String param;
+    public String reason;
+    public String param;
 
     public String getReason() {
         return reason;

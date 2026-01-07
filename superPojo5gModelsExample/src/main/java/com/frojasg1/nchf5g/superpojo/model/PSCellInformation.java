@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class PSCellInformation {
-    private Ncgi nrcgi;
-    private Ecgi ecgi;
+    public Ncgi nrcgi;
+    public Ecgi ecgi;
 
     public Ncgi getNrcgi() {
         return nrcgi;

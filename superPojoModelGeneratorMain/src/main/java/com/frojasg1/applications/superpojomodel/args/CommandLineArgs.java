@@ -40,6 +40,7 @@ public class CommandLineArgs {
 
     protected static final Pattern DEFAULT_GETTER_ATTRIBUTE_NAME_GETTER = SuperPojoCommonPatterns.DEFAULT_GETTER_ATTRIBUTE_NAME_GETTER;
     protected static final Pattern DEFAULT_SETTER_ATTRIBUTE_NAME_GETTER = SuperPojoCommonPatterns.DEFAULT_SETTER_ATTRIBUTE_NAME_GETTER;
+    protected static final String FIELD_MODIFIER_ATT_NAME = "fieldModifier";
 
     protected String applicationName;
 
@@ -170,6 +171,7 @@ public class CommandLineArgs {
         result.setElementAndListOfElementsAreCompatible(elementAndListOfElementsAreCompatible());
         result.setToIgnoreErrors(isToIgnoreErrors());
         result.setToAddHashcodeAndEquals(isToAddHashcodeAndEquals());
+        result.setFieldModifier(getFieldModifier());
 
         return result;
     }
@@ -263,6 +265,12 @@ public class CommandLineArgs {
                 .numberOfArgs(0)
                 .desc("flag to tell if hashCode and equals functions are going to be created").build());
 
+        options.addOption(Option.builder(FIELD_MODIFIER_ATT_NAME)
+                .optionalArg(true)
+                .hasArg()
+                .numberOfArgs(1)
+                .desc("Modifier for fields, just in case you wanted to make them public, or something similar. Allowed values: (private | none | protected | public)").build());
+
         return options;
     }
 
@@ -345,6 +353,26 @@ public class CommandLineArgs {
         }
     }
 
+    protected void checkModifier(String modifier, String paramName) {
+        try {
+            if (paramName != null) { // if null, it will take the default value, which is valid
+                switch(modifier) {
+                    case "private":
+                    case "none":
+                    case "protected":
+                    case "public":
+                        break;
+
+                    default:
+                        throw new IllegalArgumentException("Not valid modifier found: " + modifier);
+                }
+            }
+        } catch(Exception ex) {
+            throw new IllegalArgumentException(
+                    String.format("'%s' string does not seem to be a valid modifier at -%s option", modifier, paramName), ex);
+        }
+    }
+
     protected void checkOptions(CommandLine cl) {
         if (!isAllowEmptyCommandLineArguments() && (cl.getOptions().length == 0)) {
             throw new RuntimeException("No arguments were given");
@@ -354,6 +382,7 @@ public class CommandLineArgs {
         checkExistingFolder(cl.getOptionValue("outputFolder"), "outputFolder");
         checkRegex(cl.getOptionValue("getterRegex"), "getterRegex");
         checkRegex(cl.getOptionValue("setterRegex"), "setterRegex");
+        checkModifier(cl.getOptionValue(FIELD_MODIFIER_ATT_NAME), FIELD_MODIFIER_ATT_NAME);
     }
 
     protected String[] getInputJars() {
@@ -370,6 +399,10 @@ public class CommandLineArgs {
 
     protected String getOutputPackage() {
         return getCommandLine().getOptionValue("outputPackage");
+    }
+
+    protected String getFieldModifier() {
+        return getString(FIELD_MODIFIER_ATT_NAME, "private");
     }
 
     protected Pattern getGetterRegexPattern() {

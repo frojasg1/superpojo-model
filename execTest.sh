@@ -15,5 +15,6 @@ java -jar superPojoModelGeneratorMain/target/super-pojo-model-generator-main-v1.
                 -addListItemAdder \
                 -hashcodeAndEquals \
                 -ignoreErrors \
-                -elementAndListOfElementsAreCompatible
+                -elementAndListOfElementsAreCompatible \
+                -fieldModifier public
 

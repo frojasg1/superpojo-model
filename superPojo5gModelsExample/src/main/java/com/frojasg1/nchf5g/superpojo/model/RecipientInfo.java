@@ -4,13 +4,13 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class RecipientInfo {
-    private String recipientGPSI;
-    private String sMrecipientProtocolId;
-    private SMAddressInfo recipientReceivedAddress;
-    private String recipientSUPI;
-    private String recipientSCCPAddress;
-    private SMAddressInfo recipientOtherAddress;
-    private SMInterface sMDestinationInterface;
+    public String recipientGPSI;
+    public String sMrecipientProtocolId;
+    public SMAddressInfo recipientReceivedAddress;
+    public String recipientSUPI;
+    public SMAddressInfo recipientOtherAddress;
+    public String recipientSCCPAddress;
+    public SMInterface sMDestinationInterface;
 
     public String getRecipientGPSI() {
         return recipientGPSI;
@@ -64,19 +64,6 @@ public class RecipientInfo {
         return this;
     }
 
-    public String getRecipientSCCPAddress() {
-        return recipientSCCPAddress;
-    }
-
-    public void setRecipientSCCPAddress(String recipientSCCPAddress) {
-        this.recipientSCCPAddress = recipientSCCPAddress;
-    }
-
-    public RecipientInfo recipientSCCPAddress(String recipientSCCPAddress) {
-        this.recipientSCCPAddress = recipientSCCPAddress;
-        return this;
-    }
-
     public SMAddressInfo getRecipientOtherAddress() {
         return recipientOtherAddress;
     }
@@ -87,6 +74,19 @@ public class RecipientInfo {
 
     public RecipientInfo recipientOtherAddress(SMAddressInfo recipientOtherAddress) {
         this.recipientOtherAddress = recipientOtherAddress;
+        return this;
+    }
+
+    public String getRecipientSCCPAddress() {
+        return recipientSCCPAddress;
+    }
+
+    public void setRecipientSCCPAddress(String recipientSCCPAddress) {
+        this.recipientSCCPAddress = recipientSCCPAddress;
+    }
+
+    public RecipientInfo recipientSCCPAddress(String recipientSCCPAddress) {
+        this.recipientSCCPAddress = recipientSCCPAddress;
         return this;
     }
 
@@ -105,12 +105,12 @@ public class RecipientInfo {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((("RecipientInfo {"+"recipientGPSI = ")+ recipientGPSI)+", ")+"sMrecipientProtocolId = ")+ sMrecipientProtocolId)+", ")+"recipientReceivedAddress = ")+ recipientReceivedAddress)+", ")+"recipientSUPI = ")+ recipientSUPI)+", ")+"recipientSCCPAddress = ")+ recipientSCCPAddress)+", ")+"recipientOtherAddress = ")+ recipientOtherAddress)+", ")+"sMDestinationInterface = ")+ sMDestinationInterface)+"}");
+        return ((((((((((((((((((((("RecipientInfo {"+"recipientGPSI = ")+ recipientGPSI)+", ")+"sMrecipientProtocolId = ")+ sMrecipientProtocolId)+", ")+"recipientReceivedAddress = ")+ recipientReceivedAddress)+", ")+"recipientSUPI = ")+ recipientSUPI)+", ")+"recipientOtherAddress = ")+ recipientOtherAddress)+", ")+"recipientSCCPAddress = ")+ recipientSCCPAddress)+", ")+"sMDestinationInterface = ")+ sMDestinationInterface)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(recipientGPSI, sMrecipientProtocolId, recipientReceivedAddress, recipientSUPI, recipientSCCPAddress, recipientOtherAddress, sMDestinationInterface);
+        return Objects.hash(recipientGPSI, sMrecipientProtocolId, recipientReceivedAddress, recipientSUPI, recipientOtherAddress, recipientSCCPAddress, sMDestinationInterface);
     }
 
     @Override
@@ -122,6 +122,6 @@ public class RecipientInfo {
             return false;
         }
         RecipientInfo castThat = ((RecipientInfo) that);
-        return ((((((Objects.equals(this.recipientGPSI, castThat.recipientGPSI)&&Objects.equals(this.sMrecipientProtocolId, castThat.sMrecipientProtocolId))&&Objects.equals(this.recipientReceivedAddress, castThat.recipientReceivedAddress))&&Objects.equals(this.recipientSUPI, castThat.recipientSUPI))&&Objects.equals(this.recipientSCCPAddress, castThat.recipientSCCPAddress))&&Objects.equals(this.recipientOtherAddress, castThat.recipientOtherAddress))&&Objects.equals(this.sMDestinationInterface, castThat.sMDestinationInterface));
+        return ((((((Objects.equals(this.recipientGPSI, castThat.recipientGPSI)&&Objects.equals(this.sMrecipientProtocolId, castThat.sMrecipientProtocolId))&&Objects.equals(this.recipientReceivedAddress, castThat.recipientReceivedAddress))&&Objects.equals(this.recipientSUPI, castThat.recipientSUPI))&&Objects.equals(this.recipientOtherAddress, castThat.recipientOtherAddress))&&Objects.equals(this.recipientSCCPAddress, castThat.recipientSCCPAddress))&&Objects.equals(this.sMDestinationInterface, castThat.sMDestinationInterface));
     }
 }

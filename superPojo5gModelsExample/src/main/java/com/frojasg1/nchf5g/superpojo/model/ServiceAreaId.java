@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class ServiceAreaId {
-    private PlmnId plmnId;
-    private String sac;
-    private String lac;
+    public PlmnId plmnId;
+    public String sac;
+    public String lac;
 
     public PlmnId getPlmnId() {
         return plmnId;

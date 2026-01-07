@@ -4,7 +4,7 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class ChargingNotifyResponse {
-    private InvocationResult invocationResult;
+    public InvocationResult invocationResult;
 
     public InvocationResult getInvocationResult() {
         return invocationResult;

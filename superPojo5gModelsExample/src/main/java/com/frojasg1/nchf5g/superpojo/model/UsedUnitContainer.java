@@ -7,19 +7,19 @@ import java.util.List;
 import java.util.Objects;
 
 public class UsedUnitContainer {
-    private NSPAContainerInformation nSPAContainerInformation;
-    private Long totalVolume;
-    private QuotaManagementIndicator quotaManagementIndicator;
-    private List<Trigger> triggers;
-    private Integer localSequenceNumber;
-    private PDUContainerInformation pDUContainerInformation;
-    private List<Date> eventTimeStamps;
-    private Long downlinkVolume;
-    private Long serviceSpecificUnits;
-    private Long uplinkVolume;
-    private Integer time;
-    private Integer serviceId;
-    private Date triggerTimestamp;
+    public NSPAContainerInformation nSPAContainerInformation;
+    public Long totalVolume;
+    public QuotaManagementIndicator quotaManagementIndicator;
+    public List<Trigger> triggers;
+    public Integer localSequenceNumber;
+    public PDUContainerInformation pDUContainerInformation;
+    public List<Date> eventTimeStamps;
+    public Long downlinkVolume;
+    public Long serviceSpecificUnits;
+    public Long uplinkVolume;
+    public Integer time;
+    public Integer serviceId;
+    public Date triggerTimestamp;
 
     public NSPAContainerInformation getnSPAContainerInformation() {
         return nSPAContainerInformation;

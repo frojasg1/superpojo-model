@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class NgApCause {
-    private Integer value;
-    private Integer group;
+    public Integer value;
+    public Integer group;
 
     public Integer getValue() {
         return value;

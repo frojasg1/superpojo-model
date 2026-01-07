@@ -7,11 +7,11 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class MultipleUnitUsage {
-    private PDUAddress multihomedPDUAddress;
-    private UUID uPFID;
-    private List<UsedUnitContainer> usedUnitContainer;
-    private Integer ratingGroup;
-    private RequestedUnit requestedUnit;
+    public PDUAddress multihomedPDUAddress;
+    public UUID uPFID;
+    public List<UsedUnitContainer> usedUnitContainer;
+    public Integer ratingGroup;
+    public RequestedUnit requestedUnit;
 
     public PDUAddress getMultihomedPDUAddress() {
         return multihomedPDUAddress;

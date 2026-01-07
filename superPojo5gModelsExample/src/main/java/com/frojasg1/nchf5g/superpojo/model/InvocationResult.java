@@ -4,8 +4,8 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class InvocationResult {
-    private ProblemDetails error;
-    private FailureHandling failureHandling;
+    public ProblemDetails error;
+    public FailureHandling failureHandling;
 
     public ProblemDetails getError() {
         return error;

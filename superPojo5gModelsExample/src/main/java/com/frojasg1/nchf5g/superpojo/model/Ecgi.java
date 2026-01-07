@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class Ecgi {
-    private String nid;
-    private String eutraCellId;
-    private PlmnId plmnId;
+    public String nid;
+    public String eutraCellId;
+    public PlmnId plmnId;
 
     public String getNid() {
         return nid;

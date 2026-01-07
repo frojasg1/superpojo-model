@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class NetworkAreaInfo {
-    private List<Ncgi> ncgis;
-    private List<Tai> tais;
-    private List<Ecgi> ecgis;
-    private List<GlobalRanNodeId> gRanNodeIds;
+    public List<Ncgi> ncgis;
+    public List<Tai> tais;
+    public List<Ecgi> ecgis;
+    public List<GlobalRanNodeId> gRanNodeIds;
 
     public List<Ncgi> getNcgis() {
         return ncgis;

@@ -4,13 +4,13 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class NSPAContainerInformation {
-    private Integer theNumberOfPDUSessions;
-    private Integer latency;
-    private Integer theNumberOfRegisteredSubscribers;
-    private Throughput throughput;
-    private String maximumPacketLossRate;
-    private ServiceExperienceInfo serviceExperienceStatisticsData;
-    private NsiLoadLevelInfo loadLevel;
+    public Integer theNumberOfPDUSessions;
+    public Integer theNumberOfRegisteredSubscribers;
+    public Integer latency;
+    public ServiceExperienceInfo serviceExperienceStatisticsData;
+    public Throughput throughput;
+    public String maximumPacketLossRate;
+    public NsiLoadLevelInfo loadLevel;
 
     public Integer getTheNumberOfPDUSessions() {
         return theNumberOfPDUSessions;
@@ -22,6 +22,19 @@ public class NSPAContainerInformation {
 
     public NSPAContainerInformation theNumberOfPDUSessions(Integer theNumberOfPDUSessions) {
         this.theNumberOfPDUSessions = theNumberOfPDUSessions;
+        return this;
+    }
+
+    public Integer getTheNumberOfRegisteredSubscribers() {
+        return theNumberOfRegisteredSubscribers;
+    }
+
+    public void setTheNumberOfRegisteredSubscribers(Integer theNumberOfRegisteredSubscribers) {
+        this.theNumberOfRegisteredSubscribers = theNumberOfRegisteredSubscribers;
+    }
+
+    public NSPAContainerInformation theNumberOfRegisteredSubscribers(Integer theNumberOfRegisteredSubscribers) {
+        this.theNumberOfRegisteredSubscribers = theNumberOfRegisteredSubscribers;
         return this;
     }
 
@@ -38,16 +51,16 @@ public class NSPAContainerInformation {
         return this;
     }
 
-    public Integer getTheNumberOfRegisteredSubscribers() {
-        return theNumberOfRegisteredSubscribers;
+    public ServiceExperienceInfo getServiceExperienceStatisticsData() {
+        return serviceExperienceStatisticsData;
     }
 
-    public void setTheNumberOfRegisteredSubscribers(Integer theNumberOfRegisteredSubscribers) {
-        this.theNumberOfRegisteredSubscribers = theNumberOfRegisteredSubscribers;
+    public void setServiceExperienceStatisticsData(ServiceExperienceInfo serviceExperienceStatisticsData) {
+        this.serviceExperienceStatisticsData = serviceExperienceStatisticsData;
     }
 
-    public NSPAContainerInformation theNumberOfRegisteredSubscribers(Integer theNumberOfRegisteredSubscribers) {
-        this.theNumberOfRegisteredSubscribers = theNumberOfRegisteredSubscribers;
+    public NSPAContainerInformation serviceExperienceStatisticsData(ServiceExperienceInfo serviceExperienceStatisticsData) {
+        this.serviceExperienceStatisticsData = serviceExperienceStatisticsData;
         return this;
     }
 
@@ -77,19 +90,6 @@ public class NSPAContainerInformation {
         return this;
     }
 
-    public ServiceExperienceInfo getServiceExperienceStatisticsData() {
-        return serviceExperienceStatisticsData;
-    }
-
-    public void setServiceExperienceStatisticsData(ServiceExperienceInfo serviceExperienceStatisticsData) {
-        this.serviceExperienceStatisticsData = serviceExperienceStatisticsData;
-    }
-
-    public NSPAContainerInformation serviceExperienceStatisticsData(ServiceExperienceInfo serviceExperienceStatisticsData) {
-        this.serviceExperienceStatisticsData = serviceExperienceStatisticsData;
-        return this;
-    }
-
     public NsiLoadLevelInfo getLoadLevel() {
         return loadLevel;
     }
@@ -105,12 +105,12 @@ public class NSPAContainerInformation {
 
     @Override
     public String toString() {
-        return ((((((((((((((((((((("NSPAContainerInformation {"+"theNumberOfPDUSessions = ")+ theNumberOfPDUSessions)+", ")+"latency = ")+ latency)+", ")+"theNumberOfRegisteredSubscribers = ")+ theNumberOfRegisteredSubscribers)+", ")+"throughput = ")+ throughput)+", ")+"maximumPacketLossRate = ")+ maximumPacketLossRate)+", ")+"serviceExperienceStatisticsData = ")+ serviceExperienceStatisticsData)+", ")+"loadLevel = ")+ loadLevel)+"}");
+        return ((((((((((((((((((((("NSPAContainerInformation {"+"theNumberOfPDUSessions = ")+ theNumberOfPDUSessions)+", ")+"theNumberOfRegisteredSubscribers = ")+ theNumberOfRegisteredSubscribers)+", ")+"latency = ")+ latency)+", ")+"serviceExperienceStatisticsData = ")+ serviceExperienceStatisticsData)+", ")+"throughput = ")+ throughput)+", ")+"maximumPacketLossRate = ")+ maximumPacketLossRate)+", ")+"loadLevel = ")+ loadLevel)+"}");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(theNumberOfPDUSessions, latency, theNumberOfRegisteredSubscribers, throughput, maximumPacketLossRate, serviceExperienceStatisticsData, loadLevel);
+        return Objects.hash(theNumberOfPDUSessions, theNumberOfRegisteredSubscribers, latency, serviceExperienceStatisticsData, throughput, maximumPacketLossRate, loadLevel);
     }
 
     @Override
@@ -122,6 +122,6 @@ public class NSPAContainerInformation {
             return false;
         }
         NSPAContainerInformation castThat = ((NSPAContainerInformation) that);
-        return ((((((Objects.equals(this.theNumberOfPDUSessions, castThat.theNumberOfPDUSessions)&&Objects.equals(this.latency, castThat.latency))&&Objects.equals(this.theNumberOfRegisteredSubscribers, castThat.theNumberOfRegisteredSubscribers))&&Objects.equals(this.throughput, castThat.throughput))&&Objects.equals(this.maximumPacketLossRate, castThat.maximumPacketLossRate))&&Objects.equals(this.serviceExperienceStatisticsData, castThat.serviceExperienceStatisticsData))&&Objects.equals(this.loadLevel, castThat.loadLevel));
+        return ((((((Objects.equals(this.theNumberOfPDUSessions, castThat.theNumberOfPDUSessions)&&Objects.equals(this.theNumberOfRegisteredSubscribers, castThat.theNumberOfRegisteredSubscribers))&&Objects.equals(this.latency, castThat.latency))&&Objects.equals(this.serviceExperienceStatisticsData, castThat.serviceExperienceStatisticsData))&&Objects.equals(this.throughput, castThat.throughput))&&Objects.equals(this.maximumPacketLossRate, castThat.maximumPacketLossRate))&&Objects.equals(this.loadLevel, castThat.loadLevel));
     }
 }

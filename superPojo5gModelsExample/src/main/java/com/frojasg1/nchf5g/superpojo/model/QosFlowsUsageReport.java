@@ -5,11 +5,11 @@ import java.util.Date;
 import java.util.Objects;
 
 public class QosFlowsUsageReport {
-    private Long uplinkVolume;
-    private Long downlinkVolume;
-    private Integer qFI;
-    private Date endTimestamp;
-    private Date startTimestamp;
+    public Long uplinkVolume;
+    public Long downlinkVolume;
+    public Integer qFI;
+    public Date endTimestamp;
+    public Date startTimestamp;
 
     public Long getUplinkVolume() {
         return uplinkVolume;

@@ -4,9 +4,9 @@ package com.frojasg1.nchf5g.superpojo.model;
 import java.util.Objects;
 
 public class AccessTokenErr {
-    private String errorUri;
-    private String errorDescription;
-    private AccessTokenErr.ErrorEnum error;
+    public String errorUri;
+    public String errorDescription;
+    public AccessTokenErr.ErrorEnum error;
 
     public String getErrorUri() {
         return errorUri;
